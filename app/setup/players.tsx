@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { StyleSheet, TextInput, View } from 'react-native';
 import { router } from 'expo-router';
 import {
@@ -13,12 +13,15 @@ import {
   type as t,
 } from '../../src/ui';
 import { useGame } from '../../src/store/gameStore';
-import { identityFor } from '../../src/engine/roster';
+import { displayName } from '../../src/engine/roster';
 import { haptics } from '../../src/lib/haptics';
 
 export default function Players() {
   const players = useGame((s) => s.game.players);
   const dispatch = useGame((s) => s.dispatch);
+  // One row is editable at a time. A screen of live text fields invites
+  // mis-taps while the phone is going round the table.
+  const [editingId, setEditingId] = useState<string | null>(null);
 
   // Open with a sensible table rather than an empty screen. In an effect,
   // not in render — dispatching during render double-fires under StrictMode.
@@ -42,21 +45,39 @@ export default function Players() {
         {players.map((p) => (
           <View key={p.id} style={styles.row}>
             <Avatar icon={p.icon} size="md" />
-            <TextInput
-              value={p.name}
-              placeholder={identityFor(p.icon).name}
-              placeholderTextColor={color.inkSoft}
-              maxLength={12}
-              autoCapitalize="characters"
-              autoCorrect={false}
-              style={styles.input}
-              onChangeText={(name) => dispatch({ type: 'RENAME_PLAYER', id: p.id, name })}
-            />
-            <Text style={styles.tag}>{identityFor(p.icon).name}</Text>
+            {editingId === p.id ? (
+              <TextInput
+                value={p.name}
+                placeholder="TAP TO NAME"
+                placeholderTextColor={color.inkSoft}
+                maxLength={12}
+                autoCapitalize="characters"
+                autoCorrect={false}
+                autoFocus
+                returnKeyType="done"
+                style={styles.input}
+                onChangeText={(name) => dispatch({ type: 'RENAME_PLAYER', id: p.id, name })}
+                onBlur={() => setEditingId(null)}
+                onSubmitEditing={() => setEditingId(null)}
+              />
+            ) : (
+              <Text
+                accessibilityRole="button"
+                accessibilityLabel={p.name ? `Edit the name ${p.name}` : 'Add a name'}
+                style={[styles.name, p.name ? null : styles.unnamed]}
+                numberOfLines={1}
+                onPress={() => {
+                  haptics.tap();
+                  setEditingId(p.id);
+                }}
+              >
+                {p.name || 'TAP TO NAME'}
+              </Text>
+            )}
             {players.length > 3 ? (
               <Text
                 accessibilityRole="button"
-                accessibilityLabel={`Remove ${identityFor(p.icon).name}`}
+                accessibilityLabel={`Remove ${displayName(p)}`}
                 style={styles.remove}
                 onPress={() => {
                   haptics.tap();
@@ -92,8 +113,8 @@ export default function Players() {
       </Row>
 
       <Text style={styles.note}>
-        Icons are handed out automatically. Skip naming and the game just calls you by your shape —
-        &ldquo;pass to TRIANGLE&rdquo; works fine.
+        Tap a name to change it. Icons are handed out automatically. Skip naming and the game just
+        calls you by your shape — &ldquo;pass to TRIANGLE&rdquo; works fine.
       </Text>
 
       <View style={styles.spacer} />
@@ -134,12 +155,13 @@ const styles = StyleSheet.create({
     shadowOpacity: 1,
     shadowRadius: 0,
   },
-  // minWidth 0 lets the field shrink below its own content. Without it the
-  // input grows to fit whatever is typed and shoves the shape tag and the
-  // remove button off the right edge of the card — the tag clipping mid-word
-  // into something that reads as a rendering fault.
+  // minWidth 0 lets both the field and the resting label shrink below their own
+  // content, instead of growing and shoving the remove button off the card.
   input: { flex: 1, minWidth: 0, ...t.d3, fontSize: 18, color: color.ink, padding: 0 },
-  tag: { ...t.tiny, color: color.inkSoft, flexShrink: 0 },
+  // The whole row-width label is the tap target, so it stays easy to hit while
+  // the phone is being passed around.
+  name: { flex: 1, minWidth: 0, ...t.d3, fontSize: 18, color: color.ink, paddingVertical: 2 },
+  unnamed: { color: color.inkSoft },
   remove: { ...t.d3, fontSize: 15, paddingHorizontal: 6, color: color.pink, flexShrink: 0 },
   addRow: { marginTop: 12 },
   half: { flex: 1 },

@@ -2,14 +2,11 @@ import { StyleSheet, View } from 'react-native';
 import { router } from 'expo-router';
 import { Avatar, Button, Row, Screen, Segmented, Text, color, type as t } from '../src/ui';
 import { usePrefs } from '../src/store/prefsStore';
-import { useGame } from '../src/store/gameStore';
 import { ROSTER } from '../src/engine/roster';
 import { APP_NAME, APP_VERSION } from '../src/config';
 
 export default function Settings() {
   const prefs = usePrefs();
-  const config = useGame((s) => s.game.config);
-  const dispatch = useGame((s) => s.dispatch);
 
   return (
     <Screen scroll>
@@ -43,17 +40,6 @@ export default function Settings() {
           options={[
             { value: 'colour', label: 'FULL COLOUR' },
             { value: 'plain', label: 'PLAIN' },
-          ]}
-        />
-
-        <Segmented
-          label="FAIR DEAL"
-          value={config.fairDeal ? 'on' : 'off'}
-          note="Weights the draw away from whoever was ringer last, so nobody gets it three times running."
-          onChange={(v) => dispatch({ type: 'SET_CONFIG', patch: { fairDeal: v === 'on' } })}
-          options={[
-            { value: 'on', label: 'ON' },
-            { value: 'off', label: 'OFF' },
           ]}
         />
 

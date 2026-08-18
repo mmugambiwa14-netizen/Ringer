@@ -61,6 +61,16 @@ export default function Rules() {
           options={RINGER_OPTIONS}
         />
         <Segmented
+          label="FAIR DEAL"
+          value={config.fairDeal ? 'on' : 'off'}
+          note="Weights the draw away from whoever was ringer last, so nobody gets it three times running."
+          onChange={(v) => set({ fairDeal: v === 'on' })}
+          options={[
+            { value: 'on', label: 'ON' },
+            { value: 'off', label: 'OFF' },
+          ]}
+        />
+        <Segmented
           label="CLUE LAPS"
           value={config.clueLaps}
           onChange={(clueLaps) => set({ clueLaps })}
