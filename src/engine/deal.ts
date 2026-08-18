@@ -80,6 +80,7 @@ export function dealRound(state: GameState, packs: Pack[], startedAt: number): R
     votes: {},
     accusedId: null,
     tiedIds: [],
+    revoteCount: 0,
     imposterGuess: null,
     guessWasCorrect: false,
     outcome: null,

@@ -25,6 +25,7 @@ const round = (patch: Partial<RoundState> = {}): RoundState => ({
   votes: {},
   accusedId: 'b',
   tiedIds: [],
+  revoteCount: 0,
   imposterGuess: null,
   guessWasCorrect: false,
   outcome: null,

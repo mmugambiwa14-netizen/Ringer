@@ -97,7 +97,12 @@ export function playSfx(name: Sfx) {
   }
 }
 
-/** Called on teardown in tests and on session end; native players are finite. */
+/**
+ * Release every native player. Nothing calls this today — the eight players are
+ * deliberately held for the life of the app, which is the whole point of caching
+ * them — but native players are a finite resource, so anything that later tears
+ * the audio layer down should come through here.
+ */
 export function releaseSounds() {
   for (const p of players.values()) {
     try {

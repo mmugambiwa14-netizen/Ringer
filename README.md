@@ -250,6 +250,22 @@ into someone else's phone is the slowest moment in every game in this category.
 
 ---
 
+## Ties
+
+| Rule | What happens |
+| --- | --- |
+| **Runoff** *(default)* | Vote again, narrowed to the players who tied |
+| **Revote** | Vote again, whole table back in play |
+| **Imposter wins** | The tie stands immediately — nobody is caught |
+
+Both re-vote rules are capped at two attempts (`MAX_TIE_REVOTES` in
+`src/engine/reducer.ts`). A table of four that splits 2-2 will keep doing it, the vote
+screen has no way out, and every transition is persisted — so without the cap a deadlocked
+round couldn't even be escaped by force-quitting the app. On the third deadlock the tie
+simply stands: nobody agreed, so nobody is caught.
+
+---
+
 ## Scoring
 
 | Event | Points |

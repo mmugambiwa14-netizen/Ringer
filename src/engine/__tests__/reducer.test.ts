@@ -164,6 +164,46 @@ describe('voting and resolution', () => {
     expect(s.round!.outcome).toBe('imposter');
   });
 
+  it('lets a deadlocked table finish the round instead of looping forever', () => {
+    // Four players splitting 2-2 every time. Both re-vote tie rules send the
+    // table back to a vote screen that has no way out, and the state is
+    // persisted, so a force-quit used to restore the same deadlock.
+    for (const tieRule of ['runoff', 'revote'] as const) {
+      let s = reducer(toVote(4), { type: 'SET_CONFIG', patch: { tieRule } });
+      const [a, b, c, d] = s.players;
+
+      const deadlock = () => {
+        s = reducer(s, { type: 'CAST_VOTE', voterId: a!.id, accusedId: c!.id });
+        s = reducer(s, { type: 'CAST_VOTE', voterId: b!.id, accusedId: c!.id });
+        s = reducer(s, { type: 'CAST_VOTE', voterId: c!.id, accusedId: d!.id });
+        s = reducer(s, { type: 'CAST_VOTE', voterId: d!.id, accusedId: d!.id });
+        s = reducer(s, { type: 'RESOLVE_VOTE' });
+      };
+
+      deadlock();
+      expect(s.phase).toBe('vote');
+      deadlock();
+      expect(s.phase).toBe('vote');
+
+      // Third deadlock: the tie stands and nobody is caught.
+      deadlock();
+      expect(s.phase).toBe('roundResult');
+      expect(s.round!.outcome).toBe('imposter');
+      expect(s.round!.accusedId).toBeNull();
+    }
+  });
+
+  it('starts each round with a clean re-vote count', () => {
+    let s = toVote(4);
+    const [a, b, c, d] = s.players;
+    s = reducer(s, { type: 'CAST_VOTE', voterId: a!.id, accusedId: c!.id });
+    s = reducer(s, { type: 'CAST_VOTE', voterId: b!.id, accusedId: d!.id });
+    s = reducer(s, { type: 'RESOLVE_VOTE' });
+    expect(s.round!.revoteCount).toBe(1);
+    // Coming back through the discussion screen is a fresh vote.
+    expect(reducer(s, { type: 'GO_TO_VOTE' }).round!.revoteCount).toBe(0);
+  });
+
   it('a tie under runoff returns to the vote with the tied players recorded', () => {
     let s = toVote(4);
     const [a, b, c, d] = s.players;

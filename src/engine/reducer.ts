@@ -29,6 +29,18 @@ const RECENT_MEMORY = 60;
  */
 const NEXT_SESSION_SALT = 0x5e5510e;
 
+/**
+ * How many times a tied vote may be re-run before the tie simply stands.
+ *
+ * Both 'runoff' and 'revote' send a tie back to the vote screen, and that
+ * screen has no way out — so a table that splits evenly twice in a row used to
+ * loop forever. Worse, every transition is persisted, so force-quitting
+ * restored them straight back into the deadlock. After this many attempts the
+ * tie resolves the way the 'imposterWins' rule already does: nobody agreed,
+ * so nobody is caught.
+ */
+const MAX_TIE_REVOTES = 2;
+
 export function initialState(seed: number, config: Partial<GameConfig> = {}): GameState {
   return {
     phase: 'setup',
@@ -201,7 +213,11 @@ export function reducer(state: GameState, action: Action, packs: Pack[] = []): G
 
     case 'GO_TO_VOTE':
       if (!state.round) return state;
-      return { ...state, phase: 'vote', round: { ...state.round, votes: {}, tiedIds: [] } };
+      return {
+        ...state,
+        phase: 'vote',
+        round: { ...state.round, votes: {}, tiedIds: [], revoteCount: 0 },
+      };
 
     case 'CAST_VOTE': {
       const round = state.round;
@@ -229,12 +245,16 @@ export function reducer(state: GameState, action: Action, packs: Pack[] = []): G
 
       if (accusedId === null) {
         // A tie. House rules decide, and the difference is real.
-        if (state.config.tieRule === 'imposterWins') {
+        if (state.config.tieRule === 'imposterWins' || round.revoteCount >= MAX_TIE_REVOTES) {
           return finishRound(state, { ...round, accusedId: null, tiedIds, outcome: 'imposter' });
         }
         // runoff / revote both send the table back to the vote screen,
         // narrowed to the tied players in the runoff case.
-        return { ...state, phase: 'vote', round: { ...round, votes: {}, tiedIds } };
+        return {
+          ...state,
+          phase: 'vote',
+          round: { ...round, votes: {}, tiedIds, revoteCount: round.revoteCount + 1 },
+        };
       }
       return { ...state, phase: 'voteResult', round: { ...round, accusedId, tiedIds: [] } };
     }

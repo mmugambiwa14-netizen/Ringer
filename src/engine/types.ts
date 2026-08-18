@@ -93,6 +93,11 @@ export interface RoundState {
   votes: Record<string, string>;
   accusedId: string | null;
   tiedIds: string[];
+  /**
+   * How many times this round's vote has been re-run after a tie. Capped, so a
+   * table that keeps splitting evenly can't deadlock the round forever.
+   */
+  revoteCount: number;
   imposterGuess: string | null;
   guessWasCorrect: boolean;
   outcome: Outcome | null;

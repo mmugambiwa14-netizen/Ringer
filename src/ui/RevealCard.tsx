@@ -186,7 +186,6 @@ function Stripes() {
 function Arrow() {
   return (
     <Svg width={40} height={40} viewBox="0 0 40 40">
-      <Rect x="0" y="0" width="0" height="0" />
       <Line
         x1="20"
         y1="34"
