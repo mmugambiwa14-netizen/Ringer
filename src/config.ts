@@ -4,7 +4,7 @@
  * growth loop points at nothing.
  */
 export const APP_NAME = 'RINGER';
-export const APP_VERSION = '1.0.0';
+export const APP_VERSION = '0.1.0';
 
 // TODO(launch): real store URLs. A single short link that redirects by
 // platform is better than two — the share text is read by whoever is holding

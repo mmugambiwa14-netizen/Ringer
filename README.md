@@ -21,23 +21,29 @@ combinations — if the reveal gesture doesn't respond, run `npx expo run:ios` /
 ## Verify it
 
 ```bash
-npm run verify     # everything below that works without node_modules
-npm test           # 87 tests, no dependencies required
-npm run check      # imports, engine boundary, Rules of Hooks, JSX balance
-npm run content    # rebuild word packs from content/en/*.tsv
-npm run sfx        # regenerate the sound effects (needs python3 + numpy)
-npm run icons      # regenerate icon, adaptive icon and splash (needs pillow)
-npm run typecheck  # needs node_modules
-npm run lint       # needs node_modules
+npm run verify       # everything below that works without node_modules
+npm test             # 93 tests, no dependencies required
+npm run check        # imports, engine boundary, Rules of Hooks, JSX balance, version
+npm run content      # rebuild word packs from content/en/*.tsv
+npm run sfx          # regenerate the sound effects (needs python3 + numpy)
+npm run icons        # regenerate icon, adaptive icon and splash (needs pillow)
+npm run typecheck    # needs node_modules
+npm run lint         # needs node_modules
+npm run format:check # needs node_modules
+npm run bundle       # a real Metro export — proves the app can start
 ```
 
 `npm run verify` is the gate that runs on a bare checkout — tests, content validation and
-four static checks, none of which need a dependency tree. `typecheck` and `lint` run in CI
-after `npm ci`.
+the static checks, none of which need a dependency tree. `typecheck`, `lint`, `format:check`
+and a real Metro bundle run in CI after `npm ci`.
+
+The bundle step is the one that proves the app can actually start. Nothing else resolves the
+real module graph, so a dependency that is imported but never declared passes every other
+gate and then red-screens on launch — which is exactly what `expo-asset` did.
 
 ### The static checks, and why they exist
 
-Without `tsc` available in a bare checkout, three classes of bug ship silently. Each check
+Without `tsc` available in a bare checkout, several classes of bug ship silently. Each check
 was written after the corresponding bug was actually found in this codebase:
 
 | Check | Catches |
@@ -45,6 +51,7 @@ was written after the corresponding bug was actually found in this codebase:
 | `check-imports` | Broken relative paths, and any import that would pollute the pure engine |
 | `check-hooks` | A hook placed after an early `return` — including the `if (x) return null;` guards these screens are full of. React tears the component down when the branch flips |
 | `check-jsx` | Unbalanced tags after an edit, which otherwise appear as a red screen on a device |
+| `check-version` | `package.json`, `app.json` and `APP_VERSION` drifting apart — the settings screen prints the last one to players, and it had already gone stale |
 
 Each one is self-tested: break a file deliberately and it fails.
 
@@ -285,7 +292,7 @@ the table can call it.
 ## What's built
 
 - [x] Engine: dealing, fair deal, three modes, both vote styles, tie rules, scoring, history
-- [x] 87 tests covering every outcome branch, the content contract, the share copy and resume routing
+- [x] 93 tests covering every outcome branch, the content contract, the share copy and resume routing
 - [x] Slide-up reveal with auto-close, backgrounding guard, hold fallback
 - [x] Design system: tokens, Button, Card, Sticker, Avatar, Segmented, TimerRing, Screen
 - [x] All 16 screens wired end to end

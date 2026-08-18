@@ -13,7 +13,7 @@
     "lint": "eslint . --max-warnings 0",
     "format:check": "prettier --check \"**/*.{ts,tsx,js,mjs,json}\"",
     "bundle": "expo export --platform ios --output-dir .expo-export",
-    "check": "node tools/check-imports.mjs && node tools/check-hooks.mjs && node tools/check-jsx.mjs",
+    "check": "node tools/check-imports.mjs && node tools/check-hooks.mjs && node tools/check-jsx.mjs && node tools/check-version.mjs",
     "verify": "npm run content:check && npm run check && npm test",
     "content": "node tools/build-packs.mjs",
     "content:check": "node tools/build-packs.mjs --check",
