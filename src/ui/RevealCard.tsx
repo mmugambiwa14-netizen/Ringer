@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { AppState, StyleSheet, View, type LayoutChangeEvent } from 'react-native';
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
 import Animated, {
@@ -10,7 +10,6 @@ import Animated, {
   withRepeat,
   withSequence,
   withTiming,
-  type SharedValue,
 } from 'react-native-reanimated';
 import Svg, { Defs, Line, Pattern, Rect } from 'react-native-svg';
 import { border, color, motion, shadow, type as t } from './tokens';

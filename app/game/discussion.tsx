@@ -20,18 +20,15 @@ export default function Discussion() {
 
   useEffect(() => {
     if (total <= 0) return;
-    const id = setInterval(() => {
-      setLeft((v) => {
-        if (v <= 1) {
-          clearInterval(id);
-          haptics.warn();
-          return 0;
-        }
-        return v - 1;
-      });
-    }, 1000);
+    const id = setInterval(() => setLeft((v) => (v > 0 ? v - 1 : 0)), 1000);
     return () => clearInterval(id);
   }, [total]);
+
+  // Out of the state updater: React may run one more than once, and this
+  // buzzes the phone.
+  useEffect(() => {
+    if (total > 0 && left === 0) haptics.warn();
+  }, [left, total]);
 
   const mm = Math.floor(left / 60);
   const ss = String(left % 60).padStart(2, '0');

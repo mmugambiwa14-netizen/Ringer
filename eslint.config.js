@@ -17,6 +17,13 @@ module.exports = [
     },
   },
   {
+    // The build and check scripts are CLIs whose entire output contract is
+    // stdout. Reporting through console.warn instead would put normal output
+    // on stderr, which is worse, not better.
+    files: ['tools/**/*.mjs'],
+    rules: { 'no-console': 'off' },
+  },
+  {
     // The engine must stay pure. This mirrors tools/check-imports.mjs so the
     // rule is enforced in the editor as well as in CI.
     files: ['src/engine/**/*.ts'],

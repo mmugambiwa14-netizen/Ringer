@@ -41,7 +41,12 @@ export default function Reveal() {
     [game, round, player],
   );
 
-  useRedirectWhen(!round || !player || !face, '/');
+  // Only redirect when the screen is genuinely unreachable — a deep link with
+  // no round. `player` is *legitimately* undefined for one render after the
+  // last reveal, because REVEAL_NEXT leaves revealIndex past the end of the
+  // table; redirecting on that would race the replace() to /game/starting and
+  // could drop the table on the home screen instead.
+  useRedirectWhen(!round, '/');
   if (!round || !player || !face) return null;
 
   const name = displayName(player);

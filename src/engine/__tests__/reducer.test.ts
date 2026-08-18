@@ -3,7 +3,7 @@ import { expect } from './expect';
 import { initialState, reducer } from '../reducer';
 import { revealFor } from '../selectors';
 import { displayName } from '../roster';
-import { PACKS, deal, playClues, revealAll, withPlayers } from './helpers';
+import { deal, playClues, revealAll, withPlayers } from './helpers';
 
 describe('setup', () => {
   it('auto-assigns a distinct icon per seat', () => {

@@ -13,7 +13,7 @@
  * Usage:  node tools/build-packs.mjs [--check]
  *         --check validates without writing, for CI.
  */
-import { readFileSync, readdirSync, writeFileSync, mkdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { join } from 'node:path';
 
 const ROOT = process.cwd();

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import Svg, { Circle } from 'react-native-svg';
 import { Text } from './Text';
@@ -12,21 +12,25 @@ const C = 2 * Math.PI * R;
 export function TimerRing({ seconds, onExpire }: { seconds: number; onExpire?: () => void }) {
   const [left, setLeft] = useState(seconds);
 
+  // Held in a ref, and deliberately out of the effect's deps: every caller
+  // passes an inline arrow, so depending on it would tear down and restart the
+  // countdown — resetting it to full — on each parent render.
+  const onExpireRef = useRef(onExpire);
+  onExpireRef.current = onExpire;
+
   useEffect(() => {
     setLeft(seconds);
     if (seconds <= 0) return;
-    const id = setInterval(() => {
-      setLeft((v) => {
-        if (v <= 1) {
-          clearInterval(id);
-          onExpire?.();
-          return 0;
-        }
-        return v - 1;
-      });
-    }, 1000);
+    const id = setInterval(() => setLeft((v) => (v > 0 ? v - 1 : 0)), 1000);
     return () => clearInterval(id);
-  }, [seconds, onExpire]);
+  }, [seconds]);
+
+  // Expiry fires from an effect rather than from inside the state updater.
+  // React may invoke an updater more than once, and this one buzzes the phone
+  // and plays a sound.
+  useEffect(() => {
+    if (seconds > 0 && left === 0) onExpireRef.current?.();
+  }, [left, seconds]);
 
   if (seconds <= 0) return null;
   const pct = left / seconds;

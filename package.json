@@ -10,7 +10,7 @@
     "test": "node --no-warnings --import ./tools/loader.mjs --test \"src/**/__tests__/**/*.test.ts\"",
     "test:watch": "node --no-warnings --import ./tools/loader.mjs --test --watch \"src/**/__tests__/**/*.test.ts\"",
     "typecheck": "tsc --noEmit",
-    "lint": "eslint .",
+    "lint": "eslint . --max-warnings 0",
     "format:check": "prettier --check \"**/*.{ts,tsx,js,mjs,json}\"",
     "bundle": "expo export --platform ios --output-dir .expo-export",
     "check": "node tools/check-imports.mjs && node tools/check-hooks.mjs && node tools/check-jsx.mjs",

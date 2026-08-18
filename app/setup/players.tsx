@@ -10,7 +10,6 @@ import {
   Text,
   border,
   color,
-  shadow,
   type as t,
 } from '../../src/ui';
 import { useGame } from '../../src/store/gameStore';

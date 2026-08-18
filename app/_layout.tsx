@@ -36,15 +36,21 @@ export function ErrorBoundary({ error, retry }: { error: Error; retry: () => voi
 }
 
 export default function RootLayout() {
-  const [loaded] = useFonts({
+  const [loaded, fontError] = useFonts({
     ArchivoBlack_400Regular,
     Archivo_600SemiBold,
     Archivo_800ExtraBold,
     SpaceMono_700Bold,
   });
 
+  // Start once the fonts are in *or* once loading them has failed. Gating only
+  // on `loaded` means a font that never resolves leaves the splash up forever
+  // with no way out — the app looks hung. System fonts are an ugly fallback;
+  // an app that never opens is not a fallback at all.
+  const ready = loaded || fontError != null;
+
   useEffect(() => {
-    if (!loaded) return;
+    if (!ready) return;
     void SplashScreen.hideAsync();
     // Warm the players we hit first, so the opening tap isn't silent.
     preloadSounds();
@@ -52,9 +58,9 @@ export default function RootLayout() {
     const prefs = usePrefs.getState();
     track({ name: 'app_open', is_first_open: !prefs.launched });
     if (!prefs.launched) prefs.set({ launched: true });
-  }, [loaded]);
+  }, [ready]);
 
-  if (!loaded) return null;
+  if (!ready) return null;
 
   return (
     <GestureHandlerRootView style={{ flex: 1, backgroundColor: color.paper }}>

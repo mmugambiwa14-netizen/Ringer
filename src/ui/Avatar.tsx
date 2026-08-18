@@ -1,6 +1,6 @@
 import { StyleSheet, View } from 'react-native';
 import Svg, { Circle, Path, Polygon, Rect } from 'react-native-svg';
-import { border, color, shadow } from './tokens';
+import { border, color } from './tokens';
 import { identityFor } from '../engine/roster';
 
 /**
