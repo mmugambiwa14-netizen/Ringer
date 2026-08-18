@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { router } from 'expo-router';
 import { useKeepAwake } from 'expo-keep-awake';
@@ -19,7 +19,9 @@ import {
 } from '../../src/ui';
 import { useGame } from '../../src/store/gameStore';
 import { displayName } from '../../src/engine/roster';
-import { packsForGame } from '../../src/data/packs';
+import { playablePacksForGame } from '../../src/data/packs';
+import { useEntitlement } from '../../src/store/entitlementStore';
+import { usePrefs } from '../../src/store/prefsStore';
 import {
   currentTurn,
   isOver,
@@ -33,12 +35,17 @@ import { displayFontSize } from '../../src/lib/fitText';
 import { haptics } from '../../src/lib/haptics';
 import { playSfx } from '../../src/lib/sound';
 
-const DECK = packsForGame('whoami').flatMap((p) => p.words);
-
 export default function WhoAmIPlay() {
   useKeepAwake();
   const players = useGame((s) => s.game.players);
-  const [state, setState] = useState<WhoAmIState>(() => startWhoAmI(players, DECK, Date.now()));
+  const purchased = useEntitlement((s) => s.unlocked);
+  const adultUnlocked = usePrefs((s) => s.adultUnlocked);
+  // See the note in charades/play.tsx — the deck has to be able to change.
+  const deck = useMemo(
+    () => playablePacksForGame('whoami', { adultUnlocked, purchased }).flatMap((p) => p.words),
+    [adultUnlocked, purchased],
+  );
+  const [state, setState] = useState<WhoAmIState>(() => startWhoAmI(players, deck, Date.now()));
   const [handedOver, setHandedOver] = useState(false);
 
   useRedirectWhen(players.length < 2, '/whoami');
@@ -85,7 +92,7 @@ export default function WhoAmIPlay() {
           label="GO AGAIN"
           tone={color.pink}
           onPress={() => {
-            setState(startWhoAmI(players, DECK, Date.now()));
+            setState(startWhoAmI(players, deck, Date.now()));
             setHandedOver(false);
           }}
         />

@@ -69,7 +69,20 @@ export function isPlayable(pack: Pack, opts: { adultUnlocked: boolean; purchased
  * noticed.
  */
 export function playablePacks(opts: { adultUnlocked: boolean; purchased: boolean }): Pack[] {
-  return packsForGame('ringer').filter((p) => isPlayable(p, opts));
+  return playablePacksForGame('ringer', opts);
+}
+
+/**
+ * The same two gates, for any game. Charades and Who Am I ship free packs today,
+ * so this changes nothing yet — but a paid pack added to either would otherwise
+ * be dealt to everyone, which is the RINGER 18+ bug over again: a gate applied
+ * where the packs are listed instead of where the words are chosen.
+ */
+export function playablePacksForGame(
+  game: GameId,
+  opts: { adultUnlocked: boolean; purchased: boolean },
+): Pack[] {
+  return packsForGame(game).filter((p) => isPlayable(p, opts));
 }
 
 /** Free-tier size, for the paywall copy. Derived so it can never go stale. */

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { router, useLocalSearchParams } from 'expo-router';
 import { useKeepAwake } from 'expo-keep-awake';
@@ -15,7 +15,9 @@ import {
   onColor,
   type as t,
 } from '../../src/ui';
-import { packsForGame } from '../../src/data/packs';
+import { playablePacksForGame } from '../../src/data/packs';
+import { useEntitlement } from '../../src/store/entitlementStore';
+import { usePrefs } from '../../src/store/prefsStore';
 import {
   charadesScore,
   currentWord,
@@ -30,16 +32,22 @@ import { displayFontSize } from '../../src/lib/fitText';
 import { haptics } from '../../src/lib/haptics';
 import { playSfx } from '../../src/lib/sound';
 
-const DECK = packsForGame('charades').flatMap((p) => p.words);
-
 export default function CharadesPlay() {
   useKeepAwake();
   const params = useLocalSearchParams<{ seconds?: string }>();
   const total = Number(params.seconds ?? 90);
+  const purchased = useEntitlement((s) => s.unlocked);
+  const adultUnlocked = usePrefs((s) => s.adultUnlocked);
+  // Built here rather than at module scope: a deck frozen at import would not
+  // notice a pack being bought, or an 18+ switch being flipped, mid-session.
+  const deck = useMemo(
+    () => playablePacksForGame('charades', { adultUnlocked, purchased }).flatMap((p) => p.words),
+    [adultUnlocked, purchased],
+  );
 
   // Seeded once per round from the clock — the engine stays pure, the screen
   // owns the entropy, same rule as the RINGER deal.
-  const [state, setState] = useState<CharadesState>(() => startCharades(DECK, Date.now()));
+  const [state, setState] = useState<CharadesState>(() => startCharades(deck, Date.now()));
   const [left, setLeft] = useState<number>(total);
   const over = left <= 0 || isDeckSpent(state);
   const endedRef = useRef(false);

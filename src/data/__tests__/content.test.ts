@@ -5,10 +5,12 @@ import {
   FREE_WORDS,
   PACKS,
   TOTAL_WORDS,
+  isPlayable,
   listablePacks,
   packById,
   packsForGame,
   playablePacks,
+  playablePacksForGame,
   usableWordCount,
 } from '../packs';
 import { DEFAULT_CONFIG } from '../../engine/reducer';
@@ -149,6 +151,21 @@ describe('word packs', () => {
     const dealt = candidateWords(everything, { ...DEFAULT_CONFIG, packs: ['charades'] }, []);
     expect(dealt.length).toBeGreaterThan(0);
     expect(dealt.some((c) => c.category === 'CHARADES')).toBe(false);
+  });
+
+  it('gates every game the same way, so the unlock can cover all three', () => {
+    // Charades and Who Am I ship only free packs today, so nothing is withheld.
+    for (const game of ['charades', 'whoami'] as const) {
+      const locked = playablePacksForGame(game, { adultUnlocked: false, purchased: false });
+      expect(locked).toHaveLength(packsForGame(game).length);
+    }
+
+    // But the gate is real, not a pass-through: a paid pack in either game
+    // would be withheld until the unlock, exactly as a RINGER pack is. Without
+    // this the bundle could never grow past RINGER.
+    const paidCharade: Pack = { ...packsForGame('charades')[0]!, id: 'x', isFree: false };
+    expect(isPlayable(paidCharade, { adultUnlocked: false, purchased: false })).toBe(false);
+    expect(isPlayable(paidCharade, { adultUnlocked: false, purchased: true })).toBe(true);
   });
 
   it('a full session of 60 rounds never repeats a word', () => {
