@@ -15,6 +15,7 @@
     "bundle": "expo export --platform ios --output-dir .expo-export",
     "check": "node tools/check-imports.mjs && node tools/check-hooks.mjs && node tools/check-jsx.mjs && node tools/check-version.mjs",
     "verify": "npm run content:check && npm run check && npm test",
+    "preflight": "node tools/preflight.mjs",
     "content": "node tools/build-packs.mjs",
     "content:check": "node tools/build-packs.mjs --check",
     "sfx": "python3 tools/make-sfx.py",

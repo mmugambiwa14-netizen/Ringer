@@ -31,6 +31,7 @@ npm run typecheck    # needs node_modules
 npm run lint         # needs node_modules
 npm run format:check # needs node_modules
 npm run bundle       # a real Metro export — proves the app can start
+npm run preflight    # launch blockers; expected to fail until you ship
 ```
 
 `npm run verify` is the gate that runs on a bare checkout — tests, content validation and
@@ -313,6 +314,13 @@ the table can call it.
 
 Everything below is written and ready; these are the steps that need a human, an account, or
 a real device.
+
+```bash
+npm run preflight   # the machine-checkable half of this list, exits 1 while any remain
+```
+
+`preflight` is deliberately not part of `npm run check` or CI — it would fail every build
+until the day you ship. Run it by hand before a submission.
 
 **Must do**
 
