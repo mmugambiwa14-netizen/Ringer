@@ -158,8 +158,15 @@ which is the entire point.
   call must never restore an exposed word.
 - Pressing and holding without moving also opens it, and releasing closes it the same way.
   That's a real path for anyone who can't make a controlled drag, not a bolted-on fallback.
-- The word needs ~55% of the card height of travel before it counts as revealed, so a
-  stray flick can't expose it.
+- The word sits **low on the card, not centred**. The shutter uncovers from the bottom up,
+  so a centred word costs about half the card in finger travel before anyone can read it;
+  low, it clears in roughly a third. The block beneath the word is held to a fixed height so
+  the word lands in the same place on a crew card and a ringer card — letting it float would
+  mean the two roles need visibly different drags, and how far someone slides is watchable
+  from across a table.
+- `READABLE_AT` tracks where the word actually sits, so the reveal haptic fires as the player
+  reads it rather than long after — while still being far enough that a stray flick can't
+  expose it.
 - The haptic on reveal is **deliberately identical for crew and ringer**. A distinct buzz
   per role is tempting and leaks the role to anyone watching hands at the table.
 

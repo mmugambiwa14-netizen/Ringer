@@ -231,11 +231,21 @@ const styles = StyleSheet.create({
     shadowRadius: 0,
     elevation: 0,
   },
+  // Bottom-anchored, not centred. The shutter uncovers the card from the bottom
+  // upward, so a centred word costs about half the card in finger travel before
+  // anyone can read it. Sitting low, it clears in roughly a third.
+  //
+  // reveal.tsx holds the block *below* the word to a fixed height, so the word
+  // lands in the same place on a crew card and a ringer card. Letting it float
+  // would mean the two roles need visibly different drags, and how far someone
+  // slides is watchable from across a table.
   face: {
     ...StyleSheet.absoluteFillObject,
     alignItems: 'center',
-    justifyContent: 'center',
-    padding: 24,
+    justifyContent: 'flex-end',
+    paddingHorizontal: 24,
+    paddingTop: 24,
+    paddingBottom: 26,
   },
   shutter: { ...StyleSheet.absoluteFillObject, alignItems: 'center', justifyContent: 'center' },
   hint: { alignItems: 'center', gap: 10 },

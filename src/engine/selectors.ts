@@ -72,7 +72,7 @@ export function revealFor(state: GameState, player: Player): RevealFace {
         : others
           ? `With you: ${others}`
           : round.hintWord
-            ? "That's near the word, not the word. Bluff from it."
+            ? 'Near it. Not it. Bluff from there.'
             : "Work out the word. Don't get caught.",
   };
 }

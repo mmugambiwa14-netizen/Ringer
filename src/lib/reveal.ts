@@ -6,8 +6,15 @@
 /** Fraction of the card height the finger must travel for a full reveal. */
 export const TRAVEL_RATIO = 0.72;
 
-/** Progress past which the word is properly readable, not just peeking. */
-export const READABLE_AT = 0.55;
+/**
+ * Progress past which the word is properly readable, not just peeking.
+ *
+ * Tracks where the word actually sits on the card. It used to be centred, which
+ * put it past the halfway mark; it now sits low, and clears at roughly a third.
+ * Set this too high and the reveal haptic fires long after the player has read
+ * the word; too low and a stray flick counts as a read.
+ */
+export const READABLE_AT = 0.34;
 
 export function travelFor(cardHeight: number): number {
   return Math.max(cardHeight * TRAVEL_RATIO, 1);

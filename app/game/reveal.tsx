@@ -86,17 +86,19 @@ export default function Reveal() {
         <Text style={[styles.word, { color: ink }]} adjustsFontSizeToFit numberOfLines={2}>
           {face.word}
         </Text>
-        {face.category ? (
-          <View style={styles.pill}>
-            <Text style={t.tiny}>CATEGORY · {face.category}</Text>
-          </View>
-        ) : null}
-        {face.hintWord ? (
-          <View style={styles.hintPill}>
-            <Text style={t.tiny}>CLOSE TO IT · {face.hintWord}</Text>
-          </View>
-        ) : null}
-        {face.hint ? <Text style={[styles.hint, { color: ink }]}>{face.hint}</Text> : null}
+        <View style={styles.support}>
+          {face.category ? (
+            <View style={styles.pill}>
+              <Text style={t.tiny}>CATEGORY · {face.category}</Text>
+            </View>
+          ) : null}
+          {face.hintWord ? (
+            <View style={styles.hintPill}>
+              <Text style={t.tiny}>CLOSE TO IT · {face.hintWord}</Text>
+            </View>
+          ) : null}
+          {face.hint ? <Text style={[styles.hint, { color: ink }]}>{face.hint}</Text> : null}
+        </View>
       </RevealCard>
 
       <Button
@@ -120,6 +122,11 @@ const styles = StyleSheet.create({
   bar: { marginBottom: 16 },
   spacer: { flex: 1 },
   word: { ...t.word, textAlign: 'center', marginTop: 10, marginBottom: 14 },
+  // Fixed height on purpose. A ringer card carries two pills and a line of
+  // copy, a crew card carries one pill — letting this box size to its contents
+  // would put the word at a different height per role, and the drag needed to
+  // read it would give the role away.
+  support: { minHeight: 124, alignItems: 'center', gap: 9 },
   pill: {
     borderWidth: border.base,
     borderColor: color.ink,
@@ -137,8 +144,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 9,
     paddingTop: 4,
     paddingBottom: 3,
-    marginTop: 8,
   },
-  hint: { ...t.small, textAlign: 'center', marginTop: 12, maxWidth: 260 },
+  hint: { ...t.small, textAlign: 'center', maxWidth: 300 },
   next: { marginTop: 18 },
 });

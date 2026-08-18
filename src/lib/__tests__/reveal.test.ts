@@ -28,6 +28,16 @@ describe('slide-up reveal', () => {
     expect(isReadable(1)).toBe(true);
   });
 
+  it('reads within a short drag rather than half the card', () => {
+    // What a thumb actually has to cover before the word counts as read. The
+    // word sits low on the card, so this is well under half its height — but
+    // still far enough that a flick is not a read.
+    const cardHeight = 668;
+    const needed = travelFor(cardHeight) * READABLE_AT;
+    expect(needed / cardHeight).toBeLessThan(0.28);
+    expect(needed / cardHeight).toBeGreaterThan(0.15);
+  });
+
   it('asks for most of the card height, so a flick cannot expose the word', () => {
     expect(travelFor(400)).toBe(288);
     expect(travelFor(0)).toBe(1); // never divide by zero before layout
