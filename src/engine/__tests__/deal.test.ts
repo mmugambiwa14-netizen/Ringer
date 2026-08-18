@@ -8,6 +8,26 @@ import { PACKS, deal, withPlayers } from './helpers';
 
 const cfg = (patch = {}) => ({ ...DEFAULT_CONFIG, ...patch });
 
+describe('withheld packs', () => {
+  // The reducer is only ever handed the packs the device is allowed to deal
+  // from, so a pack that has been locked again simply is not there.
+  it('cannot deal from a pack that was not supplied', () => {
+    const permitted = PACKS.filter((p) => p.id !== 'food');
+    const words = candidateWords(permitted, cfg({ packs: ['party', 'food'] }), []);
+    expect(words.every((c) => c.category !== 'FOOD')).toBe(true);
+    expect(words.length).toBeGreaterThan(0);
+  });
+
+  it('falls back to what is permitted rather than dealing an empty deck', () => {
+    // A table picks one pack, then that pack is withheld. Throwing "no words
+    // available" into the middle of a round is not an acceptable answer.
+    const permitted = PACKS.filter((p) => p.id !== 'food');
+    const words = candidateWords(permitted, cfg({ packs: ['food'] }), []);
+    expect(words.length).toBeGreaterThan(0);
+    expect(words.every((c) => c.category !== 'FOOD')).toBe(true);
+  });
+});
+
 describe('imposter count', () => {
   it('scales with table size on auto', () => {
     expect(resolveImposterCount(cfg(), 3)).toBe(1);

@@ -1,7 +1,8 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { create } from 'zustand';
 import { createJSONStorage, persist } from 'zustand/middleware';
-import { PACKS } from '../data/packs';
+import { visiblePacks } from '../data/packs';
+import { usePrefs } from './prefsStore';
 import { initialState, reducer } from '../engine/reducer';
 import type { Action, GameState } from '../engine/types';
 
@@ -35,7 +36,16 @@ export const useGame = create<Store>()(
     (set, get) => ({
       game: initialState(freshSeed()),
       hydrated: false,
-      dispatch: (action) => set({ game: reducer(get().game, action, PACKS) }),
+      // Only the packs this device is allowed to deal from. The picker hides the
+      // 18+ pack when it is locked, but hiding it there does nothing about a
+      // selection made while it was unlocked: config.packs kept 'spicy', the
+      // deal kept serving adult words, and the pack was no longer in the picker
+      // to deselect. The permission has to be applied where the words are
+      // chosen, not where they are listed.
+      dispatch: (action) =>
+        set({
+          game: reducer(get().game, action, visiblePacks(usePrefs.getState().adultUnlocked)),
+        }),
       reset: () => set({ game: initialState(freshSeed(), get().game.config) }),
       hasRoundInFlight: () => {
         const { phase, round } = get().game;

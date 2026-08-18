@@ -22,7 +22,11 @@ interface Candidate {
 }
 
 export function candidateWords(packs: Pack[], config: GameConfig, recent: string[]): Candidate[] {
-  const selected = packs.filter((p) => config.packs.includes(p.id));
+  const chosenPacks = packs.filter((p) => config.packs.includes(p.id));
+  // Every selected pack can be withheld — a table picks 18+ only, then the 18+
+  // unlock is switched back off. Falling back to what is permitted beats
+  // throwing "no words available" into the middle of a round.
+  const selected = chosenPacks.length > 0 ? chosenPacks : packs;
   const all: Candidate[] = [];
   for (const pack of selected) {
     for (const word of pack.words) {
