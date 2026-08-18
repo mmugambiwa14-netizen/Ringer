@@ -15,7 +15,7 @@ import { useGame } from '../../src/store/gameStore';
 import type { GameConfig, Mode } from '../../src/engine/types';
 
 const MODE_NOTES: Record<Mode, string> = {
-  classic: 'The ringer knows who they are and sees the category.',
+  classic: 'The ringer knows who they are, and sees the category plus a hint word.',
   decoy: "Everyone gets a word — the ringer's is subtly wrong. Nobody knows who they are.",
   ghost: 'The ringer gets nothing. No word, no category. Brutal.',
 };
