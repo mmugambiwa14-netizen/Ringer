@@ -1,5 +1,6 @@
-src/data/packs/
+.expo-export/
+.expo-web/
 assets/
 node_modules/
-.expo-export/
 package-lock.json
+src/data/packs/

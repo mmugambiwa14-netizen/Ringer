@@ -22,7 +22,7 @@ combinations — if the reveal gesture doesn't respond, run `npx expo run:ios` /
 
 ```bash
 npm run verify       # everything below that works without node_modules
-npm test             # 105 tests, no dependencies required
+npm test             # 121 tests, no dependencies required
 npm run check        # imports, engine boundary, Rules of Hooks, JSX balance, version
 npm run content      # rebuild word packs from content/en/*.tsv
 npm run sfx          # regenerate the sound effects (needs python3 + numpy)
@@ -241,6 +241,51 @@ placeholder.
 
 ---
 
+## The other two games
+
+RINGER is the reason the app exists; these two ride on the same infrastructure —
+pass-and-play, seeded RNG, the same design system — and cost almost nothing to carry.
+Both are **free**, which keeps the promise the paywall makes: the purchase adds RINGER
+words, never a mode.
+
+| Game | What happens | Pack |
+| --- | --- | --- |
+| **Charades** | One person acts, the table shouts, a clock runs. GOT IT / SKIP | 92 phrases |
+| **Who Am I** | Hold the phone facing out — everyone can read your identity but you | 119 identities |
+
+Both engines live in `src/engine/` and are pure and seeded like the RINGER reducer, so a
+round is reproducible in a test. They are deliberately much smaller: neither hides
+information from the person holding the phone in a way that could go wrong, so there is far
+less to get right.
+
+### Written to travel
+
+The stock charades list is quietly American — gridiron, Thanksgiving, prom, brand names —
+and dies at a table in Lagos or Jakarta. These are the body, the kitchen, work, weather and
+football: `SNEEZING`, `MILKING A COW`, `SAVING A PENALTY`, `THREADING A NEEDLE`.
+
+Who Am I avoids named celebrities entirely. They are the usual filler in this genre and
+regional almost by definition — famous in one country, blank stares in the next. Roles,
+archetypes and animals are universal and narrow down cleanly under yes/no questioning:
+*alive? human? do you work indoors?*
+
+### On not copying the obvious one
+
+The forehead-and-tilt interaction belongs to a well-known app. The *mechanic* is a folk
+game and free to build — copyright does not protect a method of play — but that specific
+interaction is its trade dress. Who Am I passes the phone and asks you to hold it up
+instead, which works just as well and picks no fights.
+
+### Typography, the hard way
+
+`src/lib/fitText.ts` computes a font size from the text instead of using
+`adjustsFontSizeToFit`, which react-native-web largely ignores. The failure mode was
+specific and ugly: `ACCOUNTANT` rendered as `ACCOUNTA / NT`. Sizing is driven by the longest
+single token, because that is the part that cannot wrap. Worst case across all shipped
+content is `PHOTOGRAPHER` at 39pt.
+
+---
+
 ## Money
 
 **One payment, no subscription, no ads.** There is no server, no account and no per-player
@@ -372,12 +417,14 @@ the table can call it.
 ## What's built
 
 - [x] Engine: dealing, fair deal, three modes, both vote styles, tie rules, scoring, history
-- [x] 105 tests covering every outcome branch, the content contract, the share copy, the paywall's fail-closed behaviour and resume routing
+- [x] 121 tests covering every outcome branch, the content contract, both new games, the share copy, the paywall's fail-closed behaviour and resume routing
 - [x] Slide-up reveal with auto-close, backgrounding guard, hold fallback
 - [x] Design system: tokens, Button, Card, Sticker, Avatar, Segmented, TimerRing, Screen
 - [x] All 16 screens wired end to end
 - [x] Persistence — a round survives the app being backgrounded or killed
-- [x] 775 words across 10 packs, all with decoy pairs, all machine-validated
+- [x] 775 RINGER words across 10 packs, all with decoy pairs, all machine-validated
+- [x] Two more games on the same rails — Charades (92 phrases) and Who Am I (119
+      identities), both free, both written to work outside the US
 - [x] Content pipeline: editable TSV in, validated JSON out
 - [x] 18+ pack gated off by default
 - [x] 8 synthesised sound effects wired through the flow, with a mute toggle

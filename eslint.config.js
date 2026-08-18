@@ -6,7 +6,17 @@ const expoConfig = require('eslint-config-expo/flat');
 module.exports = [
   ...expoConfig,
   {
-    ignores: ['node_modules/**', 'dist/**', '.expo/**', 'src/data/packs/**'],
+    // Build output. `npm run bundle` writes .expo-export, and CI runs it in the
+    // same job as lint — without these a leftover bundle fails the gate on
+    // minified vendor code nobody wrote.
+    ignores: [
+      'node_modules/**',
+      'dist/**',
+      '.expo/**',
+      '.expo-export/**',
+      '.expo-web/**',
+      'src/data/packs/**',
+    ],
   },
   {
     rules: {

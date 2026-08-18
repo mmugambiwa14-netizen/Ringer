@@ -53,19 +53,35 @@ export default function Home() {
         <View style={styles.logo}>
           <Text style={styles.wordmark}>RINGER</Text>
         </View>
-        <Sticker>ONE PHONE · 3–20 PLAYERS</Sticker>
+        <Sticker>ONE PHONE · THREE GAMES</Sticker>
         <Text style={styles.tagline}>Everyone gets the word.{'\n'}Except one of you.</Text>
       </View>
 
       <View style={styles.actions}>
         <Button
-          label="PLAY"
+          label="PLAY RINGER"
           tone={color.pink}
           onPress={() => {
             track({ name: 'setup_started' });
             router.push('/setup/players');
           }}
         />
+        <Row>
+          <Button
+            label="CHARADES"
+            size="sm"
+            tone={color.green}
+            style={styles.half}
+            onPress={() => router.push('/charades')}
+          />
+          <Button
+            label="WHO AM I"
+            size="sm"
+            tone={color.blue}
+            style={styles.half}
+            onPress={() => router.push('/whoami')}
+          />
+        </Row>
         <Row>
           <Button
             label="HOW TO PLAY"

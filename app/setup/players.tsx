@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { StyleSheet, TextInput, View } from 'react-native';
-import { router } from 'expo-router';
+import { router, useLocalSearchParams } from 'expo-router';
 import {
   Avatar,
   Button,
@@ -22,6 +22,10 @@ export default function Players() {
   // One row is editable at a time. A screen of live text fields invites
   // mis-taps while the phone is going round the table.
   const [editingId, setEditingId] = useState<string | null>(null);
+  // Who Am I borrows this screen for its roster. Without a target it belongs to
+  // RINGER's setup and carries on to the packs.
+  const { next } = useLocalSearchParams<{ next?: string }>();
+  const onwards = next ?? '/setup/packs';
 
   // Open with a sensible table rather than an empty screen. In an effect,
   // not in render — dispatching during render double-fires under StrictMode.
@@ -107,7 +111,7 @@ export default function Players() {
           style={styles.half}
           onPress={() => {
             players.forEach((p) => dispatch({ type: 'RENAME_PLAYER', id: p.id, name: '' }));
-            router.push('/setup/packs');
+            router.replace(onwards as never);
           }}
         />
       </Row>
@@ -119,10 +123,11 @@ export default function Players() {
 
       <View style={styles.spacer} />
       <Button
-        label="NEXT — PICK PACKS"
+        label={next ? 'READY' : 'NEXT — PICK PACKS'}
         tone={color.blue}
-        disabled={players.length < 3}
-        onPress={() => router.push('/setup/packs')}
+        // Who Am I works from two; RINGER needs three for a round to make sense.
+        disabled={players.length < (next ? 2 : 3)}
+        onPress={() => router.replace(onwards as never)}
         style={styles.cta}
       />
       <GhostButton label="BACK" onPress={() => router.back()} />
