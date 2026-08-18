@@ -1,0 +1,488 @@
+{
+  "id": "jobs",
+  "name": "JOBS",
+  "emoji": "🧰",
+  "isFree": false,
+  "words": [
+    {
+      "id": "jobs-dentist",
+      "text": "DENTIST",
+      "decoy": "HYGIENIST",
+      "difficulty": 1
+    },
+    {
+      "id": "jobs-pilot",
+      "text": "PILOT",
+      "decoy": "SHIP CAPTAIN",
+      "difficulty": 1
+    },
+    {
+      "id": "jobs-barista",
+      "text": "BARISTA",
+      "decoy": "BARTENDER",
+      "difficulty": 2
+    },
+    {
+      "id": "jobs-plumber",
+      "text": "PLUMBER",
+      "decoy": "ELECTRICIAN",
+      "difficulty": 1
+    },
+    {
+      "id": "jobs-lifeguard",
+      "text": "LIFEGUARD",
+      "decoy": "PARK RANGER",
+      "difficulty": 1
+    },
+    {
+      "id": "jobs-tattooist",
+      "text": "TATTOOIST",
+      "decoy": "BARBER",
+      "difficulty": 2
+    },
+    {
+      "id": "jobs-butcher",
+      "text": "BUTCHER",
+      "decoy": "FISHMONGER",
+      "difficulty": 2
+    },
+    {
+      "id": "jobs-nurse",
+      "text": "NURSE",
+      "decoy": "PARAMEDIC",
+      "difficulty": 2
+    },
+    {
+      "id": "jobs-teacher",
+      "text": "TEACHER",
+      "decoy": "LECTURER",
+      "difficulty": 3
+    },
+    {
+      "id": "jobs-firefighter",
+      "text": "FIREFIGHTER",
+      "decoy": "COASTGUARD",
+      "difficulty": 1
+    },
+    {
+      "id": "jobs-postman",
+      "text": "POSTMAN",
+      "decoy": "COURIER",
+      "difficulty": 2
+    },
+    {
+      "id": "jobs-cleaner",
+      "text": "CLEANER",
+      "decoy": "CARETAKER",
+      "difficulty": 2
+    },
+    {
+      "id": "jobs-chef",
+      "text": "CHEF",
+      "decoy": "BAKER",
+      "difficulty": 2
+    },
+    {
+      "id": "jobs-farmer",
+      "text": "FARMER",
+      "decoy": "GARDENER",
+      "difficulty": 2
+    },
+    {
+      "id": "jobs-vet",
+      "text": "VET",
+      "decoy": "ZOOKEEPER",
+      "difficulty": 2
+    },
+    {
+      "id": "jobs-journalist",
+      "text": "JOURNALIST",
+      "decoy": "NOVELIST",
+      "difficulty": 2
+    },
+    {
+      "id": "jobs-photographer",
+      "text": "PHOTOGRAPHER",
+      "decoy": "PAINTER",
+      "difficulty": 2
+    },
+    {
+      "id": "jobs-architect",
+      "text": "ARCHITECT",
+      "decoy": "SURVEYOR",
+      "difficulty": 2
+    },
+    {
+      "id": "jobs-accountant",
+      "text": "ACCOUNTANT",
+      "decoy": "AUDITOR",
+      "difficulty": 3
+    },
+    {
+      "id": "jobs-lawyer",
+      "text": "LAWYER",
+      "decoy": "NOTARY",
+      "difficulty": 2
+    },
+    {
+      "id": "jobs-judge",
+      "text": "JUDGE",
+      "decoy": "MAGISTRATE",
+      "difficulty": 3
+    },
+    {
+      "id": "jobs-police-officer",
+      "text": "POLICE OFFICER",
+      "decoy": "SECURITY GUARD",
+      "difficulty": 1
+    },
+    {
+      "id": "jobs-soldier",
+      "text": "SOLDIER",
+      "decoy": "SAILOR",
+      "difficulty": 2
+    },
+    {
+      "id": "jobs-scientist",
+      "text": "SCIENTIST",
+      "decoy": "INVENTOR",
+      "difficulty": 2
+    },
+    {
+      "id": "jobs-librarian",
+      "text": "LIBRARIAN",
+      "decoy": "ARCHIVIST",
+      "difficulty": 2
+    },
+    {
+      "id": "jobs-receptionist",
+      "text": "RECEPTIONIST",
+      "decoy": "CONCIERGE",
+      "difficulty": 2
+    },
+    {
+      "id": "jobs-waiter",
+      "text": "WAITER",
+      "decoy": "SOMMELIER",
+      "difficulty": 2
+    },
+    {
+      "id": "jobs-taxi-driver",
+      "text": "TAXI DRIVER",
+      "decoy": "TRAM CONDUCTOR",
+      "difficulty": 2
+    },
+    {
+      "id": "jobs-train-driver",
+      "text": "TRAIN DRIVER",
+      "decoy": "FERRY SKIPPER",
+      "difficulty": 3
+    },
+    {
+      "id": "jobs-mechanic",
+      "text": "MECHANIC",
+      "decoy": "PANEL BEATER",
+      "difficulty": 2
+    },
+    {
+      "id": "jobs-carpenter",
+      "text": "CARPENTER",
+      "decoy": "JOINER",
+      "difficulty": 3
+    },
+    {
+      "id": "jobs-bricklayer",
+      "text": "BRICKLAYER",
+      "decoy": "ROOFER",
+      "difficulty": 2
+    },
+    {
+      "id": "jobs-decorator",
+      "text": "DECORATOR",
+      "decoy": "SIGN WRITER",
+      "difficulty": 2
+    },
+    {
+      "id": "jobs-welder",
+      "text": "WELDER",
+      "decoy": "BLACKSMITH",
+      "difficulty": 2
+    },
+    {
+      "id": "jobs-miner",
+      "text": "MINER",
+      "decoy": "DRILLER",
+      "difficulty": 2
+    },
+    {
+      "id": "jobs-fisherman",
+      "text": "FISHERMAN",
+      "decoy": "WHALER",
+      "difficulty": 2
+    },
+    {
+      "id": "jobs-shepherd",
+      "text": "SHEPHERD",
+      "decoy": "COWHAND",
+      "difficulty": 2
+    },
+    {
+      "id": "jobs-beekeeper",
+      "text": "BEEKEEPER",
+      "decoy": "FALCONER",
+      "difficulty": 2
+    },
+    {
+      "id": "jobs-florist",
+      "text": "FLORIST",
+      "decoy": "GREENGROCER",
+      "difficulty": 2
+    },
+    {
+      "id": "jobs-jeweller",
+      "text": "JEWELLER",
+      "decoy": "WATCHMAKER",
+      "difficulty": 3
+    },
+    {
+      "id": "jobs-tailor",
+      "text": "TAILOR",
+      "decoy": "COBBLER",
+      "difficulty": 2
+    },
+    {
+      "id": "jobs-hairdresser",
+      "text": "HAIRDRESSER",
+      "decoy": "MAKE-UP ARTIST",
+      "difficulty": 2
+    },
+    {
+      "id": "jobs-masseuse",
+      "text": "MASSEUSE",
+      "decoy": "PHYSIO",
+      "difficulty": 2
+    },
+    {
+      "id": "jobs-midwife",
+      "text": "MIDWIFE",
+      "decoy": "SURGEON",
+      "difficulty": 2
+    },
+    {
+      "id": "jobs-pharmacist",
+      "text": "PHARMACIST",
+      "decoy": "HERBALIST",
+      "difficulty": 2
+    },
+    {
+      "id": "jobs-optician",
+      "text": "OPTICIAN",
+      "decoy": "AUDIOLOGIST",
+      "difficulty": 3
+    },
+    {
+      "id": "jobs-dietician",
+      "text": "DIETICIAN",
+      "decoy": "PERSONAL TRAINER",
+      "difficulty": 2
+    },
+    {
+      "id": "jobs-life-coach",
+      "text": "LIFE COACH",
+      "decoy": "THERAPIST",
+      "difficulty": 2
+    },
+    {
+      "id": "jobs-social-worker",
+      "text": "SOCIAL WORKER",
+      "decoy": "PROBATION",
+      "difficulty": 3
+    },
+    {
+      "id": "jobs-translator",
+      "text": "TRANSLATOR",
+      "decoy": "INTERPRETER",
+      "difficulty": 3
+    },
+    {
+      "id": "jobs-tour-guide",
+      "text": "TOUR GUIDE",
+      "decoy": "CURATOR",
+      "difficulty": 2
+    },
+    {
+      "id": "jobs-estate-agent",
+      "text": "ESTATE AGENT",
+      "decoy": "AUCTIONEER",
+      "difficulty": 3
+    },
+    {
+      "id": "jobs-banker",
+      "text": "BANKER",
+      "decoy": "BROKER",
+      "difficulty": 2
+    },
+    {
+      "id": "jobs-cashier",
+      "text": "CASHIER",
+      "decoy": "TELLER",
+      "difficulty": 3
+    },
+    {
+      "id": "jobs-shop-assistant",
+      "text": "SHOP ASSISTANT",
+      "decoy": "STOCKROOM",
+      "difficulty": 2
+    },
+    {
+      "id": "jobs-warehouse",
+      "text": "WAREHOUSE",
+      "decoy": "DISPATCH",
+      "difficulty": 2
+    },
+    {
+      "id": "jobs-delivery-driver",
+      "text": "DELIVERY DRIVER",
+      "decoy": "REMOVAL MAN",
+      "difficulty": 2
+    },
+    {
+      "id": "jobs-air-traffic",
+      "text": "AIR TRAFFIC",
+      "decoy": "SIGNALMAN",
+      "difficulty": 2
+    },
+    {
+      "id": "jobs-cabin-crew",
+      "text": "CABIN CREW",
+      "decoy": "TRAIN GUARD",
+      "difficulty": 2
+    },
+    {
+      "id": "jobs-ticket-inspector",
+      "text": "TICKET INSPECTOR",
+      "decoy": "TRAFFIC WARDEN",
+      "difficulty": 2
+    },
+    {
+      "id": "jobs-lollipop-lady",
+      "text": "LOLLIPOP LADY",
+      "decoy": "CROSSING GUARD",
+      "difficulty": 3
+    },
+    {
+      "id": "jobs-bouncer",
+      "text": "BOUNCER",
+      "decoy": "DOORMAN",
+      "difficulty": 3
+    },
+    {
+      "id": "jobs-dj",
+      "text": "DJ",
+      "decoy": "RADIO HOST",
+      "difficulty": 2
+    },
+    {
+      "id": "jobs-comedian",
+      "text": "COMEDIAN",
+      "decoy": "MAGICIAN",
+      "difficulty": 1
+    },
+    {
+      "id": "jobs-dancer",
+      "text": "DANCER",
+      "decoy": "ACROBAT",
+      "difficulty": 2
+    },
+    {
+      "id": "jobs-musician",
+      "text": "MUSICIAN",
+      "decoy": "COMPOSER",
+      "difficulty": 2
+    },
+    {
+      "id": "jobs-actor",
+      "text": "ACTOR",
+      "decoy": "STUNTMAN",
+      "difficulty": 2
+    },
+    {
+      "id": "jobs-set-designer",
+      "text": "SET DESIGNER",
+      "decoy": "COSTUME MAKER",
+      "difficulty": 2
+    },
+    {
+      "id": "jobs-sports-coach",
+      "text": "SPORTS COACH",
+      "decoy": "GYM INSTRUCTOR",
+      "difficulty": 2
+    },
+    {
+      "id": "jobs-astronaut",
+      "text": "ASTRONAUT",
+      "decoy": "DEEP SEA DIVER",
+      "difficulty": 1
+    },
+    {
+      "id": "jobs-meteorologist",
+      "text": "METEOROLOGIST",
+      "decoy": "SEISMOLOGIST",
+      "difficulty": 2
+    },
+    {
+      "id": "jobs-archaeologist",
+      "text": "ARCHAEOLOGIST",
+      "decoy": "PALAEONTOLOGIST",
+      "difficulty": 2
+    },
+    {
+      "id": "jobs-engineer",
+      "text": "ENGINEER",
+      "decoy": "TECHNICIAN",
+      "difficulty": 3
+    },
+    {
+      "id": "jobs-programmer",
+      "text": "PROGRAMMER",
+      "decoy": "DESIGNER",
+      "difficulty": 2
+    },
+    {
+      "id": "jobs-animator",
+      "text": "ANIMATOR",
+      "decoy": "ILLUSTRATOR",
+      "difficulty": 3
+    },
+    {
+      "id": "jobs-chauffeur",
+      "text": "CHAUFFEUR",
+      "decoy": "VALET",
+      "difficulty": 3
+    },
+    {
+      "id": "jobs-nanny",
+      "text": "NANNY",
+      "decoy": "AU PAIR",
+      "difficulty": 3
+    },
+    {
+      "id": "jobs-undertaker",
+      "text": "UNDERTAKER",
+      "decoy": "GRAVEDIGGER",
+      "difficulty": 2
+    },
+    {
+      "id": "jobs-night-porter",
+      "text": "NIGHT PORTER",
+      "decoy": "DAY MANAGER",
+      "difficulty": 2
+    },
+    {
+      "id": "jobs-apprentice",
+      "text": "APPRENTICE",
+      "decoy": "INTERN",
+      "difficulty": 3
+    }
+  ]
+}

@@ -1,0 +1,488 @@
+{
+  "id": "animals",
+  "name": "ANIMALS",
+  "emoji": "🦩",
+  "isFree": true,
+  "words": [
+    {
+      "id": "animals-penguin",
+      "text": "PENGUIN",
+      "decoy": "PELICAN",
+      "difficulty": 1
+    },
+    {
+      "id": "animals-octopus",
+      "text": "OCTOPUS",
+      "decoy": "JELLYFISH",
+      "difficulty": 1
+    },
+    {
+      "id": "animals-hamster",
+      "text": "HAMSTER",
+      "decoy": "GUINEA PIG",
+      "difficulty": 2
+    },
+    {
+      "id": "animals-crocodile",
+      "text": "CROCODILE",
+      "decoy": "LIZARD",
+      "difficulty": 1
+    },
+    {
+      "id": "animals-pigeon",
+      "text": "PIGEON",
+      "decoy": "SEAGULL",
+      "difficulty": 2
+    },
+    {
+      "id": "animals-goat",
+      "text": "GOAT",
+      "decoy": "SHEEP",
+      "difficulty": 2
+    },
+    {
+      "id": "animals-dolphin",
+      "text": "DOLPHIN",
+      "decoy": "SHARK",
+      "difficulty": 1
+    },
+    {
+      "id": "animals-bat",
+      "text": "BAT",
+      "decoy": "OWL",
+      "difficulty": 2
+    },
+    {
+      "id": "animals-beehive",
+      "text": "BEEHIVE",
+      "decoy": "ANTHILL",
+      "difficulty": 2
+    },
+    {
+      "id": "animals-camel",
+      "text": "CAMEL",
+      "decoy": "DONKEY",
+      "difficulty": 1
+    },
+    {
+      "id": "animals-spider",
+      "text": "SPIDER",
+      "decoy": "BEETLE",
+      "difficulty": 1
+    },
+    {
+      "id": "animals-parrot",
+      "text": "PARROT",
+      "decoy": "CROW",
+      "difficulty": 1
+    },
+    {
+      "id": "animals-tortoise",
+      "text": "TORTOISE",
+      "decoy": "SNAIL",
+      "difficulty": 1
+    },
+    {
+      "id": "animals-wolf",
+      "text": "WOLF",
+      "decoy": "FOX",
+      "difficulty": 2
+    },
+    {
+      "id": "animals-whale",
+      "text": "WHALE",
+      "decoy": "SUBMARINE",
+      "difficulty": 2
+    },
+    {
+      "id": "animals-kangaroo",
+      "text": "KANGAROO",
+      "decoy": "RABBIT",
+      "difficulty": 1
+    },
+    {
+      "id": "animals-elephant",
+      "text": "ELEPHANT",
+      "decoy": "RHINO",
+      "difficulty": 1
+    },
+    {
+      "id": "animals-giraffe",
+      "text": "GIRAFFE",
+      "decoy": "OSTRICH",
+      "difficulty": 1
+    },
+    {
+      "id": "animals-monkey",
+      "text": "MONKEY",
+      "decoy": "SQUIRREL",
+      "difficulty": 1
+    },
+    {
+      "id": "animals-polar-bear",
+      "text": "POLAR BEAR",
+      "decoy": "SNOW LEOPARD",
+      "difficulty": 1
+    },
+    {
+      "id": "animals-flamingo",
+      "text": "FLAMINGO",
+      "decoy": "PEACOCK",
+      "difficulty": 1
+    },
+    {
+      "id": "animals-hedgehog",
+      "text": "HEDGEHOG",
+      "decoy": "PORCUPINE",
+      "difficulty": 2
+    },
+    {
+      "id": "animals-butterfly",
+      "text": "BUTTERFLY",
+      "decoy": "DRAGONFLY",
+      "difficulty": 1
+    },
+    {
+      "id": "animals-frog",
+      "text": "FROG",
+      "decoy": "TOAD",
+      "difficulty": 3
+    },
+    {
+      "id": "animals-swan",
+      "text": "SWAN",
+      "decoy": "GOOSE",
+      "difficulty": 2
+    },
+    {
+      "id": "animals-lobster",
+      "text": "LOBSTER",
+      "decoy": "CRAB",
+      "difficulty": 2
+    },
+    {
+      "id": "animals-seal",
+      "text": "SEAL",
+      "decoy": "OTTER",
+      "difficulty": 2
+    },
+    {
+      "id": "animals-lion",
+      "text": "LION",
+      "decoy": "TIGER",
+      "difficulty": 2
+    },
+    {
+      "id": "animals-bull",
+      "text": "BULL",
+      "decoy": "STAG",
+      "difficulty": 2
+    },
+    {
+      "id": "animals-chicken",
+      "text": "CHICKEN",
+      "decoy": "TURKEY",
+      "difficulty": 2
+    },
+    {
+      "id": "animals-snake",
+      "text": "SNAKE",
+      "decoy": "EEL",
+      "difficulty": 2
+    },
+    {
+      "id": "animals-bee",
+      "text": "BEE",
+      "decoy": "WASP",
+      "difficulty": 2
+    },
+    {
+      "id": "animals-ant",
+      "text": "ANT",
+      "decoy": "TERMITE",
+      "difficulty": 2
+    },
+    {
+      "id": "animals-mouse",
+      "text": "MOUSE",
+      "decoy": "SHREW",
+      "difficulty": 2
+    },
+    {
+      "id": "animals-horse",
+      "text": "HORSE",
+      "decoy": "ZEBRA",
+      "difficulty": 1
+    },
+    {
+      "id": "animals-cow",
+      "text": "COW",
+      "decoy": "BUFFALO",
+      "difficulty": 2
+    },
+    {
+      "id": "animals-duck-pond",
+      "text": "DUCK POND",
+      "decoy": "BIRD BATH",
+      "difficulty": 1
+    },
+    {
+      "id": "animals-nest",
+      "text": "NEST",
+      "decoy": "BURROW",
+      "difficulty": 2
+    },
+    {
+      "id": "animals-feather",
+      "text": "FEATHER",
+      "decoy": "SCALE",
+      "difficulty": 2
+    },
+    {
+      "id": "animals-paw-print",
+      "text": "PAW PRINT",
+      "decoy": "HOOFPRINT",
+      "difficulty": 2
+    },
+    {
+      "id": "animals-tail",
+      "text": "TAIL",
+      "decoy": "ANTLER",
+      "difficulty": 2
+    },
+    {
+      "id": "animals-claw",
+      "text": "CLAW",
+      "decoy": "BEAK",
+      "difficulty": 2
+    },
+    {
+      "id": "animals-fur",
+      "text": "FUR",
+      "decoy": "WOOL",
+      "difficulty": 2
+    },
+    {
+      "id": "animals-migration",
+      "text": "MIGRATION",
+      "decoy": "COMMUTE",
+      "difficulty": 3
+    },
+    {
+      "id": "animals-hibernation",
+      "text": "HIBERNATION",
+      "decoy": "LIE-IN",
+      "difficulty": 3
+    },
+    {
+      "id": "animals-zoo",
+      "text": "ZOO",
+      "decoy": "SAFARI PARK",
+      "difficulty": 1
+    },
+    {
+      "id": "animals-aquarium",
+      "text": "AQUARIUM",
+      "decoy": "GREENHOUSE",
+      "difficulty": 1
+    },
+    {
+      "id": "animals-microchip",
+      "text": "MICROCHIP",
+      "decoy": "COLLAR TAG",
+      "difficulty": 2
+    },
+    {
+      "id": "animals-lead",
+      "text": "LEAD",
+      "decoy": "HARNESS",
+      "difficulty": 2
+    },
+    {
+      "id": "animals-kennel",
+      "text": "KENNEL",
+      "decoy": "STABLE",
+      "difficulty": 2
+    },
+    {
+      "id": "animals-litter-tray",
+      "text": "LITTER TRAY",
+      "decoy": "BIRD CAGE",
+      "difficulty": 1
+    },
+    {
+      "id": "animals-goldfish",
+      "text": "GOLDFISH",
+      "decoy": "KOI",
+      "difficulty": 2
+    },
+    {
+      "id": "animals-puppy",
+      "text": "PUPPY",
+      "decoy": "KITTEN",
+      "difficulty": 1
+    },
+    {
+      "id": "animals-stray",
+      "text": "STRAY",
+      "decoy": "RESCUE",
+      "difficulty": 3
+    },
+    {
+      "id": "animals-sheepdog",
+      "text": "SHEEPDOG",
+      "decoy": "GUIDE DOG",
+      "difficulty": 2
+    },
+    {
+      "id": "animals-cat-flap",
+      "text": "CAT FLAP",
+      "decoy": "LETTERBOX",
+      "difficulty": 2
+    },
+    {
+      "id": "animals-bark",
+      "text": "BARK",
+      "decoy": "HOWL",
+      "difficulty": 2
+    },
+    {
+      "id": "animals-purr",
+      "text": "PURR",
+      "decoy": "GROWL",
+      "difficulty": 2
+    },
+    {
+      "id": "animals-swarm",
+      "text": "SWARM",
+      "decoy": "HERD",
+      "difficulty": 2
+    },
+    {
+      "id": "animals-flock",
+      "text": "FLOCK",
+      "decoy": "SHOAL",
+      "difficulty": 3
+    },
+    {
+      "id": "animals-predator",
+      "text": "PREDATOR",
+      "decoy": "SCAVENGER",
+      "difficulty": 3
+    },
+    {
+      "id": "animals-camouflage",
+      "text": "CAMOUFLAGE",
+      "decoy": "DISGUISE",
+      "difficulty": 2
+    },
+    {
+      "id": "animals-sting",
+      "text": "STING",
+      "decoy": "BITE",
+      "difficulty": 3
+    },
+    {
+      "id": "animals-venom",
+      "text": "VENOM",
+      "decoy": "POISON",
+      "difficulty": 3
+    },
+    {
+      "id": "animals-shell",
+      "text": "SHELL",
+      "decoy": "ARMOUR",
+      "difficulty": 2
+    },
+    {
+      "id": "animals-web",
+      "text": "WEB",
+      "decoy": "NET",
+      "difficulty": 2
+    },
+    {
+      "id": "animals-honeycomb",
+      "text": "HONEYCOMB",
+      "decoy": "HONEYPOT",
+      "difficulty": 3
+    },
+    {
+      "id": "animals-tadpole",
+      "text": "TADPOLE",
+      "decoy": "CATERPILLAR",
+      "difficulty": 2
+    },
+    {
+      "id": "animals-egg",
+      "text": "EGG",
+      "decoy": "SEED",
+      "difficulty": 2
+    },
+    {
+      "id": "animals-feeding-time",
+      "text": "FEEDING TIME",
+      "decoy": "FREE PERIOD",
+      "difficulty": 2
+    },
+    {
+      "id": "animals-pet-shop",
+      "text": "PET SHOP",
+      "decoy": "GARDEN CENTRE",
+      "difficulty": 1
+    },
+    {
+      "id": "animals-bird-song",
+      "text": "BIRD SONG",
+      "decoy": "ALARM CLOCK",
+      "difficulty": 2
+    },
+    {
+      "id": "animals-jungle",
+      "text": "JUNGLE",
+      "decoy": "RAINFOREST",
+      "difficulty": 3
+    },
+    {
+      "id": "animals-desert-fox",
+      "text": "DESERT FOX",
+      "decoy": "ARCTIC HARE",
+      "difficulty": 2
+    },
+    {
+      "id": "animals-seahorse",
+      "text": "SEAHORSE",
+      "decoy": "STARFISH",
+      "difficulty": 1
+    },
+    {
+      "id": "animals-badger",
+      "text": "BADGER",
+      "decoy": "MOLE",
+      "difficulty": 2
+    },
+    {
+      "id": "animals-deer",
+      "text": "DEER",
+      "decoy": "ANTELOPE",
+      "difficulty": 2
+    },
+    {
+      "id": "animals-bear-cub",
+      "text": "BEAR CUB",
+      "decoy": "FOAL",
+      "difficulty": 2
+    },
+    {
+      "id": "animals-worm",
+      "text": "WORM",
+      "decoy": "CENTIPEDE",
+      "difficulty": 2
+    },
+    {
+      "id": "animals-moth",
+      "text": "MOTH",
+      "decoy": "FIREFLY",
+      "difficulty": 2
+    }
+  ]
+}

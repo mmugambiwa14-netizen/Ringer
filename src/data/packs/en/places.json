@@ -1,0 +1,488 @@
+{
+  "id": "places",
+  "name": "PLACES",
+  "emoji": "🗺️",
+  "isFree": false,
+  "words": [
+    {
+      "id": "places-airport",
+      "text": "AIRPORT",
+      "decoy": "TRAIN STATION",
+      "difficulty": 1
+    },
+    {
+      "id": "places-beach",
+      "text": "BEACH",
+      "decoy": "DESERT",
+      "difficulty": 1
+    },
+    {
+      "id": "places-library",
+      "text": "LIBRARY",
+      "decoy": "MUSEUM",
+      "difficulty": 1
+    },
+    {
+      "id": "places-rooftop",
+      "text": "ROOFTOP",
+      "decoy": "BASEMENT",
+      "difficulty": 2
+    },
+    {
+      "id": "places-car-park",
+      "text": "CAR PARK",
+      "decoy": "GARAGE",
+      "difficulty": 2
+    },
+    {
+      "id": "places-market",
+      "text": "MARKET",
+      "decoy": "JUMBLE SALE",
+      "difficulty": 2
+    },
+    {
+      "id": "places-tunnel",
+      "text": "TUNNEL",
+      "decoy": "BRIDGE",
+      "difficulty": 1
+    },
+    {
+      "id": "places-waiting-room",
+      "text": "WAITING ROOM",
+      "decoy": "CLASSROOM",
+      "difficulty": 2
+    },
+    {
+      "id": "places-campsite",
+      "text": "CAMPSITE",
+      "decoy": "HOTEL",
+      "difficulty": 1
+    },
+    {
+      "id": "places-lift",
+      "text": "LIFT",
+      "decoy": "STAIRWELL",
+      "difficulty": 2
+    },
+    {
+      "id": "places-swimming-pool",
+      "text": "SWIMMING POOL",
+      "decoy": "LAKE",
+      "difficulty": 1
+    },
+    {
+      "id": "places-roundabout",
+      "text": "ROUNDABOUT",
+      "decoy": "CROSSROADS",
+      "difficulty": 2
+    },
+    {
+      "id": "places-cathedral",
+      "text": "CATHEDRAL",
+      "decoy": "TOWN HALL",
+      "difficulty": 2
+    },
+    {
+      "id": "places-playground",
+      "text": "PLAYGROUND",
+      "decoy": "SKATE PARK",
+      "difficulty": 1
+    },
+    {
+      "id": "places-greenhouse",
+      "text": "GREENHOUSE",
+      "decoy": "SHED",
+      "difficulty": 2
+    },
+    {
+      "id": "places-ferry",
+      "text": "FERRY",
+      "decoy": "CABLE CAR",
+      "difficulty": 2
+    },
+    {
+      "id": "places-motorway",
+      "text": "MOTORWAY",
+      "decoy": "COUNTRY LANE",
+      "difficulty": 2
+    },
+    {
+      "id": "places-lighthouse",
+      "text": "LIGHTHOUSE",
+      "decoy": "WATCHTOWER",
+      "difficulty": 2
+    },
+    {
+      "id": "places-cave",
+      "text": "CAVE",
+      "decoy": "MINE",
+      "difficulty": 2
+    },
+    {
+      "id": "places-village",
+      "text": "VILLAGE",
+      "decoy": "SUBURB",
+      "difficulty": 2
+    },
+    {
+      "id": "places-harbour",
+      "text": "HARBOUR",
+      "decoy": "MARINA",
+      "difficulty": 3
+    },
+    {
+      "id": "places-city-centre",
+      "text": "CITY CENTRE",
+      "decoy": "OUTSKIRTS",
+      "difficulty": 2
+    },
+    {
+      "id": "places-bus-stop",
+      "text": "BUS STOP",
+      "decoy": "TAXI RANK",
+      "difficulty": 2
+    },
+    {
+      "id": "places-platform",
+      "text": "PLATFORM",
+      "decoy": "RUNWAY",
+      "difficulty": 2
+    },
+    {
+      "id": "places-crossing",
+      "text": "CROSSING",
+      "decoy": "JUNCTION",
+      "difficulty": 3
+    },
+    {
+      "id": "places-campus",
+      "text": "CAMPUS",
+      "decoy": "BARRACKS",
+      "difficulty": 2
+    },
+    {
+      "id": "places-prison",
+      "text": "PRISON",
+      "decoy": "BOARDING SCHOOL",
+      "difficulty": 2
+    },
+    {
+      "id": "places-courtroom",
+      "text": "COURTROOM",
+      "decoy": "LECTURE HALL",
+      "difficulty": 2
+    },
+    {
+      "id": "places-hospital",
+      "text": "HOSPITAL",
+      "decoy": "CLINIC",
+      "difficulty": 2
+    },
+    {
+      "id": "places-chemist",
+      "text": "CHEMIST",
+      "decoy": "CORNER SHOP",
+      "difficulty": 2
+    },
+    {
+      "id": "places-launderette",
+      "text": "LAUNDERETTE",
+      "decoy": "CAR WASH",
+      "difficulty": 2
+    },
+    {
+      "id": "places-post-office",
+      "text": "POST OFFICE",
+      "decoy": "BANK",
+      "difficulty": 2
+    },
+    {
+      "id": "places-cinema",
+      "text": "CINEMA",
+      "decoy": "THEATRE",
+      "difficulty": 1
+    },
+    {
+      "id": "places-stadium",
+      "text": "STADIUM",
+      "decoy": "ARENA",
+      "difficulty": 3
+    },
+    {
+      "id": "places-churchyard",
+      "text": "CHURCHYARD",
+      "decoy": "ALLOTMENT",
+      "difficulty": 2
+    },
+    {
+      "id": "places-field",
+      "text": "FIELD",
+      "decoy": "MEADOW",
+      "difficulty": 3
+    },
+    {
+      "id": "places-forest",
+      "text": "FOREST",
+      "decoy": "ORCHARD",
+      "difficulty": 2
+    },
+    {
+      "id": "places-waterfall",
+      "text": "WATERFALL",
+      "decoy": "FOUNTAIN",
+      "difficulty": 1
+    },
+    {
+      "id": "places-glacier",
+      "text": "GLACIER",
+      "decoy": "SAND DUNE",
+      "difficulty": 2
+    },
+    {
+      "id": "places-volcano",
+      "text": "VOLCANO",
+      "decoy": "GEYSER",
+      "difficulty": 2
+    },
+    {
+      "id": "places-island",
+      "text": "ISLAND",
+      "decoy": "PENINSULA",
+      "difficulty": 2
+    },
+    {
+      "id": "places-cliff",
+      "text": "CLIFF",
+      "decoy": "CANYON",
+      "difficulty": 2
+    },
+    {
+      "id": "places-riverbank",
+      "text": "RIVERBANK",
+      "decoy": "SHORELINE",
+      "difficulty": 3
+    },
+    {
+      "id": "places-hilltop",
+      "text": "HILLTOP",
+      "decoy": "VALLEY",
+      "difficulty": 1
+    },
+    {
+      "id": "places-border",
+      "text": "BORDER",
+      "decoy": "CHECKPOINT",
+      "difficulty": 3
+    },
+    {
+      "id": "places-embassy",
+      "text": "EMBASSY",
+      "decoy": "CONSULATE",
+      "difficulty": 3
+    },
+    {
+      "id": "places-bunker",
+      "text": "BUNKER",
+      "decoy": "ATTIC",
+      "difficulty": 2
+    },
+    {
+      "id": "places-balcony",
+      "text": "BALCONY",
+      "decoy": "PORCH",
+      "difficulty": 2
+    },
+    {
+      "id": "places-hallway",
+      "text": "HALLWAY",
+      "decoy": "CORRIDOR",
+      "difficulty": 3
+    },
+    {
+      "id": "places-cellar",
+      "text": "CELLAR",
+      "decoy": "LOFT",
+      "difficulty": 2
+    },
+    {
+      "id": "places-canteen",
+      "text": "CANTEEN",
+      "decoy": "FOOD COURT",
+      "difficulty": 2
+    },
+    {
+      "id": "places-gym",
+      "text": "GYM",
+      "decoy": "DANCE STUDIO",
+      "difficulty": 2
+    },
+    {
+      "id": "places-spa",
+      "text": "SPA",
+      "decoy": "SAUNA",
+      "difficulty": 2
+    },
+    {
+      "id": "places-campfire",
+      "text": "CAMPFIRE",
+      "decoy": "FIREPLACE",
+      "difficulty": 2
+    },
+    {
+      "id": "places-tent",
+      "text": "TENT",
+      "decoy": "CARAVAN",
+      "difficulty": 1
+    },
+    {
+      "id": "places-motel",
+      "text": "MOTEL",
+      "decoy": "HOSTEL",
+      "difficulty": 2
+    },
+    {
+      "id": "places-departure-gate",
+      "text": "DEPARTURE GATE",
+      "decoy": "TICKET HALL",
+      "difficulty": 2
+    },
+    {
+      "id": "places-baggage-claim",
+      "text": "BAGGAGE CLAIM",
+      "decoy": "LOST PROPERTY",
+      "difficulty": 2
+    },
+    {
+      "id": "places-duty-free",
+      "text": "DUTY FREE",
+      "decoy": "GIFT SHOP",
+      "difficulty": 2
+    },
+    {
+      "id": "places-service-station",
+      "text": "SERVICE STATION",
+      "decoy": "REST STOP",
+      "difficulty": 3
+    },
+    {
+      "id": "places-toll-booth",
+      "text": "TOLL BOOTH",
+      "decoy": "TICKET BARRIER",
+      "difficulty": 2
+    },
+    {
+      "id": "places-level-crossing",
+      "text": "LEVEL CROSSING",
+      "decoy": "SWING BRIDGE",
+      "difficulty": 2
+    },
+    {
+      "id": "places-fire-escape",
+      "text": "FIRE ESCAPE",
+      "decoy": "BACK ALLEY",
+      "difficulty": 2
+    },
+    {
+      "id": "places-roof-garden",
+      "text": "ROOF GARDEN",
+      "decoy": "WINDOW BOX",
+      "difficulty": 2
+    },
+    {
+      "id": "places-building-site",
+      "text": "BUILDING SITE",
+      "decoy": "SCRAPYARD",
+      "difficulty": 2
+    },
+    {
+      "id": "places-quarry",
+      "text": "QUARRY",
+      "decoy": "LANDFILL",
+      "difficulty": 2
+    },
+    {
+      "id": "places-wind-farm",
+      "text": "WIND FARM",
+      "decoy": "OIL RIG",
+      "difficulty": 2
+    },
+    {
+      "id": "places-pier",
+      "text": "PIER",
+      "decoy": "BOARDWALK",
+      "difficulty": 2
+    },
+    {
+      "id": "places-funfair",
+      "text": "FUNFAIR",
+      "decoy": "CIRCUS",
+      "difficulty": 1
+    },
+    {
+      "id": "places-botanic-garden",
+      "text": "BOTANIC GARDEN",
+      "decoy": "NATURE TRAIL",
+      "difficulty": 2
+    },
+    {
+      "id": "places-observatory",
+      "text": "OBSERVATORY",
+      "decoy": "PLANETARIUM",
+      "difficulty": 2
+    },
+    {
+      "id": "places-castle",
+      "text": "CASTLE",
+      "decoy": "FORTRESS",
+      "difficulty": 3
+    },
+    {
+      "id": "places-ruins",
+      "text": "RUINS",
+      "decoy": "MONUMENT",
+      "difficulty": 2
+    },
+    {
+      "id": "places-catacombs",
+      "text": "CATACOMBS",
+      "decoy": "CRYPT",
+      "difficulty": 3
+    },
+    {
+      "id": "places-underpass",
+      "text": "UNDERPASS",
+      "decoy": "FLYOVER",
+      "difficulty": 2
+    },
+    {
+      "id": "places-dead-end",
+      "text": "DEAD END",
+      "decoy": "ONE WAY",
+      "difficulty": 2
+    },
+    {
+      "id": "places-high-street",
+      "text": "HIGH STREET",
+      "decoy": "RING ROAD",
+      "difficulty": 2
+    },
+    {
+      "id": "places-shopping-mall",
+      "text": "SHOPPING MALL",
+      "decoy": "ARCADE",
+      "difficulty": 2
+    },
+    {
+      "id": "places-newsagent",
+      "text": "NEWSAGENT",
+      "decoy": "KIOSK",
+      "difficulty": 2
+    },
+    {
+      "id": "places-roadworks",
+      "text": "ROADWORKS",
+      "decoy": "DIVERSION",
+      "difficulty": 2
+    }
+  ]
+}

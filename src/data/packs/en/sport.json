@@ -1,0 +1,488 @@
+{
+  "id": "sport",
+  "name": "SPORT",
+  "emoji": "🥊",
+  "isFree": false,
+  "words": [
+    {
+      "id": "sport-penalty",
+      "text": "PENALTY",
+      "decoy": "FREE KICK",
+      "difficulty": 1
+    },
+    {
+      "id": "sport-marathon",
+      "text": "MARATHON",
+      "decoy": "SPRINT",
+      "difficulty": 1
+    },
+    {
+      "id": "sport-referee",
+      "text": "REFEREE",
+      "decoy": "LINESMAN",
+      "difficulty": 2
+    },
+    {
+      "id": "sport-swimming",
+      "text": "SWIMMING",
+      "decoy": "DIVING",
+      "difficulty": 1
+    },
+    {
+      "id": "sport-locker-room",
+      "text": "LOCKER ROOM",
+      "decoy": "DUGOUT",
+      "difficulty": 2
+    },
+    {
+      "id": "sport-own-goal",
+      "text": "OWN GOAL",
+      "decoy": "FOUL",
+      "difficulty": 2
+    },
+    {
+      "id": "sport-trophy",
+      "text": "TROPHY",
+      "decoy": "MEDAL",
+      "difficulty": 1
+    },
+    {
+      "id": "sport-bench",
+      "text": "BENCH",
+      "decoy": "SIDELINE",
+      "difficulty": 2
+    },
+    {
+      "id": "sport-half-time",
+      "text": "HALF TIME",
+      "decoy": "INTERVAL",
+      "difficulty": 2
+    },
+    {
+      "id": "sport-kick-off",
+      "text": "KICK-OFF",
+      "decoy": "FINAL WHISTLE",
+      "difficulty": 2
+    },
+    {
+      "id": "sport-goalkeeper",
+      "text": "GOALKEEPER",
+      "decoy": "STRIKER",
+      "difficulty": 1
+    },
+    {
+      "id": "sport-captain",
+      "text": "CAPTAIN",
+      "decoy": "COACH",
+      "difficulty": 2
+    },
+    {
+      "id": "sport-training",
+      "text": "TRAINING",
+      "decoy": "WARM-UP",
+      "difficulty": 2
+    },
+    {
+      "id": "sport-terraces",
+      "text": "TERRACES",
+      "decoy": "GRANDSTAND",
+      "difficulty": 2
+    },
+    {
+      "id": "sport-season-ticket",
+      "text": "SEASON TICKET",
+      "decoy": "DAY PASS",
+      "difficulty": 2
+    },
+    {
+      "id": "sport-transfer",
+      "text": "TRANSFER",
+      "decoy": "LOAN",
+      "difficulty": 3
+    },
+    {
+      "id": "sport-red-card",
+      "text": "RED CARD",
+      "decoy": "SIN BIN",
+      "difficulty": 2
+    },
+    {
+      "id": "sport-extra-time",
+      "text": "EXTRA TIME",
+      "decoy": "REPLAY",
+      "difficulty": 2
+    },
+    {
+      "id": "sport-scoreboard",
+      "text": "SCOREBOARD",
+      "decoy": "LEAGUE TABLE",
+      "difficulty": 2
+    },
+    {
+      "id": "sport-home-game",
+      "text": "HOME GAME",
+      "decoy": "AWAY DAY",
+      "difficulty": 2
+    },
+    {
+      "id": "sport-derby",
+      "text": "DERBY",
+      "decoy": "FRIENDLY",
+      "difficulty": 2
+    },
+    {
+      "id": "sport-substitute",
+      "text": "SUBSTITUTE",
+      "decoy": "RESERVE",
+      "difficulty": 3
+    },
+    {
+      "id": "sport-injury-time",
+      "text": "INJURY TIME",
+      "decoy": "STOPPAGE",
+      "difficulty": 2
+    },
+    {
+      "id": "sport-dribble",
+      "text": "DRIBBLE",
+      "decoy": "TACKLE",
+      "difficulty": 2
+    },
+    {
+      "id": "sport-hat-trick",
+      "text": "HAT-TRICK",
+      "decoy": "CLEAN SHEET",
+      "difficulty": 2
+    },
+    {
+      "id": "sport-crossbar",
+      "text": "CROSSBAR",
+      "decoy": "GOAL LINE",
+      "difficulty": 2
+    },
+    {
+      "id": "sport-boxing-ring",
+      "text": "BOXING RING",
+      "decoy": "WRESTLING MAT",
+      "difficulty": 1
+    },
+    {
+      "id": "sport-knockout",
+      "text": "KNOCKOUT",
+      "decoy": "SUBMISSION",
+      "difficulty": 2
+    },
+    {
+      "id": "sport-round",
+      "text": "ROUND",
+      "decoy": "SET",
+      "difficulty": 3
+    },
+    {
+      "id": "sport-umpire",
+      "text": "UMPIRE",
+      "decoy": "JUDGE",
+      "difficulty": 2
+    },
+    {
+      "id": "sport-serve",
+      "text": "SERVE",
+      "decoy": "RALLY",
+      "difficulty": 2
+    },
+    {
+      "id": "sport-net",
+      "text": "NET",
+      "decoy": "HOOP",
+      "difficulty": 2
+    },
+    {
+      "id": "sport-racket",
+      "text": "RACKET",
+      "decoy": "BAT",
+      "difficulty": 2
+    },
+    {
+      "id": "sport-pitch",
+      "text": "PITCH",
+      "decoy": "COURT",
+      "difficulty": 2
+    },
+    {
+      "id": "sport-track",
+      "text": "TRACK",
+      "decoy": "LANE",
+      "difficulty": 2
+    },
+    {
+      "id": "sport-finish-line",
+      "text": "FINISH LINE",
+      "decoy": "STARTING BLOCK",
+      "difficulty": 1
+    },
+    {
+      "id": "sport-baton",
+      "text": "BATON",
+      "decoy": "RELAY",
+      "difficulty": 3
+    },
+    {
+      "id": "sport-hurdle",
+      "text": "HURDLE",
+      "decoy": "VAULT",
+      "difficulty": 2
+    },
+    {
+      "id": "sport-javelin",
+      "text": "JAVELIN",
+      "decoy": "DISCUS",
+      "difficulty": 2
+    },
+    {
+      "id": "sport-long-jump",
+      "text": "LONG JUMP",
+      "decoy": "POLE VAULT",
+      "difficulty": 2
+    },
+    {
+      "id": "sport-cycling",
+      "text": "CYCLING",
+      "decoy": "SKATING",
+      "difficulty": 1
+    },
+    {
+      "id": "sport-helmet",
+      "text": "HELMET",
+      "decoy": "GOGGLES",
+      "difficulty": 2
+    },
+    {
+      "id": "sport-saddle",
+      "text": "SADDLE",
+      "decoy": "HANDLEBAR",
+      "difficulty": 2
+    },
+    {
+      "id": "sport-pit-stop",
+      "text": "PIT STOP",
+      "decoy": "SERVICE BREAK",
+      "difficulty": 2
+    },
+    {
+      "id": "sport-chequered-flag",
+      "text": "CHEQUERED FLAG",
+      "decoy": "PODIUM",
+      "difficulty": 2
+    },
+    {
+      "id": "sport-lap",
+      "text": "LAP",
+      "decoy": "CIRCUIT",
+      "difficulty": 3
+    },
+    {
+      "id": "sport-surfing",
+      "text": "SURFING",
+      "decoy": "SAILING",
+      "difficulty": 1
+    },
+    {
+      "id": "sport-climbing",
+      "text": "CLIMBING",
+      "decoy": "ABSEILING",
+      "difficulty": 2
+    },
+    {
+      "id": "sport-ski-slope",
+      "text": "SKI SLOPE",
+      "decoy": "TOBOGGAN RUN",
+      "difficulty": 2
+    },
+    {
+      "id": "sport-snowboard",
+      "text": "SNOWBOARD",
+      "decoy": "SKATEBOARD",
+      "difficulty": 2
+    },
+    {
+      "id": "sport-gymnastics",
+      "text": "GYMNASTICS",
+      "decoy": "BALLET",
+      "difficulty": 2
+    },
+    {
+      "id": "sport-beam",
+      "text": "BEAM",
+      "decoy": "BAR",
+      "difficulty": 3
+    },
+    {
+      "id": "sport-scorekeeper",
+      "text": "SCOREKEEPER",
+      "decoy": "TIMEKEEPER",
+      "difficulty": 3
+    },
+    {
+      "id": "sport-team-sheet",
+      "text": "TEAM SHEET",
+      "decoy": "LINE-UP",
+      "difficulty": 3
+    },
+    {
+      "id": "sport-fans",
+      "text": "FANS",
+      "decoy": "SUPPORTERS",
+      "difficulty": 3
+    },
+    {
+      "id": "sport-chant",
+      "text": "CHANT",
+      "decoy": "ANTHEM",
+      "difficulty": 2
+    },
+    {
+      "id": "sport-mascot",
+      "text": "MASCOT",
+      "decoy": "CHEERLEADER",
+      "difficulty": 1
+    },
+    {
+      "id": "sport-kit",
+      "text": "KIT",
+      "decoy": "STRIP",
+      "difficulty": 3
+    },
+    {
+      "id": "sport-sponsor",
+      "text": "SPONSOR",
+      "decoy": "PATRON",
+      "difficulty": 3
+    },
+    {
+      "id": "sport-stopwatch",
+      "text": "STOPWATCH",
+      "decoy": "WHISTLE",
+      "difficulty": 1
+    },
+    {
+      "id": "sport-coin-toss",
+      "text": "COIN TOSS",
+      "decoy": "DRAW",
+      "difficulty": 2
+    },
+    {
+      "id": "sport-play-off",
+      "text": "PLAY-OFF",
+      "decoy": "KNOCKOUT ROUND",
+      "difficulty": 3
+    },
+    {
+      "id": "sport-group-stage",
+      "text": "GROUP STAGE",
+      "decoy": "QUALIFIER",
+      "difficulty": 3
+    },
+    {
+      "id": "sport-cup-final",
+      "text": "CUP FINAL",
+      "decoy": "LEAGUE TITLE",
+      "difficulty": 2
+    },
+    {
+      "id": "sport-underdog",
+      "text": "UNDERDOG",
+      "decoy": "FAVOURITE",
+      "difficulty": 2
+    },
+    {
+      "id": "sport-comeback",
+      "text": "COMEBACK",
+      "decoy": "COLLAPSE",
+      "difficulty": 2
+    },
+    {
+      "id": "sport-record",
+      "text": "RECORD",
+      "decoy": "PERSONAL BEST",
+      "difficulty": 2
+    },
+    {
+      "id": "sport-doping-test",
+      "text": "DOPING TEST",
+      "decoy": "MEDICAL",
+      "difficulty": 3
+    },
+    {
+      "id": "sport-press-conference",
+      "text": "PRESS CONFERENCE",
+      "decoy": "POST-MATCH",
+      "difficulty": 3
+    },
+    {
+      "id": "sport-fantasy-league",
+      "text": "FANTASY LEAGUE",
+      "decoy": "OFFICE SWEEP",
+      "difficulty": 2
+    },
+    {
+      "id": "sport-darts",
+      "text": "DARTS",
+      "decoy": "SNOOKER",
+      "difficulty": 1
+    },
+    {
+      "id": "sport-bowling",
+      "text": "BOWLING",
+      "decoy": "CURLING",
+      "difficulty": 2
+    },
+    {
+      "id": "sport-golf-swing",
+      "text": "GOLF SWING",
+      "decoy": "TENNIS SERVE",
+      "difficulty": 2
+    },
+    {
+      "id": "sport-caddie",
+      "text": "CADDIE",
+      "decoy": "BALL BOY",
+      "difficulty": 2
+    },
+    {
+      "id": "sport-clubhouse",
+      "text": "CLUBHOUSE",
+      "decoy": "PAVILION",
+      "difficulty": 2
+    },
+    {
+      "id": "sport-rowing",
+      "text": "ROWING",
+      "decoy": "CANOEING",
+      "difficulty": 2
+    },
+    {
+      "id": "sport-fencing",
+      "text": "FENCING",
+      "decoy": "ARCHERY",
+      "difficulty": 1
+    },
+    {
+      "id": "sport-chess-clock",
+      "text": "CHESS CLOCK",
+      "decoy": "EGG TIMER",
+      "difficulty": 3
+    },
+    {
+      "id": "sport-five-a-side",
+      "text": "FIVE-A-SIDE",
+      "decoy": "SEVEN-A-SIDE",
+      "difficulty": 3
+    },
+    {
+      "id": "sport-triathlon",
+      "text": "TRIATHLON",
+      "decoy": "DECATHLON",
+      "difficulty": 3
+    }
+  ]
+}

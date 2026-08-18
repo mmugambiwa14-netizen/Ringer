@@ -1,0 +1,339 @@
+{
+  "id": "spicy",
+  "name": "SPICY",
+  "emoji": "🌶️",
+  "isFree": false,
+  "adult": true,
+  "words": [
+    {
+      "id": "spicy-ex",
+      "text": "EX",
+      "decoy": "OLD FLAME",
+      "difficulty": 1
+    },
+    {
+      "id": "spicy-walk-of-shame",
+      "text": "WALK OF SHAME",
+      "decoy": "MORNING AFTER",
+      "difficulty": 2
+    },
+    {
+      "id": "spicy-drunk-dial",
+      "text": "DRUNK DIAL",
+      "decoy": "WRONG NUMBER",
+      "difficulty": 2
+    },
+    {
+      "id": "spicy-bad-tattoo",
+      "text": "BAD TATTOO",
+      "decoy": "DODGY PIERCING",
+      "difficulty": 2
+    },
+    {
+      "id": "spicy-dating-app",
+      "text": "DATING APP",
+      "decoy": "BLIND DATE",
+      "difficulty": 1
+    },
+    {
+      "id": "spicy-first-date",
+      "text": "FIRST DATE",
+      "decoy": "AWKWARD LUNCH",
+      "difficulty": 2
+    },
+    {
+      "id": "spicy-ghosting",
+      "text": "GHOSTING",
+      "decoy": "SLOW FADE",
+      "difficulty": 2
+    },
+    {
+      "id": "spicy-red-flag",
+      "text": "RED FLAG",
+      "decoy": "DEAL BREAKER",
+      "difficulty": 2
+    },
+    {
+      "id": "spicy-situationship",
+      "text": "SITUATIONSHIP",
+      "decoy": "OPEN BOOK",
+      "difficulty": 3
+    },
+    {
+      "id": "spicy-text-at-2am",
+      "text": "TEXT AT 2AM",
+      "decoy": "CALL AT DAWN",
+      "difficulty": 2
+    },
+    {
+      "id": "spicy-left-on-read",
+      "text": "LEFT ON READ",
+      "decoy": "UNANSWERED CALL",
+      "difficulty": 2
+    },
+    {
+      "id": "spicy-double-text",
+      "text": "DOUBLE TEXT",
+      "decoy": "FOLLOW-UP EMAIL",
+      "difficulty": 2
+    },
+    {
+      "id": "spicy-swipe-left",
+      "text": "SWIPE LEFT",
+      "decoy": "HARD PASS",
+      "difficulty": 2
+    },
+    {
+      "id": "spicy-beer-goggles",
+      "text": "BEER GOGGLES",
+      "decoy": "ROSE TINTED",
+      "difficulty": 2
+    },
+    {
+      "id": "spicy-love-bite",
+      "text": "LOVE BITE",
+      "decoy": "BRUISE",
+      "difficulty": 2
+    },
+    {
+      "id": "spicy-sneaking-out",
+      "text": "SNEAKING OUT",
+      "decoy": "CREEPING IN",
+      "difficulty": 2
+    },
+    {
+      "id": "spicy-shared-taxi",
+      "text": "SHARED TAXI",
+      "decoy": "SEPARATE WAYS",
+      "difficulty": 3
+    },
+    {
+      "id": "spicy-spare-key",
+      "text": "SPARE KEY",
+      "decoy": "GUEST TOWEL",
+      "difficulty": 2
+    },
+    {
+      "id": "spicy-meet-the-parents",
+      "text": "MEET THE PARENTS",
+      "decoy": "FAMILY DINNER",
+      "difficulty": 2
+    },
+    {
+      "id": "spicy-the-talk",
+      "text": "THE TALK",
+      "decoy": "THE SILENCE",
+      "difficulty": 3
+    },
+    {
+      "id": "spicy-break-up-text",
+      "text": "BREAK-UP TEXT",
+      "decoy": "RESIGNATION",
+      "difficulty": 2
+    },
+    {
+      "id": "spicy-rebound",
+      "text": "REBOUND",
+      "decoy": "RETRY",
+      "difficulty": 2
+    },
+    {
+      "id": "spicy-jealousy",
+      "text": "JEALOUSY",
+      "decoy": "SUSPICION",
+      "difficulty": 3
+    },
+    {
+      "id": "spicy-white-lie",
+      "text": "WHITE LIE",
+      "decoy": "HALF TRUTH",
+      "difficulty": 3
+    },
+    {
+      "id": "spicy-secret-crush",
+      "text": "SECRET CRUSH",
+      "decoy": "QUIET ADMIRER",
+      "difficulty": 2
+    },
+    {
+      "id": "spicy-office-romance",
+      "text": "OFFICE ROMANCE",
+      "decoy": "HOLIDAY FLING",
+      "difficulty": 2
+    },
+    {
+      "id": "spicy-speed-dating",
+      "text": "SPEED DATING",
+      "decoy": "JOB INTERVIEW",
+      "difficulty": 2
+    },
+    {
+      "id": "spicy-wingman",
+      "text": "WINGMAN",
+      "decoy": "CHAPERONE",
+      "difficulty": 2
+    },
+    {
+      "id": "spicy-bad-chat-up-line",
+      "text": "BAD CHAT-UP LINE",
+      "decoy": "SALES PITCH",
+      "difficulty": 2
+    },
+    {
+      "id": "spicy-oversharing",
+      "text": "OVERSHARING",
+      "decoy": "TMI",
+      "difficulty": 3
+    },
+    {
+      "id": "spicy-chat-screenshot",
+      "text": "CHAT SCREENSHOT",
+      "decoy": "VOICE NOTE",
+      "difficulty": 2
+    },
+    {
+      "id": "spicy-blocked",
+      "text": "BLOCKED",
+      "decoy": "UNFRIENDED",
+      "difficulty": 3
+    },
+    {
+      "id": "spicy-doomscrolling",
+      "text": "DOOMSCROLLING",
+      "decoy": "PEOPLE WATCHING",
+      "difficulty": 3
+    },
+    {
+      "id": "spicy-last-orders",
+      "text": "LAST ORDERS",
+      "decoy": "CLOSING TIME",
+      "difficulty": 3
+    },
+    {
+      "id": "spicy-kebab-at-3am",
+      "text": "KEBAB AT 3AM",
+      "decoy": "CEREAL AT NOON",
+      "difficulty": 2
+    },
+    {
+      "id": "spicy-hangxiety",
+      "text": "HANGXIETY",
+      "decoy": "STAGE FRIGHT",
+      "difficulty": 2
+    },
+    {
+      "id": "spicy-lost-phone",
+      "text": "LOST PHONE",
+      "decoy": "MISSING COAT",
+      "difficulty": 2
+    },
+    {
+      "id": "spicy-karaoke-regret",
+      "text": "KARAOKE REGRET",
+      "decoy": "SPEECH NERVES",
+      "difficulty": 3
+    },
+    {
+      "id": "spicy-table-dancing",
+      "text": "TABLE DANCING",
+      "decoy": "LIFT SINGING",
+      "difficulty": 2
+    },
+    {
+      "id": "spicy-bar-tab",
+      "text": "BAR TAB",
+      "decoy": "SPLIT BILL",
+      "difficulty": 2
+    },
+    {
+      "id": "spicy-shots-round",
+      "text": "SHOTS ROUND",
+      "decoy": "NIGHTCAP",
+      "difficulty": 2
+    },
+    {
+      "id": "spicy-truth-or-dare",
+      "text": "TRUTH OR DARE",
+      "decoy": "NEVER HAVE I",
+      "difficulty": 1
+    },
+    {
+      "id": "spicy-spin-the-bottle",
+      "text": "SPIN THE BOTTLE",
+      "decoy": "PASS THE PARCEL",
+      "difficulty": 2
+    },
+    {
+      "id": "spicy-locked-out",
+      "text": "LOCKED OUT",
+      "decoy": "SHUT IN",
+      "difficulty": 2
+    },
+    {
+      "id": "spicy-sofa-surfing",
+      "text": "SOFA SURFING",
+      "decoy": "HOUSE SITTING",
+      "difficulty": 2
+    },
+    {
+      "id": "spicy-flatmate",
+      "text": "FLATMATE",
+      "decoy": "HOUSEGUEST",
+      "difficulty": 3
+    },
+    {
+      "id": "spicy-thin-walls",
+      "text": "THIN WALLS",
+      "decoy": "OPEN WINDOW",
+      "difficulty": 3
+    },
+    {
+      "id": "spicy-awkward-silence",
+      "text": "AWKWARD SILENCE",
+      "decoy": "NERVOUS LAUGH",
+      "difficulty": 3
+    },
+    {
+      "id": "spicy-cringe",
+      "text": "CRINGE",
+      "decoy": "PITY",
+      "difficulty": 2
+    },
+    {
+      "id": "spicy-sober-friend",
+      "text": "SOBER FRIEND",
+      "decoy": "NIGHT NURSE",
+      "difficulty": 2
+    },
+    {
+      "id": "spicy-fake-number",
+      "text": "FAKE NUMBER",
+      "decoy": "WRONG DIGITS",
+      "difficulty": 3
+    },
+    {
+      "id": "spicy-wrong-bed",
+      "text": "WRONG BED",
+      "decoy": "STRANGE SOFA",
+      "difficulty": 2
+    },
+    {
+      "id": "spicy-mystery-bruise",
+      "text": "MYSTERY BRUISE",
+      "decoy": "ODD SCRATCH",
+      "difficulty": 2
+    },
+    {
+      "id": "spicy-bank-statement",
+      "text": "BANK STATEMENT",
+      "decoy": "CAMERA ROLL",
+      "difficulty": 2
+    },
+    {
+      "id": "spicy-unsent-message",
+      "text": "UNSENT MESSAGE",
+      "decoy": "DRAFT EMAIL",
+      "difficulty": 3
+    }
+  ]
+}

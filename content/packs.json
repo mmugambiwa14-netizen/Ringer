@@ -1,0 +1,14 @@
+{
+  "packs": [
+    { "id": "party",   "name": "PARTY",   "emoji": "🎉", "isFree": true },
+    { "id": "food",    "name": "FOOD",    "emoji": "🍕", "isFree": true },
+    { "id": "animals", "name": "ANIMALS", "emoji": "🦩", "isFree": true },
+    { "id": "places",  "name": "PLACES",  "emoji": "🗺️", "isFree": false },
+    { "id": "screen",  "name": "SCREEN",  "emoji": "🎬", "isFree": false },
+    { "id": "sport",   "name": "SPORT",   "emoji": "🥊", "isFree": false },
+    { "id": "objects", "name": "OBJECTS", "emoji": "🔩", "isFree": false },
+    { "id": "jobs",    "name": "JOBS",    "emoji": "🧰", "isFree": false },
+    { "id": "tech",    "name": "TECH",    "emoji": "🛰️", "isFree": false },
+    { "id": "spicy",   "name": "SPICY",   "emoji": "🌶️", "isFree": false, "adult": true }
+  ]
+}

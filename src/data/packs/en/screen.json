@@ -1,0 +1,488 @@
+{
+  "id": "screen",
+  "name": "SCREEN",
+  "emoji": "🎬",
+  "isFree": false,
+  "words": [
+    {
+      "id": "screen-horror",
+      "text": "HORROR",
+      "decoy": "THRILLER",
+      "difficulty": 2
+    },
+    {
+      "id": "screen-car-chase",
+      "text": "CAR CHASE",
+      "decoy": "GETAWAY",
+      "difficulty": 1
+    },
+    {
+      "id": "screen-plot-twist",
+      "text": "PLOT TWIST",
+      "decoy": "RED HERRING",
+      "difficulty": 2
+    },
+    {
+      "id": "screen-sequel",
+      "text": "SEQUEL",
+      "decoy": "REMAKE",
+      "difficulty": 2
+    },
+    {
+      "id": "screen-villain",
+      "text": "VILLAIN",
+      "decoy": "ANTIHERO",
+      "difficulty": 2
+    },
+    {
+      "id": "screen-cliffhanger",
+      "text": "CLIFFHANGER",
+      "decoy": "OPEN ENDING",
+      "difficulty": 2
+    },
+    {
+      "id": "screen-trailer",
+      "text": "TRAILER",
+      "decoy": "TEASER",
+      "difficulty": 3
+    },
+    {
+      "id": "screen-cameo",
+      "text": "CAMEO",
+      "decoy": "EXTRA",
+      "difficulty": 2
+    },
+    {
+      "id": "screen-stunt-double",
+      "text": "STUNT DOUBLE",
+      "decoy": "STAND-IN",
+      "difficulty": 3
+    },
+    {
+      "id": "screen-box-set",
+      "text": "BOX SET",
+      "decoy": "MINI SERIES",
+      "difficulty": 2
+    },
+    {
+      "id": "screen-soap-opera",
+      "text": "SOAP OPERA",
+      "decoy": "SITCOM",
+      "difficulty": 1
+    },
+    {
+      "id": "screen-documentary",
+      "text": "DOCUMENTARY",
+      "decoy": "NEWSREEL",
+      "difficulty": 2
+    },
+    {
+      "id": "screen-game-show",
+      "text": "GAME SHOW",
+      "decoy": "QUIZ NIGHT",
+      "difficulty": 1
+    },
+    {
+      "id": "screen-news-anchor",
+      "text": "NEWS ANCHOR",
+      "decoy": "TALK HOST",
+      "difficulty": 2
+    },
+    {
+      "id": "screen-live-stream",
+      "text": "LIVE STREAM",
+      "decoy": "BROADCAST",
+      "difficulty": 2
+    },
+    {
+      "id": "screen-subtitles",
+      "text": "SUBTITLES",
+      "decoy": "DUBBING",
+      "difficulty": 1
+    },
+    {
+      "id": "screen-soundtrack",
+      "text": "SOUNDTRACK",
+      "decoy": "THEME TUNE",
+      "difficulty": 2
+    },
+    {
+      "id": "screen-credits",
+      "text": "CREDITS",
+      "decoy": "OPENING TITLES",
+      "difficulty": 2
+    },
+    {
+      "id": "screen-spoiler",
+      "text": "SPOILER",
+      "decoy": "LEAK",
+      "difficulty": 2
+    },
+    {
+      "id": "screen-binge-watch",
+      "text": "BINGE WATCH",
+      "decoy": "REWATCH",
+      "difficulty": 2
+    },
+    {
+      "id": "screen-popcorn",
+      "text": "POPCORN",
+      "decoy": "NACHOS",
+      "difficulty": 1
+    },
+    {
+      "id": "screen-front-row",
+      "text": "FRONT ROW",
+      "decoy": "BALCONY SEAT",
+      "difficulty": 2
+    },
+    {
+      "id": "screen-red-carpet",
+      "text": "RED CARPET",
+      "decoy": "CATWALK",
+      "difficulty": 1
+    },
+    {
+      "id": "screen-award",
+      "text": "AWARD",
+      "decoy": "NOMINATION",
+      "difficulty": 2
+    },
+    {
+      "id": "screen-script",
+      "text": "SCRIPT",
+      "decoy": "SCREENPLAY",
+      "difficulty": 3
+    },
+    {
+      "id": "screen-audition",
+      "text": "AUDITION",
+      "decoy": "SCREEN TEST",
+      "difficulty": 3
+    },
+    {
+      "id": "screen-director",
+      "text": "DIRECTOR",
+      "decoy": "PRODUCER",
+      "difficulty": 2
+    },
+    {
+      "id": "screen-boom-mic",
+      "text": "BOOM MIC",
+      "decoy": "CLAPPERBOARD",
+      "difficulty": 2
+    },
+    {
+      "id": "screen-green-screen",
+      "text": "GREEN SCREEN",
+      "decoy": "BACKDROP",
+      "difficulty": 1
+    },
+    {
+      "id": "screen-special-effects",
+      "text": "SPECIAL EFFECTS",
+      "decoy": "PRACTICAL EFFECT",
+      "difficulty": 2
+    },
+    {
+      "id": "screen-montage",
+      "text": "MONTAGE",
+      "decoy": "FLASHBACK",
+      "difficulty": 2
+    },
+    {
+      "id": "screen-narrator",
+      "text": "NARRATOR",
+      "decoy": "VOICEOVER",
+      "difficulty": 3
+    },
+    {
+      "id": "screen-blooper",
+      "text": "BLOOPER",
+      "decoy": "OUTTAKE",
+      "difficulty": 3
+    },
+    {
+      "id": "screen-season-finale",
+      "text": "SEASON FINALE",
+      "decoy": "PILOT",
+      "difficulty": 2
+    },
+    {
+      "id": "screen-streaming",
+      "text": "STREAMING",
+      "decoy": "RENTAL",
+      "difficulty": 2
+    },
+    {
+      "id": "screen-channel",
+      "text": "CHANNEL",
+      "decoy": "NETWORK",
+      "difficulty": 3
+    },
+    {
+      "id": "screen-remote",
+      "text": "REMOTE",
+      "decoy": "SET-TOP BOX",
+      "difficulty": 1
+    },
+    {
+      "id": "screen-box-office",
+      "text": "BOX OFFICE",
+      "decoy": "TICKET BOOTH",
+      "difficulty": 2
+    },
+    {
+      "id": "screen-critic",
+      "text": "CRITIC",
+      "decoy": "REVIEWER",
+      "difficulty": 3
+    },
+    {
+      "id": "screen-cult-classic",
+      "text": "CULT CLASSIC",
+      "decoy": "BOX OFFICE FLOP",
+      "difficulty": 2
+    },
+    {
+      "id": "screen-superhero",
+      "text": "SUPERHERO",
+      "decoy": "SIDEKICK",
+      "difficulty": 1
+    },
+    {
+      "id": "screen-alien",
+      "text": "ALIEN",
+      "decoy": "MONSTER",
+      "difficulty": 2
+    },
+    {
+      "id": "screen-time-travel",
+      "text": "TIME TRAVEL",
+      "decoy": "PARALLEL WORLD",
+      "difficulty": 2
+    },
+    {
+      "id": "screen-heist",
+      "text": "HEIST",
+      "decoy": "CON",
+      "difficulty": 2
+    },
+    {
+      "id": "screen-courtroom-drama",
+      "text": "COURTROOM DRAMA",
+      "decoy": "CRIME SERIES",
+      "difficulty": 2
+    },
+    {
+      "id": "screen-romcom",
+      "text": "ROMCOM",
+      "decoy": "MELODRAMA",
+      "difficulty": 2
+    },
+    {
+      "id": "screen-western",
+      "text": "WESTERN",
+      "decoy": "SAMURAI",
+      "difficulty": 2
+    },
+    {
+      "id": "screen-animation",
+      "text": "ANIMATION",
+      "decoy": "PUPPETRY",
+      "difficulty": 2
+    },
+    {
+      "id": "screen-silent-film",
+      "text": "SILENT FILM",
+      "decoy": "RADIO PLAY",
+      "difficulty": 2
+    },
+    {
+      "id": "screen-black-and-white",
+      "text": "BLACK AND WHITE",
+      "decoy": "SEPIA",
+      "difficulty": 2
+    },
+    {
+      "id": "screen-slow-motion",
+      "text": "SLOW MOTION",
+      "decoy": "FAST FORWARD",
+      "difficulty": 1
+    },
+    {
+      "id": "screen-jump-scare",
+      "text": "JUMP SCARE",
+      "decoy": "FALSE ALARM",
+      "difficulty": 2
+    },
+    {
+      "id": "screen-love-triangle",
+      "text": "LOVE TRIANGLE",
+      "decoy": "RIVALRY",
+      "difficulty": 2
+    },
+    {
+      "id": "screen-chase-scene",
+      "text": "CHASE SCENE",
+      "decoy": "SHOWDOWN",
+      "difficulty": 2
+    },
+    {
+      "id": "screen-training-montage",
+      "text": "TRAINING MONTAGE",
+      "decoy": "MAKEOVER",
+      "difficulty": 2
+    },
+    {
+      "id": "screen-dream-sequence",
+      "text": "DREAM SEQUENCE",
+      "decoy": "HALLUCINATION",
+      "difficulty": 3
+    },
+    {
+      "id": "screen-post-credits",
+      "text": "POST CREDITS",
+      "decoy": "EPILOGUE",
+      "difficulty": 3
+    },
+    {
+      "id": "screen-fan-theory",
+      "text": "FAN THEORY",
+      "decoy": "CONSPIRACY",
+      "difficulty": 2
+    },
+    {
+      "id": "screen-recap",
+      "text": "RECAP",
+      "decoy": "PREVIEW",
+      "difficulty": 2
+    },
+    {
+      "id": "screen-catchphrase",
+      "text": "CATCHPHRASE",
+      "decoy": "TAGLINE",
+      "difficulty": 2
+    },
+    {
+      "id": "screen-costume",
+      "text": "COSTUME",
+      "decoy": "PROP",
+      "difficulty": 3
+    },
+    {
+      "id": "screen-make-up-chair",
+      "text": "MAKE-UP CHAIR",
+      "decoy": "DRESSING ROOM",
+      "difficulty": 2
+    },
+    {
+      "id": "screen-film-set",
+      "text": "FILM SET",
+      "decoy": "BACKLOT",
+      "difficulty": 3
+    },
+    {
+      "id": "screen-on-location",
+      "text": "ON LOCATION",
+      "decoy": "ON STAGE",
+      "difficulty": 2
+    },
+    {
+      "id": "screen-double-bill",
+      "text": "DOUBLE BILL",
+      "decoy": "MATINEE",
+      "difficulty": 2
+    },
+    {
+      "id": "screen-end-scene",
+      "text": "END SCENE",
+      "decoy": "COLD OPEN",
+      "difficulty": 3
+    },
+    {
+      "id": "screen-laugh-track",
+      "text": "LAUGH TRACK",
+      "decoy": "APPLAUSE SIGN",
+      "difficulty": 2
+    },
+    {
+      "id": "screen-screen-time",
+      "text": "SCREEN TIME",
+      "decoy": "RUNTIME",
+      "difficulty": 3
+    },
+    {
+      "id": "screen-typecast",
+      "text": "TYPECAST",
+      "decoy": "MISCAST",
+      "difficulty": 3
+    },
+    {
+      "id": "screen-adaptation",
+      "text": "ADAPTATION",
+      "decoy": "ORIGINAL",
+      "difficulty": 3
+    },
+    {
+      "id": "screen-screen-grab",
+      "text": "SCREEN GRAB",
+      "decoy": "SNAPSHOT",
+      "difficulty": 2
+    },
+    {
+      "id": "screen-interval",
+      "text": "INTERVAL",
+      "decoy": "AD BREAK",
+      "difficulty": 2
+    },
+    {
+      "id": "screen-usher",
+      "text": "USHER",
+      "decoy": "PROJECTIONIST",
+      "difficulty": 2
+    },
+    {
+      "id": "screen-film-festival",
+      "text": "FILM FESTIVAL",
+      "decoy": "PREMIERE",
+      "difficulty": 2
+    },
+    {
+      "id": "screen-binge-queue",
+      "text": "BINGE QUEUE",
+      "decoy": "WATCHLIST",
+      "difficulty": 2
+    },
+    {
+      "id": "screen-pause-button",
+      "text": "PAUSE BUTTON",
+      "decoy": "VOLUME DIAL",
+      "difficulty": 2
+    },
+    {
+      "id": "screen-spin-off",
+      "text": "SPIN-OFF",
+      "decoy": "CROSSOVER",
+      "difficulty": 3
+    },
+    {
+      "id": "screen-rerun",
+      "text": "RERUN",
+      "decoy": "REPLAY",
+      "difficulty": 3
+    },
+    {
+      "id": "screen-screen-test",
+      "text": "SCREEN TEST",
+      "decoy": "DRESS REHEARSAL",
+      "difficulty": 3
+    },
+    {
+      "id": "screen-stunt-fall",
+      "text": "STUNT FALL",
+      "decoy": "PRATFALL",
+      "difficulty": 3
+    }
+  ]
+}

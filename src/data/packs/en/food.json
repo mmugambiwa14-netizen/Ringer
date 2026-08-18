@@ -1,0 +1,488 @@
+{
+  "id": "food",
+  "name": "FOOD",
+  "emoji": "🍕",
+  "isFree": true,
+  "words": [
+    {
+      "id": "food-pizza",
+      "text": "PIZZA",
+      "decoy": "PANCAKE",
+      "difficulty": 1
+    },
+    {
+      "id": "food-toaster",
+      "text": "TOASTER",
+      "decoy": "KETTLE",
+      "difficulty": 1
+    },
+    {
+      "id": "food-hot-sauce",
+      "text": "HOT SAUCE",
+      "decoy": "MUSTARD",
+      "difficulty": 2
+    },
+    {
+      "id": "food-leftovers",
+      "text": "LEFTOVERS",
+      "decoy": "PACKED LUNCH",
+      "difficulty": 2
+    },
+    {
+      "id": "food-ice-cream",
+      "text": "ICE CREAM",
+      "decoy": "YOGHURT",
+      "difficulty": 1
+    },
+    {
+      "id": "food-breakfast",
+      "text": "BREAKFAST",
+      "decoy": "MIDNIGHT SNACK",
+      "difficulty": 2
+    },
+    {
+      "id": "food-noodles",
+      "text": "NOODLES",
+      "decoy": "SPAGHETTI",
+      "difficulty": 1
+    },
+    {
+      "id": "food-picnic",
+      "text": "PICNIC",
+      "decoy": "BARBECUE",
+      "difficulty": 1
+    },
+    {
+      "id": "food-cheese",
+      "text": "CHEESE",
+      "decoy": "BUTTER",
+      "difficulty": 1
+    },
+    {
+      "id": "food-soup",
+      "text": "SOUP",
+      "decoy": "STEW",
+      "difficulty": 2
+    },
+    {
+      "id": "food-birthday-cake",
+      "text": "BIRTHDAY CAKE",
+      "decoy": "CHEESECAKE",
+      "difficulty": 1
+    },
+    {
+      "id": "food-chopsticks",
+      "text": "CHOPSTICKS",
+      "decoy": "CUTLERY",
+      "difficulty": 1
+    },
+    {
+      "id": "food-microwave",
+      "text": "MICROWAVE",
+      "decoy": "OVEN",
+      "difficulty": 1
+    },
+    {
+      "id": "food-street-food",
+      "text": "STREET FOOD",
+      "decoy": "FINE DINING",
+      "difficulty": 2
+    },
+    {
+      "id": "food-burnt-toast",
+      "text": "BURNT TOAST",
+      "decoy": "COLD COFFEE",
+      "difficulty": 3
+    },
+    {
+      "id": "food-lunchbox",
+      "text": "LUNCHBOX",
+      "decoy": "BREAD BIN",
+      "difficulty": 1
+    },
+    {
+      "id": "food-sandwich",
+      "text": "SANDWICH",
+      "decoy": "WRAP",
+      "difficulty": 1
+    },
+    {
+      "id": "food-cereal",
+      "text": "CEREAL",
+      "decoy": "PORRIDGE",
+      "difficulty": 1
+    },
+    {
+      "id": "food-frying-pan",
+      "text": "FRYING PAN",
+      "decoy": "SAUCEPAN",
+      "difficulty": 2
+    },
+    {
+      "id": "food-recipe",
+      "text": "RECIPE",
+      "decoy": "INSTRUCTIONS",
+      "difficulty": 2
+    },
+    {
+      "id": "food-spicy",
+      "text": "SPICY",
+      "decoy": "SOUR",
+      "difficulty": 2
+    },
+    {
+      "id": "food-dessert",
+      "text": "DESSERT",
+      "decoy": "STARTER",
+      "difficulty": 1
+    },
+    {
+      "id": "food-chocolate",
+      "text": "CHOCOLATE",
+      "decoy": "CARAMEL",
+      "difficulty": 1
+    },
+    {
+      "id": "food-fruit-bowl",
+      "text": "FRUIT BOWL",
+      "decoy": "VEG RACK",
+      "difficulty": 1
+    },
+    {
+      "id": "food-freezer",
+      "text": "FREEZER",
+      "decoy": "PANTRY",
+      "difficulty": 1
+    },
+    {
+      "id": "food-garlic",
+      "text": "GARLIC",
+      "decoy": "GINGER",
+      "difficulty": 2
+    },
+    {
+      "id": "food-lemon",
+      "text": "LEMON",
+      "decoy": "LIME",
+      "difficulty": 2
+    },
+    {
+      "id": "food-honey",
+      "text": "HONEY",
+      "decoy": "SYRUP",
+      "difficulty": 2
+    },
+    {
+      "id": "food-crisps",
+      "text": "CRISPS",
+      "decoy": "POPCORN",
+      "difficulty": 1
+    },
+    {
+      "id": "food-soft-drink",
+      "text": "SOFT DRINK",
+      "decoy": "MILKSHAKE",
+      "difficulty": 1
+    },
+    {
+      "id": "food-coffee-shop",
+      "text": "COFFEE SHOP",
+      "decoy": "TEA ROOM",
+      "difficulty": 2
+    },
+    {
+      "id": "food-bakery",
+      "text": "BAKERY",
+      "decoy": "BUTCHER",
+      "difficulty": 1
+    },
+    {
+      "id": "food-menu",
+      "text": "MENU",
+      "decoy": "PRICE LIST",
+      "difficulty": 2
+    },
+    {
+      "id": "food-tip",
+      "text": "TIP",
+      "decoy": "SERVICE CHARGE",
+      "difficulty": 3
+    },
+    {
+      "id": "food-bill",
+      "text": "BILL",
+      "decoy": "RECEIPT",
+      "difficulty": 1
+    },
+    {
+      "id": "food-kitchen",
+      "text": "KITCHEN",
+      "decoy": "LABORATORY",
+      "difficulty": 2
+    },
+    {
+      "id": "food-left-on",
+      "text": "LEFT ON",
+      "decoy": "BOILED OVER",
+      "difficulty": 3
+    },
+    {
+      "id": "food-shopping-list",
+      "text": "SHOPPING LIST",
+      "decoy": "RECEIPT",
+      "difficulty": 2
+    },
+    {
+      "id": "food-trifle",
+      "text": "TRIFLE",
+      "decoy": "SUNDAE",
+      "difficulty": 2
+    },
+    {
+      "id": "food-roast-dinner",
+      "text": "ROAST DINNER",
+      "decoy": "FRY-UP",
+      "difficulty": 2
+    },
+    {
+      "id": "food-gravy",
+      "text": "GRAVY",
+      "decoy": "CUSTARD",
+      "difficulty": 2
+    },
+    {
+      "id": "food-salt",
+      "text": "SALT",
+      "decoy": "PEPPER",
+      "difficulty": 2
+    },
+    {
+      "id": "food-olive-oil",
+      "text": "OLIVE OIL",
+      "decoy": "VINEGAR",
+      "difficulty": 2
+    },
+    {
+      "id": "food-pasta-bake",
+      "text": "PASTA BAKE",
+      "decoy": "CASSEROLE",
+      "difficulty": 2
+    },
+    {
+      "id": "food-takeaway",
+      "text": "TAKEAWAY",
+      "decoy": "DELIVERY",
+      "difficulty": 2
+    },
+    {
+      "id": "food-dough",
+      "text": "DOUGH",
+      "decoy": "BATTER",
+      "difficulty": 2
+    },
+    {
+      "id": "food-fish-and-chips",
+      "text": "FISH AND CHIPS",
+      "decoy": "PIE AND MASH",
+      "difficulty": 1
+    },
+    {
+      "id": "food-curry",
+      "text": "CURRY",
+      "decoy": "CHILLI",
+      "difficulty": 2
+    },
+    {
+      "id": "food-rice",
+      "text": "RICE",
+      "decoy": "COUSCOUS",
+      "difficulty": 2
+    },
+    {
+      "id": "food-burger",
+      "text": "BURGER",
+      "decoy": "HOT DOG",
+      "difficulty": 1
+    },
+    {
+      "id": "food-salad",
+      "text": "SALAD",
+      "decoy": "COLESLAW",
+      "difficulty": 1
+    },
+    {
+      "id": "food-smoothie",
+      "text": "SMOOTHIE",
+      "decoy": "SLUSHIE",
+      "difficulty": 2
+    },
+    {
+      "id": "food-jam",
+      "text": "JAM",
+      "decoy": "MARMALADE",
+      "difficulty": 2
+    },
+    {
+      "id": "food-peanut-butter",
+      "text": "PEANUT BUTTER",
+      "decoy": "CREAM CHEESE",
+      "difficulty": 1
+    },
+    {
+      "id": "food-croissant",
+      "text": "CROISSANT",
+      "decoy": "BAGEL",
+      "difficulty": 1
+    },
+    {
+      "id": "food-pancake-day",
+      "text": "PANCAKE DAY",
+      "decoy": "SHROVE",
+      "difficulty": 3
+    },
+    {
+      "id": "food-food-truck",
+      "text": "FOOD TRUCK",
+      "decoy": "ICE CREAM VAN",
+      "difficulty": 1
+    },
+    {
+      "id": "food-buffet-line",
+      "text": "BUFFET LINE",
+      "decoy": "SERVING HATCH",
+      "difficulty": 2
+    },
+    {
+      "id": "food-leftover-rice",
+      "text": "LEFTOVER RICE",
+      "decoy": "STALE BREAD",
+      "difficulty": 3
+    },
+    {
+      "id": "food-dinner-party",
+      "text": "DINNER PARTY",
+      "decoy": "FAMILY MEAL",
+      "difficulty": 2
+    },
+    {
+      "id": "food-tablecloth",
+      "text": "TABLECLOTH",
+      "decoy": "PLACEMAT",
+      "difficulty": 2
+    },
+    {
+      "id": "food-napkin",
+      "text": "NAPKIN",
+      "decoy": "TEA TOWEL",
+      "difficulty": 2
+    },
+    {
+      "id": "food-corkscrew",
+      "text": "CORKSCREW",
+      "decoy": "TIN OPENER",
+      "difficulty": 2
+    },
+    {
+      "id": "food-blender",
+      "text": "BLENDER",
+      "decoy": "GRINDER",
+      "difficulty": 2
+    },
+    {
+      "id": "food-scales",
+      "text": "SCALES",
+      "decoy": "MEASURING JUG",
+      "difficulty": 2
+    },
+    {
+      "id": "food-sour-milk",
+      "text": "SOUR MILK",
+      "decoy": "FLAT LEMONADE",
+      "difficulty": 3
+    },
+    {
+      "id": "food-food-coma",
+      "text": "FOOD COMA",
+      "decoy": "SUGAR RUSH",
+      "difficulty": 2
+    },
+    {
+      "id": "food-sea-salt",
+      "text": "SEA SALT",
+      "decoy": "BLACK PEPPER",
+      "difficulty": 3
+    },
+    {
+      "id": "food-sticky-toffee",
+      "text": "STICKY TOFFEE",
+      "decoy": "BREAD PUDDING",
+      "difficulty": 2
+    },
+    {
+      "id": "food-cheeseboard",
+      "text": "CHEESEBOARD",
+      "decoy": "FRUIT PLATTER",
+      "difficulty": 2
+    },
+    {
+      "id": "food-leftover-curry",
+      "text": "LEFTOVER CURRY",
+      "decoy": "YESTERDAY PIZZA",
+      "difficulty": 3
+    },
+    {
+      "id": "food-chewing-gum",
+      "text": "CHEWING GUM",
+      "decoy": "MINT",
+      "difficulty": 1
+    },
+    {
+      "id": "food-boiling-water",
+      "text": "BOILING WATER",
+      "decoy": "MELTED ICE",
+      "difficulty": 2
+    },
+    {
+      "id": "food-sunday-lunch",
+      "text": "SUNDAY LUNCH",
+      "decoy": "PACKED SUPPER",
+      "difficulty": 2
+    },
+    {
+      "id": "food-food-fight",
+      "text": "FOOD FIGHT",
+      "decoy": "WATER BALLOON",
+      "difficulty": 2
+    },
+    {
+      "id": "food-chip-shop",
+      "text": "CHIP SHOP",
+      "decoy": "KEBAB VAN",
+      "difficulty": 2
+    },
+    {
+      "id": "food-seasoning",
+      "text": "SEASONING",
+      "decoy": "MARINADE",
+      "difficulty": 3
+    },
+    {
+      "id": "food-kitchen-timer",
+      "text": "KITCHEN TIMER",
+      "decoy": "EGG CUP",
+      "difficulty": 2
+    },
+    {
+      "id": "food-soup-spoon",
+      "text": "SOUP SPOON",
+      "decoy": "LADLE",
+      "difficulty": 2
+    },
+    {
+      "id": "food-doggy-bag",
+      "text": "DOGGY BAG",
+      "decoy": "FOIL WRAP",
+      "difficulty": 2
+    }
+  ]
+}

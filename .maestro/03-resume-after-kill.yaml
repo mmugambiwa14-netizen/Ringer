@@ -1,0 +1,18 @@
+# A round in flight must survive the app being killed. Party games get
+# interrupted constantly and losing the round is the worst possible outcome.
+appId: com.ringer.party
+---
+- launchApp:
+    clearState: true
+- tapOn: 'PLAY'
+- tapOn: 'NEXT — PICK PACKS'
+- tapOn: 'NEXT — RULES'
+- tapOn: 'DEAL THE ROUND'
+- extendedWaitUntil:
+    visible: 'PASS THE PHONE TO'
+    timeout: 5000
+- stopApp
+- launchApp
+- assertVisible: 'STILL'
+- tapOn: 'CARRY ON'
+- assertVisible: 'PASS THE PHONE TO'

@@ -1,0 +1,482 @@
+{
+  "id": "party",
+  "name": "PARTY",
+  "emoji": "🎉",
+  "isFree": true,
+  "words": [
+    {
+      "id": "party-karaoke",
+      "text": "KARAOKE",
+      "decoy": "STAND-UP",
+      "difficulty": 1
+    },
+    {
+      "id": "party-hangover",
+      "text": "HANGOVER",
+      "decoy": "JET LAG",
+      "difficulty": 2
+    },
+    {
+      "id": "party-birthday",
+      "text": "BIRTHDAY",
+      "decoy": "ANNIVERSARY",
+      "difficulty": 1
+    },
+    {
+      "id": "party-dance-floor",
+      "text": "DANCE FLOOR",
+      "decoy": "FRONT ROW",
+      "difficulty": 1
+    },
+    {
+      "id": "party-group-chat",
+      "text": "GROUP CHAT",
+      "decoy": "NOTICE BOARD",
+      "difficulty": 2
+    },
+    {
+      "id": "party-last-bus",
+      "text": "LAST BUS",
+      "decoy": "FIRST TRAIN",
+      "difficulty": 2
+    },
+    {
+      "id": "party-selfie",
+      "text": "SELFIE",
+      "decoy": "PORTRAIT",
+      "difficulty": 1
+    },
+    {
+      "id": "party-sleepover",
+      "text": "SLEEPOVER",
+      "decoy": "CAMPING TRIP",
+      "difficulty": 2
+    },
+    {
+      "id": "party-wedding",
+      "text": "WEDDING",
+      "decoy": "FUNERAL",
+      "difficulty": 1
+    },
+    {
+      "id": "party-fancy-dress",
+      "text": "FANCY DRESS",
+      "decoy": "SCHOOL UNIFORM",
+      "difficulty": 2
+    },
+    {
+      "id": "party-queue",
+      "text": "QUEUE",
+      "decoy": "CROWD",
+      "difficulty": 2
+    },
+    {
+      "id": "party-board-game",
+      "text": "BOARD GAME",
+      "decoy": "CARD TRICK",
+      "difficulty": 1
+    },
+    {
+      "id": "party-fireworks",
+      "text": "FIREWORKS",
+      "decoy": "BONFIRE",
+      "difficulty": 1
+    },
+    {
+      "id": "party-new-year",
+      "text": "NEW YEAR",
+      "decoy": "HALLOWEEN",
+      "difficulty": 1
+    },
+    {
+      "id": "party-balloon",
+      "text": "BALLOON",
+      "decoy": "KITE",
+      "difficulty": 1
+    },
+    {
+      "id": "party-confetti",
+      "text": "CONFETTI",
+      "decoy": "GLITTER",
+      "difficulty": 2
+    },
+    {
+      "id": "party-playlist",
+      "text": "PLAYLIST",
+      "decoy": "MIXTAPE",
+      "difficulty": 2
+    },
+    {
+      "id": "party-night-bus",
+      "text": "NIGHT BUS",
+      "decoy": "TAXI RANK",
+      "difficulty": 2
+    },
+    {
+      "id": "party-name-tag",
+      "text": "NAME TAG",
+      "decoy": "WRISTBAND",
+      "difficulty": 2
+    },
+    {
+      "id": "party-photo-booth",
+      "text": "PHOTO BOOTH",
+      "decoy": "VENDING MACHINE",
+      "difficulty": 1
+    },
+    {
+      "id": "party-speech",
+      "text": "SPEECH",
+      "decoy": "TOAST",
+      "difficulty": 3
+    },
+    {
+      "id": "party-gatecrasher",
+      "text": "GATECRASHER",
+      "decoy": "PLUS ONE",
+      "difficulty": 2
+    },
+    {
+      "id": "party-disco-ball",
+      "text": "DISCO BALL",
+      "decoy": "SPOTLIGHT",
+      "difficulty": 1
+    },
+    {
+      "id": "party-house-party",
+      "text": "HOUSE PARTY",
+      "decoy": "WORK DO",
+      "difficulty": 2
+    },
+    {
+      "id": "party-pinata",
+      "text": "PINATA",
+      "decoy": "LUCKY DIP",
+      "difficulty": 2
+    },
+    {
+      "id": "party-big-screen",
+      "text": "BIG SCREEN",
+      "decoy": "PROJECTOR",
+      "difficulty": 2
+    },
+    {
+      "id": "party-candles",
+      "text": "CANDLES",
+      "decoy": "FAIRY LIGHTS",
+      "difficulty": 1
+    },
+    {
+      "id": "party-guest-list",
+      "text": "GUEST LIST",
+      "decoy": "SHORTLIST",
+      "difficulty": 2
+    },
+    {
+      "id": "party-secret-santa",
+      "text": "SECRET SANTA",
+      "decoy": "RAFFLE",
+      "difficulty": 2
+    },
+    {
+      "id": "party-leaving-do",
+      "text": "LEAVING DO",
+      "decoy": "HOUSEWARMING",
+      "difficulty": 2
+    },
+    {
+      "id": "party-dare",
+      "text": "DARE",
+      "decoy": "CHALLENGE",
+      "difficulty": 3
+    },
+    {
+      "id": "party-dress-code",
+      "text": "DRESS CODE",
+      "decoy": "SEATING PLAN",
+      "difficulty": 2
+    },
+    {
+      "id": "party-afterparty",
+      "text": "AFTERPARTY",
+      "decoy": "WARM-UP",
+      "difficulty": 2
+    },
+    {
+      "id": "party-catering",
+      "text": "CATERING",
+      "decoy": "TAKEAWAY",
+      "difficulty": 2
+    },
+    {
+      "id": "party-dance-off",
+      "text": "DANCE-OFF",
+      "decoy": "TUG OF WAR",
+      "difficulty": 2
+    },
+    {
+      "id": "party-party-trick",
+      "text": "PARTY TRICK",
+      "decoy": "MAGIC ACT",
+      "difficulty": 2
+    },
+    {
+      "id": "party-vip-area",
+      "text": "VIP AREA",
+      "decoy": "BACKSTAGE",
+      "difficulty": 2
+    },
+    {
+      "id": "party-glow-stick",
+      "text": "GLOW STICK",
+      "decoy": "SPARKLER",
+      "difficulty": 1
+    },
+    {
+      "id": "party-group-photo",
+      "text": "GROUP PHOTO",
+      "decoy": "TEAM PORTRAIT",
+      "difficulty": 1
+    },
+    {
+      "id": "party-late-arrival",
+      "text": "LATE ARRIVAL",
+      "decoy": "EARLY EXIT",
+      "difficulty": 3
+    },
+    {
+      "id": "party-buffet",
+      "text": "BUFFET",
+      "decoy": "PICNIC",
+      "difficulty": 1
+    },
+    {
+      "id": "party-noise-complaint",
+      "text": "NOISE COMPLAINT",
+      "decoy": "PARKING TICKET",
+      "difficulty": 2
+    },
+    {
+      "id": "party-best-man",
+      "text": "BEST MAN",
+      "decoy": "RINGBEARER",
+      "difficulty": 2
+    },
+    {
+      "id": "party-first-dance",
+      "text": "FIRST DANCE",
+      "decoy": "LAST ORDERS",
+      "difficulty": 2
+    },
+    {
+      "id": "party-hen-do",
+      "text": "HEN DO",
+      "decoy": "STAG DO",
+      "difficulty": 1
+    },
+    {
+      "id": "party-baby-shower",
+      "text": "BABY SHOWER",
+      "decoy": "RETIREMENT",
+      "difficulty": 2
+    },
+    {
+      "id": "party-ballroom",
+      "text": "BALLROOM",
+      "decoy": "FUNCTION ROOM",
+      "difficulty": 2
+    },
+    {
+      "id": "party-scavenger-hunt",
+      "text": "SCAVENGER HUNT",
+      "decoy": "TREASURE MAP",
+      "difficulty": 2
+    },
+    {
+      "id": "party-pub-quiz",
+      "text": "PUB QUIZ",
+      "decoy": "SPELLING BEE",
+      "difficulty": 1
+    },
+    {
+      "id": "party-karaoke-booth",
+      "text": "KARAOKE BOOTH",
+      "decoy": "RECORDING STUDIO",
+      "difficulty": 2
+    },
+    {
+      "id": "party-street-party",
+      "text": "STREET PARTY",
+      "decoy": "CARNIVAL",
+      "difficulty": 1
+    },
+    {
+      "id": "party-festival",
+      "text": "FESTIVAL",
+      "decoy": "MARATHON",
+      "difficulty": 1
+    },
+    {
+      "id": "party-wrist-stamp",
+      "text": "WRIST STAMP",
+      "decoy": "TICKET STUB",
+      "difficulty": 2
+    },
+    {
+      "id": "party-coat-check",
+      "text": "COAT CHECK",
+      "decoy": "LOST PROPERTY",
+      "difficulty": 2
+    },
+    {
+      "id": "party-dj-booth",
+      "text": "DJ BOOTH",
+      "decoy": "PULPIT",
+      "difficulty": 2
+    },
+    {
+      "id": "party-speakers",
+      "text": "SPEAKERS",
+      "decoy": "MEGAPHONE",
+      "difficulty": 2
+    },
+    {
+      "id": "party-encore",
+      "text": "ENCORE",
+      "decoy": "CURTAIN CALL",
+      "difficulty": 3
+    },
+    {
+      "id": "party-crowd-surf",
+      "text": "CROWD SURF",
+      "decoy": "CONGA LINE",
+      "difficulty": 2
+    },
+    {
+      "id": "party-grand-entrance",
+      "text": "GRAND ENTRANCE",
+      "decoy": "QUIET EXIT",
+      "difficulty": 3
+    },
+    {
+      "id": "party-birthday-card",
+      "text": "BIRTHDAY CARD",
+      "decoy": "POSTCARD",
+      "difficulty": 1
+    },
+    {
+      "id": "party-party-bag",
+      "text": "PARTY BAG",
+      "decoy": "LUNCHBOX",
+      "difficulty": 1
+    },
+    {
+      "id": "party-countdown",
+      "text": "COUNTDOWN",
+      "decoy": "KICK-OFF",
+      "difficulty": 2
+    },
+    {
+      "id": "party-midnight",
+      "text": "MIDNIGHT",
+      "decoy": "SUNRISE",
+      "difficulty": 1
+    },
+    {
+      "id": "party-leftover-cake",
+      "text": "LEFTOVER CAKE",
+      "decoy": "COLD PIZZA",
+      "difficulty": 2
+    },
+    {
+      "id": "party-group-hug",
+      "text": "GROUP HUG",
+      "decoy": "HANDSHAKE",
+      "difficulty": 2
+    },
+    {
+      "id": "party-inside-joke",
+      "text": "INSIDE JOKE",
+      "decoy": "CATCHPHRASE",
+      "difficulty": 3
+    },
+    {
+      "id": "party-bad-dancer",
+      "text": "BAD DANCER",
+      "decoy": "SORE LOSER",
+      "difficulty": 3
+    },
+    {
+      "id": "party-spilled-drink",
+      "text": "SPILLED DRINK",
+      "decoy": "BROKEN GLASS",
+      "difficulty": 2
+    },
+    {
+      "id": "party-loud-music",
+      "text": "LOUD MUSIC",
+      "decoy": "THIN WALLS",
+      "difficulty": 2
+    },
+    {
+      "id": "party-wrong-house",
+      "text": "WRONG HOUSE",
+      "decoy": "EMPTY FLAT",
+      "difficulty": 3
+    },
+    {
+      "id": "party-foam-party",
+      "text": "FOAM PARTY",
+      "decoy": "MUD RUN",
+      "difficulty": 2
+    },
+    {
+      "id": "party-face-paint",
+      "text": "FACE PAINT",
+      "decoy": "MASK",
+      "difficulty": 2
+    },
+    {
+      "id": "party-live-band",
+      "text": "LIVE BAND",
+      "decoy": "STREET ACT",
+      "difficulty": 1
+    },
+    {
+      "id": "party-table-plan",
+      "text": "TABLE PLAN",
+      "decoy": "MENU CARD",
+      "difficulty": 3
+    },
+    {
+      "id": "party-cheers",
+      "text": "CHEERS",
+      "decoy": "SALUTE",
+      "difficulty": 2
+    },
+    {
+      "id": "party-shots",
+      "text": "SHOTS",
+      "decoy": "ROUNDS",
+      "difficulty": 2
+    },
+    {
+      "id": "party-sober-driver",
+      "text": "SOBER DRIVER",
+      "decoy": "NIGHT PORTER",
+      "difficulty": 2
+    },
+    {
+      "id": "party-lost-keys",
+      "text": "LOST KEYS",
+      "decoy": "FLAT BATTERY",
+      "difficulty": 2
+    },
+    {
+      "id": "party-walking-home",
+      "text": "WALKING HOME",
+      "decoy": "CATCHING UP",
+      "difficulty": 3
+    }
+  ]
+}

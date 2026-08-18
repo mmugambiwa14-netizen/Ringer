@@ -1,0 +1,37 @@
+name: verify
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      # These run against a bare checkout: the engine tests, the content
+      # validator and the static checks all work with nothing installed.
+      - name: Validate word packs
+        run: npm run content:check
+
+      - name: Static checks (imports, engine boundary, hooks, JSX)
+        run: npm run check
+
+      - name: Engine and content tests
+        run: npm test
+
+      # Everything below needs the dependency tree.
+      - name: Install
+        run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Lint
+        run: npm run lint

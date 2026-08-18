@@ -1,0 +1,32 @@
+# Crew catch the ringer and the guess is wrong.
+# Run with: maestro test .maestro/01-crew-win.yaml
+appId: com.ringer.party
+---
+- launchApp:
+    clearState: true
+- tapOn: 'PLAY'
+- tapOn: 'NEXT — PICK PACKS'
+- tapOn: 'NEXT — RULES'
+- tapOn: 'DEAL THE ROUND'
+- extendedWaitUntil:
+    visible: 'PASS THE PHONE TO'
+    timeout: 5000
+
+# Four players by default: hand off, slide the card, move on.
+- repeat:
+    times: 4
+    commands:
+      - tapOn:
+          text: "I'M .* — SHOW ME"
+      - swipe:
+          from: { x: '50%', y: '65%' }
+          to: { x: '50%', y: '20%' }
+      - tapOn: 'GOT IT — NEXT'
+
+- tapOn: 'START CLUES'
+- tapOn: 'SKIP TO DISCUSSION'
+- tapOn: 'GO TO VOTE'
+- tapOn:
+    point: '25%,55%'
+- tapOn: 'REVEAL'
+- assertVisible: 'VOTED OUT'

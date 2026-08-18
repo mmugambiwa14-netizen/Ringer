@@ -1,0 +1,58 @@
+{
+  "expo": {
+    "name": "Ringer",
+    "slug": "ringer",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "scheme": "ringer",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "backgroundColor": "#F2EBDD",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#FF3D9A"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.ringer.party",
+      "infoPlist": {
+        "UIViewControllerBasedStatusBarAppearance": false
+      },
+      "buildNumber": "1",
+      "requireFullScreen": false,
+      "config": {
+        "usesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "package": "com.ringer.party",
+      "edgeToEdgeEnabled": true,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#FF3D9A"
+      },
+      "versionCode": 1,
+      "permissions": [],
+      "blockedPermissions": [
+        "android.permission.RECORD_AUDIO"
+      ]
+    },
+    "plugins": [
+      "expo-router",
+      "expo-font"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "icon": "./assets/icon.png",
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "assetBundlePatterns": [
+      "assets/**/*"
+    ],
+    "primaryColor": "#FF3D9A"
+  }
+}

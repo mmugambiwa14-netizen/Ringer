@@ -1,0 +1,494 @@
+{
+  "id": "tech",
+  "name": "TECH",
+  "emoji": "🛰️",
+  "isFree": false,
+  "words": [
+    {
+      "id": "tech-password",
+      "text": "PASSWORD",
+      "decoy": "USERNAME",
+      "difficulty": 1
+    },
+    {
+      "id": "tech-bluetooth",
+      "text": "BLUETOOTH",
+      "decoy": "WIFI",
+      "difficulty": 1
+    },
+    {
+      "id": "tech-spam",
+      "text": "SPAM",
+      "decoy": "JUNK MAIL",
+      "difficulty": 2
+    },
+    {
+      "id": "tech-battery",
+      "text": "BATTERY",
+      "decoy": "CHARGER",
+      "difficulty": 1
+    },
+    {
+      "id": "tech-algorithm",
+      "text": "ALGORITHM",
+      "decoy": "FORMULA",
+      "difficulty": 3
+    },
+    {
+      "id": "tech-firewall",
+      "text": "FIREWALL",
+      "decoy": "PADLOCK",
+      "difficulty": 2
+    },
+    {
+      "id": "tech-cache",
+      "text": "CACHE",
+      "decoy": "BACKUP",
+      "difficulty": 3
+    },
+    {
+      "id": "tech-drone",
+      "text": "DRONE",
+      "decoy": "HELICOPTER",
+      "difficulty": 1
+    },
+    {
+      "id": "tech-screenshot",
+      "text": "SCREENSHOT",
+      "decoy": "PHOTOCOPY",
+      "difficulty": 2
+    },
+    {
+      "id": "tech-notification",
+      "text": "NOTIFICATION",
+      "decoy": "DOORBELL",
+      "difficulty": 2
+    },
+    {
+      "id": "tech-group-call",
+      "text": "GROUP CALL",
+      "decoy": "CONFERENCE",
+      "difficulty": 2
+    },
+    {
+      "id": "tech-mute-button",
+      "text": "MUTE BUTTON",
+      "decoy": "VOLUME KNOB",
+      "difficulty": 2
+    },
+    {
+      "id": "tech-loading-bar",
+      "text": "LOADING BAR",
+      "decoy": "QUEUE TICKET",
+      "difficulty": 2
+    },
+    {
+      "id": "tech-search-bar",
+      "text": "SEARCH BAR",
+      "decoy": "INDEX",
+      "difficulty": 2
+    },
+    {
+      "id": "tech-bookmark",
+      "text": "BOOKMARK",
+      "decoy": "SHORTCUT",
+      "difficulty": 3
+    },
+    {
+      "id": "tech-download",
+      "text": "DOWNLOAD",
+      "decoy": "UPLOAD",
+      "difficulty": 2
+    },
+    {
+      "id": "tech-update",
+      "text": "UPDATE",
+      "decoy": "PATCH",
+      "difficulty": 3
+    },
+    {
+      "id": "tech-crash",
+      "text": "CRASH",
+      "decoy": "FREEZE",
+      "difficulty": 3
+    },
+    {
+      "id": "tech-reboot",
+      "text": "REBOOT",
+      "decoy": "REFRESH",
+      "difficulty": 3
+    },
+    {
+      "id": "tech-dark-mode",
+      "text": "DARK MODE",
+      "decoy": "NIGHT LIGHT",
+      "difficulty": 2
+    },
+    {
+      "id": "tech-touchscreen",
+      "text": "TOUCHSCREEN",
+      "decoy": "KEYPAD",
+      "difficulty": 2
+    },
+    {
+      "id": "tech-keyboard",
+      "text": "KEYBOARD",
+      "decoy": "TYPEWRITER",
+      "difficulty": 1
+    },
+    {
+      "id": "tech-mouse-mat",
+      "text": "MOUSE MAT",
+      "decoy": "COASTER",
+      "difficulty": 2
+    },
+    {
+      "id": "tech-webcam",
+      "text": "WEBCAM",
+      "decoy": "DOOR CAMERA",
+      "difficulty": 2
+    },
+    {
+      "id": "tech-headphones",
+      "text": "HEADPHONES",
+      "decoy": "EARMUFFS",
+      "difficulty": 1
+    },
+    {
+      "id": "tech-speaker",
+      "text": "SPEAKER",
+      "decoy": "MEGAPHONE",
+      "difficulty": 2
+    },
+    {
+      "id": "tech-charging-cable",
+      "text": "CHARGING CABLE",
+      "decoy": "EXTENSION LEAD",
+      "difficulty": 2
+    },
+    {
+      "id": "tech-power-bank",
+      "text": "POWER BANK",
+      "decoy": "SPARE BATTERY",
+      "difficulty": 3
+    },
+    {
+      "id": "tech-sim-card",
+      "text": "SIM CARD",
+      "decoy": "KEY FOB",
+      "difficulty": 3
+    },
+    {
+      "id": "tech-router",
+      "text": "ROUTER",
+      "decoy": "MODEM",
+      "difficulty": 3
+    },
+    {
+      "id": "tech-server",
+      "text": "SERVER",
+      "decoy": "WAREHOUSE",
+      "difficulty": 2
+    },
+    {
+      "id": "tech-cloud",
+      "text": "CLOUD",
+      "decoy": "LOCKER",
+      "difficulty": 2
+    },
+    {
+      "id": "tech-hard-drive",
+      "text": "HARD DRIVE",
+      "decoy": "FILING CABINET",
+      "difficulty": 2
+    },
+    {
+      "id": "tech-folder",
+      "text": "FOLDER",
+      "decoy": "ENVELOPE",
+      "difficulty": 2
+    },
+    {
+      "id": "tech-recycle-bin",
+      "text": "RECYCLE BIN",
+      "decoy": "SHREDDER",
+      "difficulty": 2
+    },
+    {
+      "id": "tech-inbox",
+      "text": "INBOX",
+      "decoy": "POSTBOX",
+      "difficulty": 2
+    },
+    {
+      "id": "tech-attachment",
+      "text": "ATTACHMENT",
+      "decoy": "PARCEL",
+      "difficulty": 2
+    },
+    {
+      "id": "tech-autocorrect",
+      "text": "AUTOCORRECT",
+      "decoy": "PROOFREADER",
+      "difficulty": 2
+    },
+    {
+      "id": "tech-voice-assistant",
+      "text": "VOICE ASSISTANT",
+      "decoy": "CALL CENTRE",
+      "difficulty": 2
+    },
+    {
+      "id": "tech-satellite",
+      "text": "SATELLITE",
+      "decoy": "WEATHER BALLOON",
+      "difficulty": 1
+    },
+    {
+      "id": "tech-gps",
+      "text": "GPS",
+      "decoy": "COMPASS",
+      "difficulty": 2
+    },
+    {
+      "id": "tech-barcode",
+      "text": "BARCODE",
+      "decoy": "FINGERPRINT",
+      "difficulty": 2
+    },
+    {
+      "id": "tech-qr-code",
+      "text": "QR CODE",
+      "decoy": "TICKET STUB",
+      "difficulty": 2
+    },
+    {
+      "id": "tech-chip",
+      "text": "CHIP",
+      "decoy": "CIRCUIT",
+      "difficulty": 3
+    },
+    {
+      "id": "tech-pixel",
+      "text": "PIXEL",
+      "decoy": "GRAIN",
+      "difficulty": 3
+    },
+    {
+      "id": "tech-resolution",
+      "text": "RESOLUTION",
+      "decoy": "SHARPNESS",
+      "difficulty": 3
+    },
+    {
+      "id": "tech-filter",
+      "text": "FILTER",
+      "decoy": "SIEVE",
+      "difficulty": 2
+    },
+    {
+      "id": "tech-emoji",
+      "text": "EMOJI",
+      "decoy": "HIEROGLYPH",
+      "difficulty": 2
+    },
+    {
+      "id": "tech-hashtag",
+      "text": "HASHTAG",
+      "decoy": "LABEL",
+      "difficulty": 2
+    },
+    {
+      "id": "tech-profile",
+      "text": "PROFILE",
+      "decoy": "BADGE",
+      "difficulty": 2
+    },
+    {
+      "id": "tech-feed",
+      "text": "FEED",
+      "decoy": "NEWSPAPER",
+      "difficulty": 2
+    },
+    {
+      "id": "tech-follower",
+      "text": "FOLLOWER",
+      "decoy": "SUBSCRIBER",
+      "difficulty": 3
+    },
+    {
+      "id": "tech-block",
+      "text": "BLOCK",
+      "decoy": "MUTE",
+      "difficulty": 3
+    },
+    {
+      "id": "tech-dm",
+      "text": "DM",
+      "decoy": "POSTCARD",
+      "difficulty": 2
+    },
+    {
+      "id": "tech-viral",
+      "text": "VIRAL",
+      "decoy": "EPIDEMIC",
+      "difficulty": 2
+    },
+    {
+      "id": "tech-troll",
+      "text": "TROLL",
+      "decoy": "HECKLER",
+      "difficulty": 2
+    },
+    {
+      "id": "tech-bot",
+      "text": "BOT",
+      "decoy": "PUPPET",
+      "difficulty": 2
+    },
+    {
+      "id": "tech-captcha",
+      "text": "CAPTCHA",
+      "decoy": "RIDDLE",
+      "difficulty": 2
+    },
+    {
+      "id": "tech-two-factor",
+      "text": "TWO-FACTOR",
+      "decoy": "DOUBLE LOCK",
+      "difficulty": 2
+    },
+    {
+      "id": "tech-incognito",
+      "text": "INCOGNITO",
+      "decoy": "DISGUISE",
+      "difficulty": 2
+    },
+    {
+      "id": "tech-cookie",
+      "text": "COOKIE",
+      "decoy": "BREADCRUMB",
+      "difficulty": 2
+    },
+    {
+      "id": "tech-pop-up",
+      "text": "POP-UP",
+      "decoy": "INTERRUPTION",
+      "difficulty": 2
+    },
+    {
+      "id": "tech-ad-blocker",
+      "text": "AD BLOCKER",
+      "decoy": "EARPLUGS",
+      "difficulty": 2
+    },
+    {
+      "id": "tech-broken-link",
+      "text": "BROKEN LINK",
+      "decoy": "DEAD END",
+      "difficulty": 2
+    },
+    {
+      "id": "tech-low-signal",
+      "text": "LOW SIGNAL",
+      "decoy": "FAINT ECHO",
+      "difficulty": 2
+    },
+    {
+      "id": "tech-airplane-mode",
+      "text": "AIRPLANE MODE",
+      "decoy": "DO NOT DISTURB",
+      "difficulty": 2
+    },
+    {
+      "id": "tech-smart-watch",
+      "text": "SMART WATCH",
+      "decoy": "PEDOMETER",
+      "difficulty": 2
+    },
+    {
+      "id": "tech-fitness-tracker",
+      "text": "FITNESS TRACKER",
+      "decoy": "STOPWATCH",
+      "difficulty": 2
+    },
+    {
+      "id": "tech-e-reader",
+      "text": "E-READER",
+      "decoy": "PAPERBACK",
+      "difficulty": 1
+    },
+    {
+      "id": "tech-printer",
+      "text": "PRINTER",
+      "decoy": "VENDING MACHINE",
+      "difficulty": 2
+    },
+    {
+      "id": "tech-scanner",
+      "text": "SCANNER",
+      "decoy": "CAMERA",
+      "difficulty": 3
+    },
+    {
+      "id": "tech-projector",
+      "text": "PROJECTOR",
+      "decoy": "TORCH",
+      "difficulty": 2
+    },
+    {
+      "id": "tech-remote-control",
+      "text": "REMOTE CONTROL",
+      "decoy": "LIGHT SWITCH",
+      "difficulty": 2
+    },
+    {
+      "id": "tech-games-console",
+      "text": "GAMES CONSOLE",
+      "decoy": "ARCADE MACHINE",
+      "difficulty": 1
+    },
+    {
+      "id": "tech-controller",
+      "text": "CONTROLLER",
+      "decoy": "STEERING WHEEL",
+      "difficulty": 2
+    },
+    {
+      "id": "tech-joystick",
+      "text": "JOYSTICK",
+      "decoy": "LEVER",
+      "difficulty": 3
+    },
+    {
+      "id": "tech-headset",
+      "text": "HEADSET",
+      "decoy": "HELMET",
+      "difficulty": 2
+    },
+    {
+      "id": "tech-virtual-reality",
+      "text": "VIRTUAL REALITY",
+      "decoy": "DAYDREAM",
+      "difficulty": 2
+    },
+    {
+      "id": "tech-self-driving",
+      "text": "SELF-DRIVING",
+      "decoy": "AUTOPILOT",
+      "difficulty": 3
+    },
+    {
+      "id": "tech-electric-car",
+      "text": "ELECTRIC CAR",
+      "decoy": "MILK FLOAT",
+      "difficulty": 2
+    },
+    {
+      "id": "tech-solar-panel",
+      "text": "SOLAR PANEL",
+      "decoy": "SUNDIAL",
+      "difficulty": 2
+    }
+  ]
+}

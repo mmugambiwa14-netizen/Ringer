@@ -1,0 +1,22 @@
+# The reveal must shut the moment the finger leaves the screen. This is the
+# single most important behaviour in the app — a word left on screen ruins
+# the round for the next person to pick the phone up.
+appId: com.ringer.party
+---
+- launchApp:
+    clearState: true
+- tapOn: 'PLAY'
+- tapOn: 'NEXT — PICK PACKS'
+- tapOn: 'NEXT — RULES'
+- tapOn: 'DEAL THE ROUND'
+- extendedWaitUntil:
+    visible: 'PASS THE PHONE TO'
+    timeout: 5000
+- tapOn:
+    text: "I'M .* — SHOW ME"
+- assertVisible: 'SLIDE UP'
+- swipe:
+    from: { x: '50%', y: '65%' }
+    to: { x: '50%', y: '20%' }
+# After the swipe ends the shutter snaps back, so the prompt returns.
+- assertVisible: 'SLIDE UP'
