@@ -71,12 +71,16 @@ export interface Word {
   difficulty?: 1 | 2 | 3;
 }
 
+/** Which game a pack feeds. Absent in older data means RINGER. */
+export type GameId = 'ringer' | 'charades' | 'whoami';
+
 export interface Pack {
   id: string;
   name: string;
   emoji: string;
   isFree: boolean;
   adult?: boolean;
+  game?: GameId;
   words: Word[];
 }
 

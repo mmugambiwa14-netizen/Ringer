@@ -3,6 +3,7 @@
   "name": "JOBS",
   "emoji": "🧰",
   "isFree": false,
+  "game": "ringer",
   "words": [
     {
       "id": "jobs-dentist",

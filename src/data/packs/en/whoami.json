@@ -1,0 +1,604 @@
+{
+  "id": "whoami",
+  "name": "WHO AM I",
+  "emoji": "❓",
+  "isFree": true,
+  "game": "whoami",
+  "words": [
+    {
+      "id": "whoami-doctor",
+      "text": "DOCTOR",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-nurse",
+      "text": "NURSE",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-teacher",
+      "text": "TEACHER",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-farmer",
+      "text": "FARMER",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-chef",
+      "text": "CHEF",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-pilot",
+      "text": "PILOT",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-taxi-driver",
+      "text": "TAXI DRIVER",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-bus-driver",
+      "text": "BUS DRIVER",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-barber",
+      "text": "BARBER",
+      "difficulty": 2
+    },
+    {
+      "id": "whoami-tailor",
+      "text": "TAILOR",
+      "difficulty": 2
+    },
+    {
+      "id": "whoami-fisherman",
+      "text": "FISHERMAN",
+      "difficulty": 2
+    },
+    {
+      "id": "whoami-builder",
+      "text": "BUILDER",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-plumber",
+      "text": "PLUMBER",
+      "difficulty": 2
+    },
+    {
+      "id": "whoami-electrician",
+      "text": "ELECTRICIAN",
+      "difficulty": 2
+    },
+    {
+      "id": "whoami-mechanic",
+      "text": "MECHANIC",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-judge",
+      "text": "JUDGE",
+      "difficulty": 2
+    },
+    {
+      "id": "whoami-lawyer",
+      "text": "LAWYER",
+      "difficulty": 2
+    },
+    {
+      "id": "whoami-soldier",
+      "text": "SOLDIER",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-police-officer",
+      "text": "POLICE OFFICER",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-firefighter",
+      "text": "FIREFIGHTER",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-waiter",
+      "text": "WAITER",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-cleaner",
+      "text": "CLEANER",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-architect",
+      "text": "ARCHITECT",
+      "difficulty": 2
+    },
+    {
+      "id": "whoami-dentist",
+      "text": "DENTIST",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-librarian",
+      "text": "LIBRARIAN",
+      "difficulty": 2
+    },
+    {
+      "id": "whoami-journalist",
+      "text": "JOURNALIST",
+      "difficulty": 2
+    },
+    {
+      "id": "whoami-photographer",
+      "text": "PHOTOGRAPHER",
+      "difficulty": 2
+    },
+    {
+      "id": "whoami-musician",
+      "text": "MUSICIAN",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-painter",
+      "text": "PAINTER",
+      "difficulty": 2
+    },
+    {
+      "id": "whoami-dancer",
+      "text": "DANCER",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-singer",
+      "text": "SINGER",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-actor",
+      "text": "ACTOR",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-comedian",
+      "text": "COMEDIAN",
+      "difficulty": 2
+    },
+    {
+      "id": "whoami-magician",
+      "text": "MAGICIAN",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-clown",
+      "text": "CLOWN",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-referee",
+      "text": "REFEREE",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-football-coach",
+      "text": "FOOTBALL COACH",
+      "difficulty": 2
+    },
+    {
+      "id": "whoami-goalkeeper",
+      "text": "GOALKEEPER",
+      "difficulty": 2
+    },
+    {
+      "id": "whoami-astronaut",
+      "text": "ASTRONAUT",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-scientist",
+      "text": "SCIENTIST",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-engineer",
+      "text": "ENGINEER",
+      "difficulty": 2
+    },
+    {
+      "id": "whoami-accountant",
+      "text": "ACCOUNTANT",
+      "difficulty": 3
+    },
+    {
+      "id": "whoami-shopkeeper",
+      "text": "SHOPKEEPER",
+      "difficulty": 2
+    },
+    {
+      "id": "whoami-butcher",
+      "text": "BUTCHER",
+      "difficulty": 2
+    },
+    {
+      "id": "whoami-baker",
+      "text": "BAKER",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-miner",
+      "text": "MINER",
+      "difficulty": 2
+    },
+    {
+      "id": "whoami-sailor",
+      "text": "SAILOR",
+      "difficulty": 2
+    },
+    {
+      "id": "whoami-gardener",
+      "text": "GARDENER",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-hairdresser",
+      "text": "HAIRDRESSER",
+      "difficulty": 2
+    },
+    {
+      "id": "whoami-pharmacist",
+      "text": "PHARMACIST",
+      "difficulty": 3
+    },
+    {
+      "id": "whoami-translator",
+      "text": "TRANSLATOR",
+      "difficulty": 3
+    },
+    {
+      "id": "whoami-beekeeper",
+      "text": "BEEKEEPER",
+      "difficulty": 3
+    },
+    {
+      "id": "whoami-shepherd",
+      "text": "SHEPHERD",
+      "difficulty": 2
+    },
+    {
+      "id": "whoami-lifeguard",
+      "text": "LIFEGUARD",
+      "difficulty": 2
+    },
+    {
+      "id": "whoami-postal-worker",
+      "text": "POSTAL WORKER",
+      "difficulty": 2
+    },
+    {
+      "id": "whoami-king",
+      "text": "KING",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-queen",
+      "text": "QUEEN",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-pirate",
+      "text": "PIRATE",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-knight",
+      "text": "KNIGHT",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-wizard",
+      "text": "WIZARD",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-vampire",
+      "text": "VAMPIRE",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-ghost",
+      "text": "GHOST",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-robot",
+      "text": "ROBOT",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-alien",
+      "text": "ALIEN",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-superhero",
+      "text": "SUPERHERO",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-detective",
+      "text": "DETECTIVE",
+      "difficulty": 2
+    },
+    {
+      "id": "whoami-spy",
+      "text": "SPY",
+      "difficulty": 2
+    },
+    {
+      "id": "whoami-thief",
+      "text": "THIEF",
+      "difficulty": 2
+    },
+    {
+      "id": "whoami-explorer",
+      "text": "EXPLORER",
+      "difficulty": 2
+    },
+    {
+      "id": "whoami-inventor",
+      "text": "INVENTOR",
+      "difficulty": 3
+    },
+    {
+      "id": "whoami-poet",
+      "text": "POET",
+      "difficulty": 3
+    },
+    {
+      "id": "whoami-monk",
+      "text": "MONK",
+      "difficulty": 2
+    },
+    {
+      "id": "whoami-fortune-teller",
+      "text": "FORTUNE TELLER",
+      "difficulty": 3
+    },
+    {
+      "id": "whoami-acrobat",
+      "text": "ACROBAT",
+      "difficulty": 2
+    },
+    {
+      "id": "whoami-tourist",
+      "text": "TOURIST",
+      "difficulty": 2
+    },
+    {
+      "id": "whoami-newlywed",
+      "text": "NEWLYWED",
+      "difficulty": 3
+    },
+    {
+      "id": "whoami-twin",
+      "text": "TWIN",
+      "difficulty": 3
+    },
+    {
+      "id": "whoami-baby",
+      "text": "BABY",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-teenager",
+      "text": "TEENAGER",
+      "difficulty": 2
+    },
+    {
+      "id": "whoami-grandmother",
+      "text": "GRANDMOTHER",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-neighbour",
+      "text": "NEIGHBOUR",
+      "difficulty": 2
+    },
+    {
+      "id": "whoami-passenger",
+      "text": "PASSENGER",
+      "difficulty": 2
+    },
+    {
+      "id": "whoami-patient",
+      "text": "PATIENT",
+      "difficulty": 2
+    },
+    {
+      "id": "whoami-student",
+      "text": "STUDENT",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-elephant",
+      "text": "ELEPHANT",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-penguin",
+      "text": "PENGUIN",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-dolphin",
+      "text": "DOLPHIN",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-octopus",
+      "text": "OCTOPUS",
+      "difficulty": 2
+    },
+    {
+      "id": "whoami-crocodile",
+      "text": "CROCODILE",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-giraffe",
+      "text": "GIRAFFE",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-kangaroo",
+      "text": "KANGAROO",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-camel",
+      "text": "CAMEL",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-eagle",
+      "text": "EAGLE",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-owl",
+      "text": "OWL",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-snake",
+      "text": "SNAKE",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-spider",
+      "text": "SPIDER",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-butterfly",
+      "text": "BUTTERFLY",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-bee",
+      "text": "BEE",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-shark",
+      "text": "SHARK",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-whale",
+      "text": "WHALE",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-tiger",
+      "text": "TIGER",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-monkey",
+      "text": "MONKEY",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-bear",
+      "text": "BEAR",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-wolf",
+      "text": "WOLF",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-fox",
+      "text": "FOX",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-rabbit",
+      "text": "RABBIT",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-horse",
+      "text": "HORSE",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-frog",
+      "text": "FROG",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-turtle",
+      "text": "TURTLE",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-bat",
+      "text": "BAT",
+      "difficulty": 2
+    },
+    {
+      "id": "whoami-parrot",
+      "text": "PARROT",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-peacock",
+      "text": "PEACOCK",
+      "difficulty": 2
+    },
+    {
+      "id": "whoami-zebra",
+      "text": "ZEBRA",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-panda",
+      "text": "PANDA",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-sloth",
+      "text": "SLOTH",
+      "difficulty": 2
+    },
+    {
+      "id": "whoami-hedgehog",
+      "text": "HEDGEHOG",
+      "difficulty": 2
+    },
+    {
+      "id": "whoami-squirrel",
+      "text": "SQUIRREL",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-donkey",
+      "text": "DONKEY",
+      "difficulty": 1
+    },
+    {
+      "id": "whoami-mosquito",
+      "text": "MOSQUITO",
+      "difficulty": 2
+    }
+  ]
+}

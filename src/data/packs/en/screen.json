@@ -3,6 +3,7 @@
   "name": "SCREEN",
   "emoji": "🎬",
   "isFree": false,
+  "game": "ringer",
   "words": [
     {
       "id": "screen-horror",

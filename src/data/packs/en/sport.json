@@ -3,6 +3,7 @@
   "name": "SPORT",
   "emoji": "🥊",
   "isFree": false,
+  "game": "ringer",
   "words": [
     {
       "id": "sport-penalty",

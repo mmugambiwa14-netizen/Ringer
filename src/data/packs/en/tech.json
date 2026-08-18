@@ -3,6 +3,7 @@
   "name": "TECH",
   "emoji": "🛰️",
   "isFree": false,
+  "game": "ringer",
   "words": [
     {
       "id": "tech-password",

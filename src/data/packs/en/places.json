@@ -3,6 +3,7 @@
   "name": "PLACES",
   "emoji": "🗺️",
   "isFree": false,
+  "game": "ringer",
   "words": [
     {
       "id": "places-airport",

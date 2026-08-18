@@ -3,6 +3,7 @@
   "name": "FOOD",
   "emoji": "🍕",
   "isFree": true,
+  "game": "ringer",
   "words": [
     {
       "id": "food-pizza",

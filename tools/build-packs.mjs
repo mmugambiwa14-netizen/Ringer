@@ -25,8 +25,16 @@ const checkOnly = process.argv.includes('--check');
 // The binding constraint is display width on a phone, not word count —
 // "WALK OF SHAME" is 13 characters and sets beautifully. Word count is only
 // capped to stop entries drifting into sentences, which clue terribly.
-const MAX_LEN = 16;
-const MAX_WORDS = 3;
+/**
+ * Display limits differ by game because the cards do. A ringer card carries the
+ * word plus a category pill, a hint pill and a line of copy; a charades card
+ * carries the phrase and nothing else, so it can afford a longer one.
+ */
+const LIMITS = {
+  ringer: { len: 16, words: 3 },
+  charades: { len: 20, words: 3 },
+  whoami: { len: 18, words: 3 },
+};
 const MIN_PER_PACK = 40;
 const ALLOWED = /^[A-Z0-9][A-Z0-9 '-]*$/;
 
@@ -58,14 +66,15 @@ function slug(text) {
     .replace(/^-|-$/g, '');
 }
 
-function checkText(packId, line, label, text) {
+function checkText(packId, line, label, text, game) {
+  const limit = LIMITS[game];
   const where = `${packId}:${line} ${label} "${text}"`;
   if (!ALLOWED.test(text))
     errors.push(`${where} — must be UPPERCASE letters, digits, spaces, ' or -`);
-  if (text.length > MAX_LEN)
-    errors.push(`${where} — ${text.length} chars, max ${MAX_LEN} (won't fit at display size)`);
-  if (text.trim().split(/\s+/).length > MAX_WORDS)
-    errors.push(`${where} — more than ${MAX_WORDS} words`);
+  if (text.length > limit.len)
+    errors.push(`${where} — ${text.length} chars, max ${limit.len} (won't fit at display size)`);
+  if (text.trim().split(/\s+/).length > limit.words)
+    errors.push(`${where} — more than ${limit.words} words`);
   if (text !== text.trim()) errors.push(`${where} — stray whitespace`);
 }
 
@@ -78,6 +87,14 @@ for (const meta of META) {
     raw = readFileSync(file, 'utf8');
   } catch {
     errors.push(`${meta.id} — missing content/en/${meta.id}.tsv`);
+    continue;
+  }
+
+  // Which game this pack feeds. Absent means RINGER, so the ten original packs
+  // need no change.
+  const game = meta.game ?? 'ringer';
+  if (!LIMITS[game]) {
+    errors.push(`${meta.id} — unknown game "${game}"`);
     continue;
   }
 
@@ -94,53 +111,63 @@ for (const meta of META) {
       .split('\t')
       .map((s) => s.trim())
       .filter((s) => s.length > 0);
-    if (parts.length < 2) {
-      errors.push(
-        `${meta.id}:${line} — expected "WORD<tab>DECOY<tab>difficulty", got "${trimmed}"`,
-      );
+
+    // Only RINGER needs a decoy pair — it is the whole mechanic there, and
+    // meaningless for a charade or an identity to guess.
+    const wantsDecoy = game === 'ringer';
+    const shape = wantsDecoy ? 'WORD<tab>DECOY<tab>difficulty' : 'WORD<tab>difficulty';
+    if (parts.length < (wantsDecoy ? 2 : 1)) {
+      errors.push(`${meta.id}:${line} — expected "${shape}", got "${trimmed}"`);
       return;
     }
-    const [text, decoy, diffRaw] = parts;
-    const difficulty = Number(diffRaw ?? 2);
+    const text = parts[0];
+    const decoy = wantsDecoy ? parts[1] : undefined;
+    const difficulty = Number((wantsDecoy ? parts[2] : parts[1]) ?? 2);
 
-    checkText(meta.id, line, 'word', text);
-    checkText(meta.id, line, 'decoy', decoy);
+    checkText(meta.id, line, 'word', text, game);
+    if (wantsDecoy) checkText(meta.id, line, 'decoy', decoy, game);
 
     if (!Number.isInteger(difficulty) || difficulty < 1 || difficulty > 3) {
       errors.push(`${meta.id}:${line} "${text}" — difficulty must be 1, 2 or 3`);
     }
-    if (text === decoy)
-      errors.push(`${meta.id}:${line} "${text}" — decoy is identical to the word`);
-    if (text.includes(decoy) || decoy.includes(text)) {
-      errors.push(`${meta.id}:${line} "${text}" / "${decoy}" — one contains the other`);
-    }
-    // A shared word is the real killer: "TRAIN DRIVER" / "TRAM DRIVER" means
-    // every clue about the shared half lands identically for both roles, so
-    // the ringer never gives themselves away.
-    // Stopwords don't carry meaning, so sharing one is harmless:
-    // "SPIN THE BOTTLE" / "PASS THE PARCEL" is a perfectly good pair.
-    const STOP = new Set(['THE', 'AND', 'FOR', 'OFF', 'OUT', 'ONE', 'TWO']);
-    const shared = text
-      .split(' ')
-      .filter((tok) => tok.length > 2 && !STOP.has(tok) && decoy.split(' ').includes(tok));
-    if (shared.length > 0) {
-      errors.push(`${meta.id}:${line} "${text}" / "${decoy}" — share the word "${shared[0]}"`);
-    }
-    // Spelling-similarity only matters once words are long enough to misread.
-    if (Math.min(text.length, decoy.length) >= 8 && levenshtein(text, decoy) <= 2) {
-      errors.push(
-        `${meta.id}:${line} "${text}" / "${decoy}" — near-identical spelling, easy to misread`,
-      );
+    if (wantsDecoy) {
+      if (text === decoy)
+        errors.push(`${meta.id}:${line} "${text}" — decoy is identical to the word`);
+      if (text.includes(decoy) || decoy.includes(text)) {
+        errors.push(`${meta.id}:${line} "${text}" / "${decoy}" — one contains the other`);
+      }
+      // A shared word is the real killer: "TRAIN DRIVER" / "TRAM DRIVER" means
+      // every clue about the shared half lands identically for both roles, so
+      // the ringer never gives themselves away.
+      // Stopwords don't carry meaning, so sharing one is harmless:
+      // "SPIN THE BOTTLE" / "PASS THE PARCEL" is a perfectly good pair.
+      const STOP = new Set(['THE', 'AND', 'FOR', 'OFF', 'OUT', 'ONE', 'TWO']);
+      const shared = text
+        .split(' ')
+        .filter((tok) => tok.length > 2 && !STOP.has(tok) && decoy.split(' ').includes(tok));
+      if (shared.length > 0) {
+        errors.push(`${meta.id}:${line} "${text}" / "${decoy}" — share the word "${shared[0]}"`);
+      }
+      // Spelling-similarity only matters once words are long enough to misread.
+      if (Math.min(text.length, decoy.length) >= 8 && levenshtein(text, decoy) <= 2) {
+        errors.push(
+          `${meta.id}:${line} "${text}" / "${decoy}" — near-identical spelling, easy to misread`,
+        );
+      }
     }
     if (textsInPack.has(text))
       errors.push(`${meta.id}:${line} "${text}" — duplicate inside the pack`);
     textsInPack.add(text);
 
-    const otherPack = seenText.get(text);
+    // Scoped per game. A word repeating inside RINGER could be dealt twice in
+    // one session, which matters; the same word being both a ringer word and a
+    // charade is fine and often desirable.
+    const key = `${game}:${text}`;
+    const otherPack = seenText.get(key);
     if (otherPack && otherPack !== meta.id) {
-      warnings.push(`"${text}" appears in both ${otherPack} and ${meta.id}`);
+      warnings.push(`"${text}" appears in both ${otherPack} and ${meta.id} (${game})`);
     }
-    seenText.set(text, meta.id);
+    seenText.set(key, meta.id);
 
     let id = `${meta.id}-${slug(text)}`;
     if (idsUsed.has(id)) {
@@ -148,14 +175,14 @@ for (const meta of META) {
       return;
     }
     idsUsed.add(id);
-    words.push({ id, text, decoy, difficulty });
+    words.push(wantsDecoy ? { id, text, decoy, difficulty } : { id, text, difficulty });
   });
 
   if (words.length < MIN_PER_PACK) {
     errors.push(`${meta.id} — only ${words.length} words, minimum ${MIN_PER_PACK}`);
   }
 
-  built.push({ ...meta, words });
+  built.push({ ...meta, game, words });
 }
 
 if (warnings.length) {

@@ -3,6 +3,7 @@
   "name": "PARTY",
   "emoji": "🎉",
   "isFree": true,
+  "game": "ringer",
   "words": [
     {
       "id": "party-karaoke",

@@ -7,6 +7,7 @@ import {
   TOTAL_WORDS,
   listablePacks,
   packById,
+  packsForGame,
   playablePacks,
   usableWordCount,
 } from '../packs';
@@ -19,16 +20,20 @@ import { candidateWords } from '../../engine/deal';
  * sees the TSV.
  */
 describe('word packs', () => {
+  // The RINGER packs. Charades and Who Am I have their own contract below —
+  // they carry no decoy pairs, so holding them to this one would be wrong.
+  const RINGER = packsForGame('ringer');
+
   it('ships ten packs with a healthy word count', () => {
-    expect(PACKS).toHaveLength(10);
+    expect(RINGER).toHaveLength(10);
     expect(TOTAL_WORDS).toBeGreaterThan(700);
-    for (const pack of PACKS) {
+    for (const pack of RINGER) {
       expect(pack.words.length).toBeGreaterThanOrEqual(40);
     }
   });
 
   it('gives every word a decoy, so Decoy mode never runs dry', () => {
-    for (const pack of PACKS) {
+    for (const pack of RINGER) {
       for (const word of pack.words) {
         expect(typeof word.decoy).toBe('string');
         expect(word.decoy !== word.text).toBe(true);
@@ -37,7 +42,7 @@ describe('word packs', () => {
   });
 
   it('keeps every word short enough to set at display size', () => {
-    for (const pack of PACKS) {
+    for (const pack of RINGER) {
       for (const word of pack.words) {
         expect(word.text.length).toBeLessThanOrEqual(16);
         expect((word.decoy ?? '').length).toBeLessThanOrEqual(16);
@@ -51,7 +56,7 @@ describe('word packs', () => {
   });
 
   it('never repeats a word across packs, so one session cannot deal it twice', () => {
-    const texts = PACKS.flatMap((p) => p.words.map((w) => w.text));
+    const texts = RINGER.flatMap((p) => p.words.map((w) => w.text));
     expect(new Set(texts).size).toBe(texts.length);
   });
 
@@ -64,9 +69,9 @@ describe('word packs', () => {
   });
 
   it('keeps the three free packs free and the adult pack marked', () => {
-    const free = PACKS.filter((p) => p.isFree).map((p) => p.id);
+    const free = RINGER.filter((p) => p.isFree).map((p) => p.id);
     expect(free).toEqual(['party', 'food', 'animals']);
-    expect(PACKS.filter((p) => p.adult).map((p) => p.id)).toEqual(['spicy']);
+    expect(RINGER.filter((p) => p.adult).map((p) => p.id)).toEqual(['spicy']);
   });
 
   it('hides the adult pack until it is unlocked', () => {
@@ -91,18 +96,18 @@ describe('word packs', () => {
     expect(adultOnly.every((p: Pack) => p.isFree)).toBe(true);
 
     // Both gates open: everything.
-    expect(playablePacks({ adultUnlocked: true, purchased: true })).toHaveLength(PACKS.length);
+    expect(playablePacks({ adultUnlocked: true, purchased: true })).toHaveLength(RINGER.length);
   });
 
   it('reports the same count in decoy mode, because every word is paired', () => {
-    for (const pack of PACKS) {
+    for (const pack of RINGER) {
       expect(usableWordCount(pack, 'decoy')).toBe(pack.words.length);
       expect(usableWordCount(pack, 'classic')).toBe(pack.words.length);
     }
   });
 
   it('the default pack selection actually resolves to playable words', () => {
-    const candidates = candidateWords(PACKS, DEFAULT_CONFIG, []);
+    const candidates = candidateWords(RINGER, DEFAULT_CONFIG, []);
     expect(candidates.length).toBeGreaterThan(200);
     expect(candidates.every((c) => c.category.length > 0)).toBe(true);
   });
@@ -113,9 +118,42 @@ describe('word packs', () => {
     }
   });
 
+  it('gives the new games their own packs, free and decoy-free', () => {
+    for (const game of ['charades', 'whoami'] as const) {
+      const packs = packsForGame(game);
+      expect(packs.length).toBeGreaterThan(0);
+      for (const pack of packs) {
+        // Every mode is playable without paying — the unlock adds RINGER words.
+        expect(pack.isFree).toBe(true);
+        expect(pack.adult ?? false).toBe(false);
+        expect(pack.words.length).toBeGreaterThanOrEqual(40);
+        for (const word of pack.words) {
+          expect(word.decoy).toBe(undefined);
+          expect([1, 2, 3].includes(word.difficulty ?? 0)).toBe(true);
+          expect(word.text.length).toBeLessThanOrEqual(20);
+        }
+      }
+    }
+  });
+
+  it('keeps the new packs out of the RINGER flow entirely', () => {
+    // A charade in the deal would be unclueable and have no decoy to fall back
+    // on, so the picker and the deal must never see one.
+    const everything = playablePacks({ adultUnlocked: true, purchased: true });
+    expect(everything.every((p: Pack) => (p.game ?? 'ringer') === 'ringer')).toBe(true);
+    expect(listablePacks(true).every((p: Pack) => (p.game ?? 'ringer') === 'ringer')).toBe(true);
+
+    // The store only ever hands the reducer playablePacks(), so even a config
+    // naming a charades pack cannot reach one: the selection resolves to
+    // nothing and falls back to the permitted RINGER packs.
+    const dealt = candidateWords(everything, { ...DEFAULT_CONFIG, packs: ['charades'] }, []);
+    expect(dealt.length).toBeGreaterThan(0);
+    expect(dealt.some((c) => c.category === 'CHARADES')).toBe(false);
+  });
+
   it('a full session of 60 rounds never repeats a word', () => {
     // recentWordIds holds 60, so the pool must comfortably exceed that.
-    const pool = candidateWords(PACKS, { ...DEFAULT_CONFIG, packs: ['party'] }, []);
+    const pool = candidateWords(RINGER, { ...DEFAULT_CONFIG, packs: ['party'] }, []);
     expect(pool.length).toBeGreaterThan(60);
   });
 });

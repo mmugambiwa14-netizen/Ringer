@@ -1,14 +1,79 @@
 {
   "packs": [
-    { "id": "party", "name": "PARTY", "emoji": "🎉", "isFree": true },
-    { "id": "food", "name": "FOOD", "emoji": "🍕", "isFree": true },
-    { "id": "animals", "name": "ANIMALS", "emoji": "🦩", "isFree": true },
-    { "id": "places", "name": "PLACES", "emoji": "🗺️", "isFree": false },
-    { "id": "screen", "name": "SCREEN", "emoji": "🎬", "isFree": false },
-    { "id": "sport", "name": "SPORT", "emoji": "🥊", "isFree": false },
-    { "id": "objects", "name": "OBJECTS", "emoji": "🔩", "isFree": false },
-    { "id": "jobs", "name": "JOBS", "emoji": "🧰", "isFree": false },
-    { "id": "tech", "name": "TECH", "emoji": "🛰️", "isFree": false },
-    { "id": "spicy", "name": "SPICY", "emoji": "🌶️", "isFree": false, "adult": true }
+    {
+      "id": "party",
+      "name": "PARTY",
+      "emoji": "\ud83c\udf89",
+      "isFree": true
+    },
+    {
+      "id": "food",
+      "name": "FOOD",
+      "emoji": "\ud83c\udf55",
+      "isFree": true
+    },
+    {
+      "id": "animals",
+      "name": "ANIMALS",
+      "emoji": "\ud83e\udda9",
+      "isFree": true
+    },
+    {
+      "id": "places",
+      "name": "PLACES",
+      "emoji": "\ud83d\uddfa\ufe0f",
+      "isFree": false
+    },
+    {
+      "id": "screen",
+      "name": "SCREEN",
+      "emoji": "\ud83c\udfac",
+      "isFree": false
+    },
+    {
+      "id": "sport",
+      "name": "SPORT",
+      "emoji": "\ud83e\udd4a",
+      "isFree": false
+    },
+    {
+      "id": "objects",
+      "name": "OBJECTS",
+      "emoji": "\ud83d\udd29",
+      "isFree": false
+    },
+    {
+      "id": "jobs",
+      "name": "JOBS",
+      "emoji": "\ud83e\uddf0",
+      "isFree": false
+    },
+    {
+      "id": "tech",
+      "name": "TECH",
+      "emoji": "\ud83d\udef0\ufe0f",
+      "isFree": false
+    },
+    {
+      "id": "spicy",
+      "name": "SPICY",
+      "emoji": "\ud83c\udf36\ufe0f",
+      "isFree": false,
+      "adult": true
+    },
+    {
+      "id": "charades",
+      "name": "CHARADES",
+      "emoji": "\ud83c\udfad",
+      "isFree": true,
+      "game": "charades"
+    },
+    {
+      "id": "whoami",
+      "name": "WHO AM I",
+      "emoji": "\u2753",
+      "isFree": true,
+      "game": "whoami"
+    }
   ]
 }

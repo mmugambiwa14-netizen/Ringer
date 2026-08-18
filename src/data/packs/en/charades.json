@@ -1,0 +1,469 @@
+{
+  "id": "charades",
+  "name": "CHARADES",
+  "emoji": "🎭",
+  "isFree": true,
+  "game": "charades",
+  "words": [
+    {
+      "id": "charades-sneezing",
+      "text": "SNEEZING",
+      "difficulty": 1
+    },
+    {
+      "id": "charades-yawning",
+      "text": "YAWNING",
+      "difficulty": 1
+    },
+    {
+      "id": "charades-snoring",
+      "text": "SNORING",
+      "difficulty": 1
+    },
+    {
+      "id": "charades-shivering",
+      "text": "SHIVERING",
+      "difficulty": 2
+    },
+    {
+      "id": "charades-laughing",
+      "text": "LAUGHING",
+      "difficulty": 1
+    },
+    {
+      "id": "charades-crying",
+      "text": "CRYING",
+      "difficulty": 1
+    },
+    {
+      "id": "charades-whistling",
+      "text": "WHISTLING",
+      "difficulty": 2
+    },
+    {
+      "id": "charades-clapping",
+      "text": "CLAPPING",
+      "difficulty": 1
+    },
+    {
+      "id": "charades-tiptoeing",
+      "text": "TIPTOEING",
+      "difficulty": 2
+    },
+    {
+      "id": "charades-limping",
+      "text": "LIMPING",
+      "difficulty": 2
+    },
+    {
+      "id": "charades-stretching",
+      "text": "STRETCHING",
+      "difficulty": 1
+    },
+    {
+      "id": "charades-sleeping",
+      "text": "SLEEPING",
+      "difficulty": 1
+    },
+    {
+      "id": "charades-waving-goodbye",
+      "text": "WAVING GOODBYE",
+      "difficulty": 1
+    },
+    {
+      "id": "charades-shaking-hands",
+      "text": "SHAKING HANDS",
+      "difficulty": 1
+    },
+    {
+      "id": "charades-bowing",
+      "text": "BOWING",
+      "difficulty": 2
+    },
+    {
+      "id": "charades-arguing",
+      "text": "ARGUING",
+      "difficulty": 2
+    },
+    {
+      "id": "charades-brushing-teeth",
+      "text": "BRUSHING TEETH",
+      "difficulty": 1
+    },
+    {
+      "id": "charades-washing-hands",
+      "text": "WASHING HANDS",
+      "difficulty": 1
+    },
+    {
+      "id": "charades-shaving",
+      "text": "SHAVING",
+      "difficulty": 1
+    },
+    {
+      "id": "charades-combing-hair",
+      "text": "COMBING HAIR",
+      "difficulty": 1
+    },
+    {
+      "id": "charades-tying-shoelaces",
+      "text": "TYING SHOELACES",
+      "difficulty": 2
+    },
+    {
+      "id": "charades-tying-a-tie",
+      "text": "TYING A TIE",
+      "difficulty": 2
+    },
+    {
+      "id": "charades-putting-on-socks",
+      "text": "PUTTING ON SOCKS",
+      "difficulty": 2
+    },
+    {
+      "id": "charades-taking-a-shower",
+      "text": "TAKING A SHOWER",
+      "difficulty": 1
+    },
+    {
+      "id": "charades-cooking",
+      "text": "COOKING",
+      "difficulty": 1
+    },
+    {
+      "id": "charades-frying-an-egg",
+      "text": "FRYING AN EGG",
+      "difficulty": 1
+    },
+    {
+      "id": "charades-chopping-onions",
+      "text": "CHOPPING ONIONS",
+      "difficulty": 2
+    },
+    {
+      "id": "charades-stirring-a-pot",
+      "text": "STIRRING A POT",
+      "difficulty": 1
+    },
+    {
+      "id": "charades-eating-noodles",
+      "text": "EATING NOODLES",
+      "difficulty": 1
+    },
+    {
+      "id": "charades-eating-spaghetti",
+      "text": "EATING SPAGHETTI",
+      "difficulty": 2
+    },
+    {
+      "id": "charades-drinking-tea",
+      "text": "DRINKING TEA",
+      "difficulty": 1
+    },
+    {
+      "id": "charades-washing-dishes",
+      "text": "WASHING DISHES",
+      "difficulty": 1
+    },
+    {
+      "id": "charades-peeling-a-banana",
+      "text": "PEELING A BANANA",
+      "difficulty": 1
+    },
+    {
+      "id": "charades-opening-a-bottle",
+      "text": "OPENING A BOTTLE",
+      "difficulty": 2
+    },
+    {
+      "id": "charades-sweeping",
+      "text": "SWEEPING",
+      "difficulty": 1
+    },
+    {
+      "id": "charades-ironing",
+      "text": "IRONING",
+      "difficulty": 2
+    },
+    {
+      "id": "charades-sewing",
+      "text": "SEWING",
+      "difficulty": 2
+    },
+    {
+      "id": "charades-threading-a-needle",
+      "text": "THREADING A NEEDLE",
+      "difficulty": 3
+    },
+    {
+      "id": "charades-hanging-washing",
+      "text": "HANGING WASHING",
+      "difficulty": 2
+    },
+    {
+      "id": "charades-making-a-bed",
+      "text": "MAKING A BED",
+      "difficulty": 1
+    },
+    {
+      "id": "charades-locking-a-door",
+      "text": "LOCKING A DOOR",
+      "difficulty": 2
+    },
+    {
+      "id": "charades-hammering-a-nail",
+      "text": "HAMMERING A NAIL",
+      "difficulty": 2
+    },
+    {
+      "id": "charades-sawing-wood",
+      "text": "SAWING WOOD",
+      "difficulty": 2
+    },
+    {
+      "id": "charades-painting-a-wall",
+      "text": "PAINTING A WALL",
+      "difficulty": 2
+    },
+    {
+      "id": "charades-changing-a-bulb",
+      "text": "CHANGING A BULB",
+      "difficulty": 2
+    },
+    {
+      "id": "charades-digging",
+      "text": "DIGGING",
+      "difficulty": 1
+    },
+    {
+      "id": "charades-planting-a-tree",
+      "text": "PLANTING A TREE",
+      "difficulty": 2
+    },
+    {
+      "id": "charades-watering-plants",
+      "text": "WATERING PLANTS",
+      "difficulty": 1
+    },
+    {
+      "id": "charades-chopping-wood",
+      "text": "CHOPPING WOOD",
+      "difficulty": 2
+    },
+    {
+      "id": "charades-carrying-water",
+      "text": "CARRYING WATER",
+      "difficulty": 2
+    },
+    {
+      "id": "charades-fishing",
+      "text": "FISHING",
+      "difficulty": 1
+    },
+    {
+      "id": "charades-milking-a-cow",
+      "text": "MILKING A COW",
+      "difficulty": 2
+    },
+    {
+      "id": "charades-riding-a-horse",
+      "text": "RIDING A HORSE",
+      "difficulty": 1
+    },
+    {
+      "id": "charades-herding-sheep",
+      "text": "HERDING SHEEP",
+      "difficulty": 3
+    },
+    {
+      "id": "charades-swimming",
+      "text": "SWIMMING",
+      "difficulty": 1
+    },
+    {
+      "id": "charades-running",
+      "text": "RUNNING",
+      "difficulty": 1
+    },
+    {
+      "id": "charades-cycling",
+      "text": "CYCLING",
+      "difficulty": 1
+    },
+    {
+      "id": "charades-boxing",
+      "text": "BOXING",
+      "difficulty": 1
+    },
+    {
+      "id": "charades-playing-football",
+      "text": "PLAYING FOOTBALL",
+      "difficulty": 1
+    },
+    {
+      "id": "charades-saving-a-penalty",
+      "text": "SAVING A PENALTY",
+      "difficulty": 2
+    },
+    {
+      "id": "charades-skipping-rope",
+      "text": "SKIPPING ROPE",
+      "difficulty": 2
+    },
+    {
+      "id": "charades-lifting-weights",
+      "text": "LIFTING WEIGHTS",
+      "difficulty": 2
+    },
+    {
+      "id": "charades-climbing-a-rope",
+      "text": "CLIMBING A ROPE",
+      "difficulty": 2
+    },
+    {
+      "id": "charades-rowing-a-boat",
+      "text": "ROWING A BOAT",
+      "difficulty": 2
+    },
+    {
+      "id": "charades-doing-yoga",
+      "text": "DOING YOGA",
+      "difficulty": 1
+    },
+    {
+      "id": "charades-table-tennis",
+      "text": "TABLE TENNIS",
+      "difficulty": 2
+    },
+    {
+      "id": "charades-arm-wrestling",
+      "text": "ARM WRESTLING",
+      "difficulty": 2
+    },
+    {
+      "id": "charades-playing-guitar",
+      "text": "PLAYING GUITAR",
+      "difficulty": 1
+    },
+    {
+      "id": "charades-playing-drums",
+      "text": "PLAYING DRUMS",
+      "difficulty": 1
+    },
+    {
+      "id": "charades-playing-piano",
+      "text": "PLAYING PIANO",
+      "difficulty": 1
+    },
+    {
+      "id": "charades-playing-a-flute",
+      "text": "PLAYING A FLUTE",
+      "difficulty": 2
+    },
+    {
+      "id": "charades-conducting",
+      "text": "CONDUCTING",
+      "difficulty": 3
+    },
+    {
+      "id": "charades-juggling",
+      "text": "JUGGLING",
+      "difficulty": 1
+    },
+    {
+      "id": "charades-dancing",
+      "text": "DANCING",
+      "difficulty": 1
+    },
+    {
+      "id": "charades-taking-a-photo",
+      "text": "TAKING A PHOTO",
+      "difficulty": 1
+    },
+    {
+      "id": "charades-driving-a-car",
+      "text": "DRIVING A CAR",
+      "difficulty": 1
+    },
+    {
+      "id": "charades-parking-a-car",
+      "text": "PARKING A CAR",
+      "difficulty": 2
+    },
+    {
+      "id": "charades-packing-a-bag",
+      "text": "PACKING A BAG",
+      "difficulty": 1
+    },
+    {
+      "id": "charades-reading-a-map",
+      "text": "READING A MAP",
+      "difficulty": 2
+    },
+    {
+      "id": "charades-catching-a-bus",
+      "text": "CATCHING A BUS",
+      "difficulty": 2
+    },
+    {
+      "id": "charades-climbing-stairs",
+      "text": "CLIMBING STAIRS",
+      "difficulty": 2
+    },
+    {
+      "id": "charades-pushing-a-cart",
+      "text": "PUSHING A CART",
+      "difficulty": 2
+    },
+    {
+      "id": "charades-taking-a-selfie",
+      "text": "TAKING A SELFIE",
+      "difficulty": 1
+    },
+    {
+      "id": "charades-texting",
+      "text": "TEXTING",
+      "difficulty": 1
+    },
+    {
+      "id": "charades-flying-a-kite",
+      "text": "FLYING A KITE",
+      "difficulty": 1
+    },
+    {
+      "id": "charades-blowing-bubbles",
+      "text": "BLOWING BUBBLES",
+      "difficulty": 1
+    },
+    {
+      "id": "charades-blowing-candles",
+      "text": "BLOWING CANDLES",
+      "difficulty": 1
+    },
+    {
+      "id": "charades-opening-a-gift",
+      "text": "OPENING A GIFT",
+      "difficulty": 1
+    },
+    {
+      "id": "charades-swatting-a-fly",
+      "text": "SWATTING A FLY",
+      "difficulty": 2
+    },
+    {
+      "id": "charades-being-seasick",
+      "text": "BEING SEASICK",
+      "difficulty": 3
+    },
+    {
+      "id": "charades-waking-up-late",
+      "text": "WAKING UP LATE",
+      "difficulty": 2
+    },
+    {
+      "id": "charades-carrying-a-baby",
+      "text": "CARRYING A BABY",
+      "difficulty": 1
+    }
+  ]
+}

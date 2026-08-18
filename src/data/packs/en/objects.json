@@ -3,6 +3,7 @@
   "name": "OBJECTS",
   "emoji": "🔩",
   "isFree": false,
+  "game": "ringer",
   "words": [
     {
       "id": "objects-umbrella",

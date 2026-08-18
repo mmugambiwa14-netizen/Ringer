@@ -3,6 +3,7 @@
   "name": "ANIMALS",
   "emoji": "🦩",
   "isFree": true,
+  "game": "ringer",
   "words": [
     {
       "id": "animals-penguin",
