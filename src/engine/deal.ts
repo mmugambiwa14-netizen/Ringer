@@ -71,6 +71,14 @@ export function dealRound(state: GameState, packs: Pack[], startedAt: number): R
     wordId: chosen.word.id,
     word: chosen.word.text,
     decoyWord: state.config.mode === 'decoy' ? (chosen.word.decoy ?? null) : null,
+    // The decoy pair doubles as the classic-mode hint. It is already validated
+    // to be close but not overlapping — no shared word, neither containing the
+    // other, no near-identical spelling — which is exactly the bar a hint has
+    // to clear to be useful without being a giveaway.
+    hintWord:
+      state.config.mode === 'classic' && state.config.imposterSeesHint
+        ? (chosen.word.decoy ?? null)
+        : null,
     category: chosen.category,
     imposterIds,
     revealIndex: 0,

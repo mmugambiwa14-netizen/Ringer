@@ -18,6 +18,8 @@ export interface RevealFace {
   headline: string;
   word: string | null;
   category: string | null;
+  /** A word near the secret one, shown to the ringer to bluff from. Never the answer. */
+  hintWord: string | null;
   hint: string | null;
 }
 
@@ -34,6 +36,7 @@ export function revealFor(state: GameState, player: Player): RevealFace {
       headline: 'THE SECRET WORD',
       word: imposter ? (round.decoyWord ?? round.word) : round.word,
       category: round.category,
+      hintWord: null,
       hint: 'One of you has a different word. It might be you.',
     };
   }
@@ -44,6 +47,7 @@ export function revealFor(state: GameState, player: Player): RevealFace {
       headline: 'THE SECRET WORD',
       word: round.word,
       category: round.category,
+      hintWord: null,
       hint: null,
     };
   }
@@ -61,12 +65,15 @@ export function revealFor(state: GameState, player: Player): RevealFace {
     headline: "YOU'RE THE",
     word: 'RINGER',
     category: mode === 'ghost' || !imposterSeesCategory ? null : round.category,
+    hintWord: round.hintWord,
     hint:
       mode === 'ghost'
         ? 'No word. No category. Blend in.'
         : others
           ? `With you: ${others}`
-          : "Work out the word. Don't get caught.",
+          : round.hintWord
+            ? "That's near the word, not the word. Bluff from it."
+            : "Work out the word. Don't get caught.",
   };
 }
 

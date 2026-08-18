@@ -42,6 +42,14 @@ export interface GameConfig {
   imposterCount: 'auto' | 1 | 2 | 3;
   impostersKnowEachOther: boolean;
   imposterSeesCategory: boolean;
+  /**
+   * Show the ringer the word's decoy pair as a nudge — close enough to bluff
+   * from, far enough that saying it out loud gives them away. A ringer with
+   * nothing at all can only stall, which is the least fun seat at the table.
+   * Classic mode only: decoy mode already hands them the pair as their word,
+   * and ghost mode is the deliberate no-help setting.
+   */
+  imposterSeesHint: boolean;
   packs: string[];
   clueLaps: 1 | 2 | 3;
   /** Seconds. 0 = off. */
@@ -82,6 +90,8 @@ export interface RoundState {
   wordId: string;
   word: string;
   decoyWord: string | null;
+  /** The nudge shown to a classic-mode ringer. Null when the mode or the config says no. */
+  hintWord: string | null;
   category: string;
   imposterIds: string[];
   /** Index into players — whose turn it is to look at the phone. */

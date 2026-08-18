@@ -68,6 +68,54 @@ describe('dealing and reveal', () => {
     expect(words.size).toBe(2); // the real word and its decoy
   });
 
+  it('gives the classic ringer a hint word, and nobody else', () => {
+    const s = deal(withPlayers(5, 31));
+    const faces = s.players.map((p) => ({ p, face: revealFor(s, p) }));
+    const ringer = faces.find(({ face }) => face.kind === 'ringer')!;
+    const crew = faces.filter(({ face }) => face.kind !== 'ringer');
+
+    expect(ringer.face.hintWord).toBe(s.round!.hintWord);
+    expect(typeof ringer.face.hintWord).toBe('string');
+    expect(crew.every(({ face }) => face.hintWord === null)).toBe(true);
+  });
+
+  it('never hands the ringer the answer as a hint', () => {
+    // "Close but not obvious" is a content guarantee, not a hope: the decoy
+    // pairs are validated so neither word contains the other and they share no
+    // word. Sweep a spread of seeds and hold the deal to that.
+    const stop = new Set(['THE', 'A', 'OF', 'AND']);
+    let checked = 0;
+    for (let seed = 1; seed <= 60; seed++) {
+      const s = deal(withPlayers(5, seed));
+      const hint = s.round!.hintWord;
+      if (hint === null) continue; // a word that ships without a pair
+      checked++;
+      const word = s.round!.word;
+      expect(hint).not.toBe(word);
+      expect(word.includes(hint)).toBe(false);
+      expect(hint.includes(word)).toBe(false);
+      const shared = hint
+        .split(' ')
+        .filter((w) => !stop.has(w))
+        .some((w) => word.split(' ').includes(w));
+      expect(shared).toBe(false);
+    }
+    expect(checked).toBeGreaterThan(0);
+  });
+
+  it('withholds the hint in ghost and decoy modes, and when switched off', () => {
+    for (const patch of [
+      { mode: 'ghost' as const },
+      { mode: 'decoy' as const },
+      { imposterSeesHint: false },
+    ]) {
+      const s = deal(reducer(withPlayers(5, 31), { type: 'SET_CONFIG', patch }));
+      expect(s.round!.hintWord).toBeNull();
+      const ringer = s.players.find((p) => s.round!.imposterIds.includes(p.id))!;
+      expect(revealFor(s, ringer).hintWord).toBeNull();
+    }
+  });
+
   it('withholds the category in ghost mode', () => {
     let s = withPlayers(5);
     s = reducer(s, { type: 'SET_CONFIG', patch: { mode: 'ghost' } });

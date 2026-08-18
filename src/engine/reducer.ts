@@ -9,6 +9,7 @@ export const DEFAULT_CONFIG: GameConfig = {
   imposterCount: 'auto',
   impostersKnowEachOther: false,
   imposterSeesCategory: true,
+  imposterSeesHint: true,
   packs: ['party', 'food', 'animals'],
   clueLaps: 2,
   turnTimer: 30,

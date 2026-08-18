@@ -93,6 +93,20 @@ export default function Rules() {
           ]}
         />
         <Segmented
+          label="RINGER'S HINT"
+          value={config.imposterSeesHint ? 'on' : 'off'}
+          note={
+            config.imposterSeesHint
+              ? 'The ringer sees a word close to the real one — enough to bluff from, not enough to be safe. Classic mode only.'
+              : 'The ringer gets the category and nothing else. Harder, and quieter at the table.'
+          }
+          onChange={(v) => set({ imposterSeesHint: v === 'on' })}
+          options={[
+            { value: 'on', label: 'ON' },
+            { value: 'off', label: 'OFF' },
+          ]}
+        />
+        <Segmented
           label="THE STEAL"
           value={config.imposterCanGuess ? 'on' : 'off'}
           note={

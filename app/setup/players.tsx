@@ -134,9 +134,13 @@ const styles = StyleSheet.create({
     shadowOpacity: 1,
     shadowRadius: 0,
   },
-  input: { flex: 1, ...t.d3, fontSize: 18, color: color.ink, padding: 0 },
-  tag: { ...t.tiny, color: color.inkSoft },
-  remove: { ...t.d3, fontSize: 15, paddingHorizontal: 6, color: color.pink },
+  // minWidth 0 lets the field shrink below its own content. Without it the
+  // input grows to fit whatever is typed and shoves the shape tag and the
+  // remove button off the right edge of the card — the tag clipping mid-word
+  // into something that reads as a rendering fault.
+  input: { flex: 1, minWidth: 0, ...t.d3, fontSize: 18, color: color.ink, padding: 0 },
+  tag: { ...t.tiny, color: color.inkSoft, flexShrink: 0 },
+  remove: { ...t.d3, fontSize: 15, paddingHorizontal: 6, color: color.pink, flexShrink: 0 },
   addRow: { marginTop: 12 },
   half: { flex: 1 },
   note: { ...t.small, color: color.inkSoft, marginTop: 12 },

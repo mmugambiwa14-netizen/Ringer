@@ -16,6 +16,7 @@ const round = (patch: Partial<RoundState> = {}): RoundState => ({
   wordId: 'w1',
   word: 'PIZZA',
   decoyWord: null,
+  hintWord: null,
   category: 'FOOD',
   imposterIds: ['b'],
   revealIndex: 0,

@@ -22,7 +22,7 @@ combinations — if the reveal gesture doesn't respond, run `npx expo run:ios` /
 
 ```bash
 npm run verify       # everything below that works without node_modules
-npm test             # 93 tests, no dependencies required
+npm test             # 96 tests, no dependencies required
 npm run check        # imports, engine boundary, Rules of Hooks, JSX balance, version
 npm run content      # rebuild word packs from content/en/*.tsv
 npm run sfx          # regenerate the sound effects (needs python3 + numpy)
@@ -252,9 +252,32 @@ into someone else's phone is the slowest moment in every game in this category.
 
 | Mode | What the ringer gets |
 | --- | --- |
-| **Classic** | Told they're the ringer, sees the category |
+| **Classic** | Told they're the ringer, sees the category, and a hint word close to the answer |
 | **Decoy** | A subtly wrong word, and *nobody* is told they're the ringer |
 | **Ghost** | Nothing at all. No word, no category, no steal attempt |
+
+### The ringer's hint
+
+A ringer holding nothing but a category can only stall — vague clues, hedged answers, caught
+in the first lap. That is the least fun seat at the table, and it is the seat one person is
+in every round.
+
+So in classic mode they get the word's **decoy pair** as a nudge: `CLOSE TO IT · BUFFALO`
+when the word is `BISON`. Enough to bluff from, not enough to be safe — say it out loud and
+you have named the wrong animal in a room full of people who know the right one.
+
+The decoy pairs already clear exactly the right bar, because the content validator enforces
+it: neither word may contain the other, they may not share a word, and near-identical
+spellings are rejected. A hint that passes those tests is close without being the answer,
+and `npm test` holds every deal to it.
+
+It renders as a **yellow** pill, deliberately unlike the paper category pill above it and
+nothing like the big word treatment a crew member sees. A ringer glancing at their card
+under pressure must never mistake the nudge for the answer.
+
+Off by default in ghost mode (that mode's whole point is no help), absent in decoy mode
+(they already hold the pair as their word), and switchable in the rules screen for tables
+who want it harder.
 
 ---
 
@@ -293,7 +316,7 @@ the table can call it.
 ## What's built
 
 - [x] Engine: dealing, fair deal, three modes, both vote styles, tie rules, scoring, history
-- [x] 93 tests covering every outcome branch, the content contract, the share copy and resume routing
+- [x] 96 tests covering every outcome branch, the content contract, the share copy and resume routing
 - [x] Slide-up reveal with auto-close, backgrounding guard, hold fallback
 - [x] Design system: tokens, Button, Card, Sticker, Avatar, Segmented, TimerRing, Screen
 - [x] All 16 screens wired end to end

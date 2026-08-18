@@ -91,6 +91,11 @@ export default function Reveal() {
             <Text style={t.tiny}>CATEGORY · {face.category}</Text>
           </View>
         ) : null}
+        {face.hintWord ? (
+          <View style={styles.hintPill}>
+            <Text style={t.tiny}>CLOSE TO IT · {face.hintWord}</Text>
+          </View>
+        ) : null}
         {face.hint ? <Text style={[styles.hint, { color: ink }]}>{face.hint}</Text> : null}
       </RevealCard>
 
@@ -122,6 +127,17 @@ const styles = StyleSheet.create({
     paddingHorizontal: 9,
     paddingTop: 4,
     paddingBottom: 3,
+  },
+  // Yellow, and never the same shape as the word above it. A ringer glancing
+  // at their card under pressure must not mistake the nudge for the answer.
+  hintPill: {
+    borderWidth: border.base,
+    borderColor: color.ink,
+    backgroundColor: color.yellow,
+    paddingHorizontal: 9,
+    paddingTop: 4,
+    paddingBottom: 3,
+    marginTop: 8,
   },
   hint: { ...t.small, textAlign: 'center', marginTop: 12, maxWidth: 260 },
   next: { marginTop: 18 },
