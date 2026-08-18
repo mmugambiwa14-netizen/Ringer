@@ -22,7 +22,7 @@ combinations — if the reveal gesture doesn't respond, run `npx expo run:ios` /
 
 ```bash
 npm run verify       # everything below that works without node_modules
-npm test             # 96 tests, no dependencies required
+npm test             # 105 tests, no dependencies required
 npm run check        # imports, engine boundary, Rules of Hooks, JSX balance, version
 npm run content      # rebuild word packs from content/en/*.tsv
 npm run sfx          # regenerate the sound effects (needs python3 + numpy)
@@ -241,6 +241,55 @@ placeholder.
 
 ---
 
+## Money
+
+**One payment, no subscription, no ads.** There is no server, no account and no per-player
+running cost, so the content is sold once rather than rented. Three packs are free — 239
+words, a complete game night — and a single non-consumable purchase opens the other seven.
+
+That is also the honest read of the market: the nearest competitors charge up to $7.99 a
+*week* for a pass-and-play word game whose content does not change between billing periods.
+"Bought once, yours forever" is the differentiator, not the price.
+
+It matters for distribution too. The strongest thing this app has going for it is that five
+people at a table don't have it and just watched an hour of it. A subscription wall is the
+worst possible thing to put in front of that download; a generous free tier is the best.
+
+### How the gate works
+
+Two gates, deliberately different, in `src/data/packs/index.ts`:
+
+| Gate | Behaviour | Why |
+| --- | --- | --- |
+| **18+** | Hidden entirely | The point is what happens when the phone is handed over, so it must not even be advertised |
+| **Paid** | Shown, locked, tappable | The point is to sell it |
+
+Both are applied in `playablePacks()`, which is what the store hands the reducer — **not** in
+the picker. A selection made while a pack was available has to stop working the moment it
+isn't, and the picker is not where that gets noticed. That distinction was a real bug: locking
+the 18+ pack again used to leave `spicy` in `config.packs`, still dealing, with no way left to
+deselect it.
+
+### On "securely"
+
+`src/lib/purchases.ts` takes an injected transport, the same shape as the analytics sink, so
+the whole flow is testable without a device or a store account — and **fails closed**: with no
+transport installed, every path returns `unavailable` and nothing is ever granted. There is a
+test for exactly that, because a bug that fails *open* gives the app away.
+
+The persisted `unlocked` flag is a cache so the app works on a plane. It is **not** the
+security boundary — anyone with a rooted device can flip it. The boundary is the transport:
+`restore()` must ask the platform what the account owns and validate the receipt, and the app
+re-asks on every cold start. A store that answers "not owned" revokes the cache, which is what
+makes a refund take effect; a store that doesn't answer leaves it alone, so being offline never
+locks anyone out of what they bought.
+
+For real receipt validation without running a server, RevenueCat is free below $2.5k/month and
+keeps the no-backend property. `react-native-iap` works too and validates on-device, which is
+weaker but has no third party. Either goes in `setPurchaseTransport`; nothing else changes.
+
+---
+
 ## Player identity
 
 Twenty auto-assigned identities in `src/engine/roster.ts` — a shape and a colour, handed out
@@ -323,7 +372,7 @@ the table can call it.
 ## What's built
 
 - [x] Engine: dealing, fair deal, three modes, both vote styles, tie rules, scoring, history
-- [x] 96 tests covering every outcome branch, the content contract, the share copy and resume routing
+- [x] 105 tests covering every outcome branch, the content contract, the share copy, the paywall's fail-closed behaviour and resume routing
 - [x] Slide-up reveal with auto-close, backgrounding guard, hold fallback
 - [x] Design system: tokens, Button, Card, Sticker, Avatar, Segmented, TimerRing, Screen
 - [x] All 16 screens wired end to end
@@ -361,6 +410,11 @@ until the day you ship. Run it by hand before a submission.
 - [ ] **Fill in `eas.json`** — Apple ID, ASC app ID, team ID, Play service account.
 - [ ] **Clear the name.** Check "Ringer" on the App Store, Play, and as a domain before
       anyone is paid to draw anything. This category is crowded with near-identical names.
+- [ ] **Wire a store transport** in `setPurchaseTransport` — RevenueCat or `react-native-iap`.
+      Until then the unlock cannot be bought or restored; it fails closed, so the app is
+      free-tier-only rather than fully open.
+- [ ] **Register the non-consumable** `UNLOCK_PRODUCT_ID` from `src/config.ts` in App Store
+      Connect and the Play Console, and price it. The stores key off that string exactly.
 - [ ] **Wire an analytics transport** in `setAnalyticsSink` — Aptabase or TelemetryDeck.
       Never Firebase; see the COPPA note in `src/lib/analytics.ts`.
 - [ ] **Run the Maestro flows on real devices** (`maestro test .maestro/`), especially

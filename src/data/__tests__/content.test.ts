@@ -1,6 +1,15 @@
 import { describe, it } from 'node:test';
+import type { Pack } from '../../engine/types';
 import { expect } from '../../engine/__tests__/expect';
-import { PACKS, TOTAL_WORDS, packById, usableWordCount, visiblePacks } from '../packs';
+import {
+  FREE_WORDS,
+  PACKS,
+  TOTAL_WORDS,
+  listablePacks,
+  packById,
+  playablePacks,
+  usableWordCount,
+} from '../packs';
 import { DEFAULT_CONFIG } from '../../engine/reducer';
 import { candidateWords } from '../../engine/deal';
 
@@ -61,9 +70,28 @@ describe('word packs', () => {
   });
 
   it('hides the adult pack until it is unlocked', () => {
-    expect(visiblePacks(false)).toHaveLength(9);
-    expect(visiblePacks(true)).toHaveLength(10);
-    expect(visiblePacks(false).some((p) => p.adult)).toBe(false);
+    expect(listablePacks(false)).toHaveLength(9);
+    expect(listablePacks(true)).toHaveLength(10);
+    expect(listablePacks(false).some((p: Pack) => p.adult)).toBe(false);
+  });
+
+  it('deals only from packs that are both age-cleared and paid for', () => {
+    const free = playablePacks({ adultUnlocked: false, purchased: false });
+    expect(free.every((p: Pack) => p.isFree && !p.adult)).toBe(true);
+    expect(free.length).toBeGreaterThan(0);
+    expect(FREE_WORDS).toBe(free.reduce((n: number, p: Pack) => n + p.words.length, 0));
+
+    // Paying does not open the 18+ pack; that is a separate switch.
+    const paid = playablePacks({ adultUnlocked: false, purchased: true });
+    expect(paid.some((p: Pack) => p.adult)).toBe(false);
+    expect(paid.length).toBeGreaterThan(free.length);
+
+    // ...and switching 18+ on does not hand over the paid packs either.
+    const adultOnly = playablePacks({ adultUnlocked: true, purchased: false });
+    expect(adultOnly.every((p: Pack) => p.isFree)).toBe(true);
+
+    // Both gates open: everything.
+    expect(playablePacks({ adultUnlocked: true, purchased: true })).toHaveLength(PACKS.length);
   });
 
   it('reports the same count in decoy mode, because every word is paired', () => {

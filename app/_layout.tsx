@@ -14,6 +14,7 @@ import { preloadSounds } from '../src/lib/sound';
 import { track } from '../src/lib/analytics';
 import { useGame } from '../src/store/gameStore';
 import { usePrefs } from '../src/store/prefsStore';
+import { useEntitlement } from '../src/store/entitlementStore';
 
 void SplashScreen.preventAutoHideAsync();
 
@@ -54,6 +55,12 @@ export default function RootLayout() {
     void SplashScreen.hideAsync();
     // Warm the players we hit first, so the opening tap isn't silent.
     preloadSounds();
+
+    // Re-ask the store what this account owns. Silent and non-blocking: a
+    // refund or a family-sharing removal takes effect here, and being offline
+    // leaves the cached entitlement alone rather than locking someone out of
+    // what they paid for.
+    void useEntitlement.getState().verify();
 
     const prefs = usePrefs.getState();
     track({ name: 'app_open', is_first_open: !prefs.launched });

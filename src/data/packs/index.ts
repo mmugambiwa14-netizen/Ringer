@@ -24,10 +24,38 @@ export function packById(id: string): Pack | undefined {
   return PACKS.find((p) => p.id === id);
 }
 
-/** Packs a table can pick from. The 18+ pack stays hidden until switched on. */
-export function visiblePacks(adultUnlocked: boolean): Pack[] {
+/**
+ * Age and payment are separate gates and behave differently on purpose.
+ *
+ * An adult pack that is switched off is *hidden* — the point of that gate is
+ * what happens when the phone is handed to someone else, so it must not even
+ * be advertised. A paid pack that has not been bought is *shown but locked* —
+ * the point of that gate is to sell it.
+ */
+
+/** What the picker lists. Adult packs stay hidden until switched on. */
+export function listablePacks(adultUnlocked: boolean): Pack[] {
   return PACKS.filter((p) => adultUnlocked || !p.adult);
 }
+
+/** Whether a pack's words may actually be dealt. */
+export function isPlayable(pack: Pack, opts: { adultUnlocked: boolean; purchased: boolean }): boolean {
+  if (pack.adult && !opts.adultUnlocked) return false;
+  return pack.isFree || opts.purchased;
+}
+
+/**
+ * What the deal is allowed to draw from. Applying the gates here rather than in
+ * the picker is deliberate: a selection made while a pack was available has to
+ * stop working the moment it isn't, and the picker is not where that is
+ * noticed.
+ */
+export function playablePacks(opts: { adultUnlocked: boolean; purchased: boolean }): Pack[] {
+  return PACKS.filter((p) => isPlayable(p, opts));
+}
+
+/** Free-tier size, for the paywall copy. Derived so it can never go stale. */
+export const FREE_WORDS = PACKS.filter((p) => p.isFree).reduce((n, p) => n + p.words.length, 0);
 
 /**
  * Decoy mode can only use words that ship with a pair, so the count shown on

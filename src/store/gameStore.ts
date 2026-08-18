@@ -1,8 +1,9 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { create } from 'zustand';
 import { createJSONStorage, persist } from 'zustand/middleware';
-import { visiblePacks } from '../data/packs';
+import { playablePacks } from '../data/packs';
 import { usePrefs } from './prefsStore';
+import { useEntitlement } from './entitlementStore';
 import { initialState, reducer } from '../engine/reducer';
 import type { Action, GameState } from '../engine/types';
 
@@ -36,15 +37,22 @@ export const useGame = create<Store>()(
     (set, get) => ({
       game: initialState(freshSeed()),
       hydrated: false,
-      // Only the packs this device is allowed to deal from. The picker hides the
-      // 18+ pack when it is locked, but hiding it there does nothing about a
-      // selection made while it was unlocked: config.packs kept 'spicy', the
-      // deal kept serving adult words, and the pack was no longer in the picker
-      // to deselect. The permission has to be applied where the words are
-      // chosen, not where they are listed.
+      // Only the packs this device may actually deal from — both gates, applied
+      // where the words are chosen rather than where they are listed. A
+      // selection made while a pack was available has to stop working the
+      // moment it isn't, and the picker is not where that gets noticed: before
+      // this, locking the 18+ pack again left 'spicy' in config.packs and the
+      // deal kept serving it, with no way left to deselect it.
       dispatch: (action) =>
         set({
-          game: reducer(get().game, action, visiblePacks(usePrefs.getState().adultUnlocked)),
+          game: reducer(
+            get().game,
+            action,
+            playablePacks({
+              adultUnlocked: usePrefs.getState().adultUnlocked,
+              purchased: useEntitlement.getState().unlocked,
+            }),
+          ),
         }),
       reset: () => set({ game: initialState(freshSeed(), get().game.config) }),
       hasRoundInFlight: () => {

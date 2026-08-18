@@ -12,7 +12,9 @@ import {
   type as t,
 } from '../../src/ui';
 import { useGame } from '../../src/store/gameStore';
-import { usableWordCount, visiblePacks } from '../../src/data/packs';
+import { isPlayable, listablePacks, usableWordCount } from '../../src/data/packs';
+import { useEntitlement } from '../../src/store/entitlementStore';
+import type { Pack } from '../../src/engine/types';
 import { usePrefs } from '../../src/store/prefsStore';
 import { haptics } from '../../src/lib/haptics';
 
@@ -21,11 +23,20 @@ export default function Packs() {
   const mode = useGame((s) => s.game.config.mode);
   const dispatch = useGame((s) => s.dispatch);
   const adultUnlocked = usePrefs((s) => s.adultUnlocked);
-  const packs = visiblePacks(adultUnlocked);
+  const purchased = useEntitlement((s) => s.unlocked);
+  const packs = listablePacks(adultUnlocked);
+  const lockedCount = packs.filter((p) => !isPlayable(p, { adultUnlocked, purchased })).length;
 
-  const toggle = (id: string) => {
+  const toggle = (pack: Pack) => {
+    if (!isPlayable(pack, { adultUnlocked, purchased })) {
+      haptics.tap();
+      router.push('/paywall');
+      return;
+    }
     haptics.tap();
-    const next = selected.includes(id) ? selected.filter((p) => p !== id) : [...selected, id];
+    const next = selected.includes(pack.id)
+      ? selected.filter((p) => p !== pack.id)
+      : [...selected, pack.id];
     if (next.length === 0) return; // always leave one pack on
     dispatch({ type: 'SET_CONFIG', patch: { packs: next } });
   };
@@ -38,18 +49,20 @@ export default function Packs() {
 
       <View style={styles.grid}>
         {packs.map((pack) => {
-          const on = selected.includes(pack.id);
+          const locked = !isPlayable(pack, { adultUnlocked, purchased });
+          const on = selected.includes(pack.id) && !locked;
           const usable = usableWordCount(pack, mode);
           const tone = on ? color.blue : color.paper;
           return (
             <Pressable
               key={pack.id}
               accessibilityRole="checkbox"
-              accessibilityState={{ checked: on }}
-              onPress={() => toggle(pack.id)}
-              style={[styles.tile, { backgroundColor: tone }]}
+              accessibilityState={{ checked: on, disabled: locked }}
+              accessibilityLabel={locked ? `${pack.name} — locked, tap to unlock` : pack.name}
+              onPress={() => toggle(pack)}
+              style={[styles.tile, { backgroundColor: tone }, locked && styles.locked]}
             >
-              <Text style={styles.emoji}>{pack.emoji}</Text>
+              <Text style={styles.emoji}>{locked ? '🔒' : pack.emoji}</Text>
               <Text style={[styles.name, { color: onColor(tone) }]}>{pack.name}</Text>
               <Text style={[styles.count, { color: onColor(tone) }]}>
                 {usable} WORD{usable === 1 ? '' : 'S'}
@@ -65,6 +78,13 @@ export default function Packs() {
         {mode === 'decoy' ? ' Decoy mode only uses words that ship with a pair.' : ''}
         {adultUnlocked ? '' : ' The 18+ pack is off; turn it on in settings.'}
       </Text>
+
+      {lockedCount > 0 ? (
+        <GhostButton
+          label={`UNLOCK ${lockedCount} MORE PACKS`}
+          onPress={() => router.push('/paywall')}
+        />
+      ) : null}
 
       <View style={styles.spacer} />
       <Button label="NEXT — RULES" tone={color.blue} onPress={() => router.push('/setup/rules')} />
@@ -89,6 +109,9 @@ const styles = StyleSheet.create({
     shadowOpacity: 1,
     shadowRadius: 0,
   },
+  // Locked tiles stay legible rather than greyed to the point of looking
+  // broken — they are the shop window, not disabled controls.
+  locked: { opacity: 0.55 },
   emoji: { fontSize: 22, marginBottom: 6 },
   name: { ...t.d3, fontSize: 16 },
   count: { ...t.tiny, marginTop: 4 },

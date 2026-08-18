@@ -43,6 +43,21 @@ check(
   'store/privacy-policy.html is written but no hosted URL is recorded in src/config.ts; both stores require one',
 );
 
+// --- the unlock can actually be bought ---
+// Both of these are wired the same way as the analytics sink: a seam that
+// fails closed, so an unwired app sells nothing rather than giving itself away.
+const wiredPurchases = /setPurchaseTransport\s*\(/.test(
+  ['app/_layout.tsx', 'src/store/entitlementStore.ts'].map(read).join('\n'),
+);
+check(
+  'Purchase transport',
+  wiredPurchases,
+  'no store transport is installed, so the £/$ unlock cannot be bought or restored — wire react-native-iap or RevenueCat into setPurchaseTransport',
+);
+
+const wiredAnalytics = /setAnalyticsSink\s*\(/.test(read('app/_layout.tsx'));
+check('Analytics sink', wiredAnalytics, 'every track() call is a no-op until a transport is set');
+
 // --- version is a real release, not the scaffold default ---
 const version = JSON.parse(read('package.json')).version;
 check('Version', version !== '0.1.0', version === '0.1.0' ? 'still 0.1.0' : version);

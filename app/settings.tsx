@@ -1,12 +1,27 @@
 import { StyleSheet, View } from 'react-native';
 import { router } from 'expo-router';
-import { Avatar, Button, Row, Screen, Segmented, Text, color, type as t } from '../src/ui';
+import {
+  Avatar,
+  Button,
+  GhostButton,
+  Row,
+  Screen,
+  Segmented,
+  Sticker,
+  Text,
+  color,
+  type as t,
+} from '../src/ui';
 import { usePrefs } from '../src/store/prefsStore';
+import { useEntitlement } from '../src/store/entitlementStore';
 import { ROSTER } from '../src/engine/roster';
 import { APP_NAME, APP_VERSION } from '../src/config';
 
 export default function Settings() {
   const prefs = usePrefs();
+  const unlocked = useEntitlement((s) => s.unlocked);
+  const busy = useEntitlement((s) => s.busy);
+  const restore = useEntitlement((s) => s.restore);
 
   return (
     <Screen scroll>
@@ -85,6 +100,38 @@ export default function Settings() {
             { value: 'on', label: 'ON' },
           ]}
         />
+
+        <View>
+          <Text style={styles.label}>WORD PACKS</Text>
+          {unlocked ? (
+            <>
+              <Text style={styles.note}>
+                Unlocked. Every pack, on this store account, on every device you own.
+              </Text>
+              <View style={styles.unlockRow}>
+                <Sticker tone={color.green}>ALL PACKS UNLOCKED</Sticker>
+              </View>
+            </>
+          ) : (
+            <>
+              <Text style={styles.note}>
+                Three packs are free. The rest are a single payment — no subscription, no ads.
+              </Text>
+              <View style={styles.unlockRow}>
+                <Button
+                  label="SEE THE FULL SET"
+                  size="sm"
+                  tone={color.yellow}
+                  onPress={() => router.push('/paywall')}
+                />
+                <GhostButton
+                  label={busy ? 'CHECKING…' : 'RESTORE A PURCHASE'}
+                  onPress={() => void restore()}
+                />
+              </View>
+            </>
+          )}
+        </View>
       </View>
 
       <View style={styles.spacer} />
@@ -100,6 +147,7 @@ const styles = StyleSheet.create({
   label: { ...t.label, marginBottom: 7 },
   note: { ...t.small, color: color.inkSoft },
   icons: { flexDirection: 'row', flexWrap: 'wrap', gap: 7, marginTop: 12 },
+  unlockRow: { gap: 10, marginTop: 12 },
   spacer: { flex: 1, minHeight: 20 },
   version: { ...t.tiny, color: color.inkSoft, textAlign: 'center', marginBottom: 12 },
 });
