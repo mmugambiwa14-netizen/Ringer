@@ -1,6 +1,16 @@
 import { StyleSheet, View } from 'react-native';
 import { router } from 'expo-router';
-import { Button, GhostButton, Row, Screen, Segmented, Text, color, type as t } from '../../src/ui';
+import {
+  Button,
+  GhostButton,
+  Row,
+  Screen,
+  Segmented,
+  Text,
+  color,
+  type as t,
+  type Option,
+} from '../../src/ui';
 import { useGame } from '../../src/store/gameStore';
 import type { GameConfig, Mode } from '../../src/engine/types';
 
@@ -9,6 +19,15 @@ const MODE_NOTES: Record<Mode, string> = {
   decoy: "Everyone gets a word — the ringer's is subtly wrong. Nobody knows who they are.",
   ghost: 'The ringer gets nothing. No word, no category. Brutal.',
 };
+
+// Typed explicitly rather than inline: the values mix a string and numbers, so
+// inference off the array literal alone pins Segmented's T to 'auto'.
+const RINGER_OPTIONS: readonly Option<GameConfig['imposterCount']>[] = [
+  { value: 'auto', label: 'AUTO' },
+  { value: 1, label: '1' },
+  { value: 2, label: '2' },
+  { value: 3, label: '3' },
+];
 
 export default function Rules() {
   const config = useGame((s) => s.game.config);
@@ -39,12 +58,7 @@ export default function Rules() {
           value={config.imposterCount}
           note={`${players.length} players — auto gives you ${players.length <= 6 ? 1 : players.length <= 11 ? 2 : 3}.`}
           onChange={(imposterCount) => set({ imposterCount })}
-          options={[
-            { value: 'auto', label: 'AUTO' },
-            { value: 1, label: '1' },
-            { value: 2, label: '2' },
-            { value: 3, label: '3' },
-          ]}
+          options={RINGER_OPTIONS}
         />
         <Segmented
           label="CLUE LAPS"

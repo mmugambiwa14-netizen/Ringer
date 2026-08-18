@@ -11,7 +11,7 @@ export default function Discussion() {
   const game = useGame((s) => s.game);
   const dispatch = useGame((s) => s.dispatch);
   const total = game.config.discussionTimer;
-  const [left, setLeft] = useState(total);
+  const [left, setLeft] = useState<number>(total);
 
   const toVote = () => {
     dispatch({ type: 'GO_TO_VOTE' });

@@ -12,6 +12,7 @@ const players: Player[] = ['a', 'b', 'c', 'd'].map((id, i) => ({
 }));
 
 const round = (patch: Partial<RoundState> = {}): RoundState => ({
+  startedAt: 1_700_000_000_000,
   wordId: 'w1',
   word: 'PIZZA',
   decoyWord: null,
