@@ -263,6 +263,10 @@ export function reducer(state: GameState, action: Action, packs: Pack[] = []): G
       const round = state.round;
       if (!round) return state;
       if (state.phase === 'voteResult') return resolveOutcome(state, round);
+      // A round may only be settled once. The guess screen can fire this twice
+      // — the keyboard's return key, then the button — and without this guard
+      // the second one scores the round again and files it in history again.
+      if (state.phase !== 'imposterGuess') return state;
       const correct = guessMatches(action.guess, round.word);
       return finishRound(state, {
         ...round,
@@ -275,6 +279,7 @@ export function reducer(state: GameState, action: Action, packs: Pack[] = []): G
     case 'SKIP_GUESS': {
       const round = state.round;
       if (!round) return state;
+      if (state.phase !== 'imposterGuess') return state;
       return finishRound(state, { ...round, guessWasCorrect: false, outcome: 'crew' });
     }
 

@@ -278,6 +278,29 @@ describe('the four endings', () => {
     expect(s.round!.outcome).toBe('crew');
   });
 
+  it('settles a round exactly once, however many times the guess is sent', () => {
+    // The guess screen can fire SUBMIT_GUESS twice — the keyboard's return key
+    // settles the round without navigating away, leaving the button there to
+    // press again. That used to score the round a second time.
+    let s = upToVote();
+    const ringer = s.round!.imposterIds[0]!;
+    s = reducer(s, { type: 'QUICK_VOTE', accusedId: ringer });
+    s = reducer(s, { type: 'GO_TO_SCOREBOARD' });
+    expect(s.phase).toBe('imposterGuess');
+
+    const word = s.round!.word;
+    s = reducer(s, { type: 'SUBMIT_GUESS', guess: word });
+    const scoreAfterOne = s.players.find((p) => p.id === ringer)!.score;
+    expect(s.history).toHaveLength(1);
+    expect(scoreAfterOne).toBe(2);
+
+    // Every further attempt to settle it is a no-op.
+    s = reducer(s, { type: 'SUBMIT_GUESS', guess: word });
+    s = reducer(s, { type: 'SKIP_GUESS' });
+    expect(s.history).toHaveLength(1);
+    expect(s.players.find((p) => p.id === ringer)!.score).toBe(scoreAfterOne);
+  });
+
   it('records every round in history', () => {
     let s = reducer(upToVote(), { type: 'GO_TO_VOTE' });
     const innocent = s.players.find((p) => !s.round!.imposterIds.includes(p.id))!;

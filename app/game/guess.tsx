@@ -31,6 +31,15 @@ export default function Guess() {
 
   const nearMiss = text.length > 0 && guessIsNearMiss(text, round.word);
 
+  // The keyboard's return key has to do exactly what the button does. Firing
+  // only the dispatch settles the round but leaves the player sitting on this
+  // screen, with the button still there to press again.
+  const submit = () => {
+    if (text.trim().length === 0) return;
+    dispatch({ type: 'SUBMIT_GUESS', guess: text });
+    router.replace('/game/result');
+  };
+
   return (
     <Screen tone={color.pink}>
       <KeyboardAvoidingView
@@ -61,21 +70,14 @@ export default function Guess() {
             autoCorrect={false}
             autoFocus
             style={styles.input}
-            onSubmitEditing={() => dispatch({ type: 'SUBMIT_GUESS', guess: text })}
+            onSubmitEditing={submit}
           />
           {nearMiss ? (
             <Text style={styles.near}>CLOSE. THE TABLE DECIDES IF THAT COUNTS.</Text>
           ) : null}
         </View>
 
-        <Button
-          label="LOCK IT IN"
-          disabled={text.trim().length === 0}
-          onPress={() => {
-            dispatch({ type: 'SUBMIT_GUESS', guess: text });
-            router.replace('/game/result');
-          }}
-        />
+        <Button label="LOCK IT IN" disabled={text.trim().length === 0} onPress={submit} />
         <GhostButton
           label="GIVE UP"
           onPress={() => {
