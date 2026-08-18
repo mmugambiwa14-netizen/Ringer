@@ -1,3 +1,5 @@
 src/data/packs/
 assets/
 node_modules/
+.expo-export/
+package-lock.json

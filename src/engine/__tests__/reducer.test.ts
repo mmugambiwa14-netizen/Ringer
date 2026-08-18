@@ -268,6 +268,39 @@ describe('session', () => {
     expect(s.round).toBeNull();
     expect(s.phase).toBe('setup');
   });
+
+  it('does not replay the same session after END_SESSION', () => {
+    // The round seed is derived from (seed, roundNumber) and roundNumber
+    // restarts at 0, so holding the seed would deal the identical word, ringer
+    // and starting player to a table that just tapped "play again".
+    const first = deal(withPlayers(5, 4242));
+    const second = deal(reducer(first, { type: 'END_SESSION' }));
+
+    expect(second.seed).not.toBe(first.seed);
+    expect([
+      second.round!.word,
+      second.round!.imposterIds,
+      second.round!.startingPlayerId,
+    ]).not.toEqual([first.round!.word, first.round!.imposterIds, first.round!.startingPlayerId]);
+  });
+
+  it('keeps the recently-used words across a session boundary', () => {
+    // Same table, same night — a word from the last session is still stale.
+    const first = deal(withPlayers(5, 4242));
+    const next = reducer(first, { type: 'END_SESSION' });
+    expect(next.recentWordIds).toEqual(first.recentWordIds);
+    expect(next.recentWordIds.length).toBeGreaterThan(0);
+  });
+
+  it('keeps advancing the seed over repeated sessions', () => {
+    let s = deal(withPlayers(5, 4242));
+    const seen = new Set<number>([s.seed]);
+    for (let i = 0; i < 5; i++) {
+      s = deal(reducer(s, { type: 'END_SESSION' }));
+      seen.add(s.seed);
+    }
+    expect(seen.size).toBe(6);
+  });
 });
 
 describe('round timing', () => {

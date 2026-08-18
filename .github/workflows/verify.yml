@@ -35,3 +35,13 @@ jobs:
 
       - name: Lint
         run: npm run lint
+
+      - name: Formatting
+        run: npm run format:check
+
+      # The check that actually proves the app can start. Metro has to resolve
+      # the whole import graph, which is the one thing typecheck, lint and the
+      # tests all miss: a dependency that is imported but never declared passes
+      # every other gate and then red-screens on launch.
+      - name: Bundle (Metro)
+        run: npm run bundle

@@ -2,6 +2,7 @@ import type { Action, GameConfig, GameState, Pack, Player, RoundState } from './
 import { dealRound } from './deal';
 import { applyAwards, awardsForRound, isGameOver } from './scoring';
 import { guessMatches } from './guess';
+import { deriveSeed } from './rng';
 
 export const DEFAULT_CONFIG: GameConfig = {
   mode: 'classic',
@@ -21,6 +22,12 @@ export const DEFAULT_CONFIG: GameConfig = {
 };
 
 const RECENT_MEMORY = 60;
+
+/**
+ * Salt for advancing the seed when a session ends. Round seeds are derived as
+ * (seed, roundNumber), so a large constant can never collide with one.
+ */
+const NEXT_SESSION_SALT = 0x5e5510e;
 
 export function initialState(seed: number, config: Partial<GameConfig> = {}): GameState {
   return {
@@ -263,9 +270,16 @@ export function reducer(state: GameState, action: Action, packs: Pack[] = []): G
 
     case 'END_SESSION':
       return {
-        ...initialState(state.seed, state.config),
+        // Advance the seed. Keeping it would replay the session just finished
+        // word for word — same word, same ringer, same starting player — because
+        // the round seed is derived from (seed, roundNumber) and roundNumber
+        // restarts at 0. "Play again" is the most common thing a table does.
+        ...initialState(deriveSeed(state.seed, NEXT_SESSION_SALT), state.config),
         players: state.players.map((p) => ({ ...p, score: 0, ringerCount: 0 })),
         nextPlayerId: state.nextPlayerId,
+        // Same table, same night: a word used in the last session should still
+        // feel used up.
+        recentWordIds: state.recentWordIds,
       };
 
     default:
