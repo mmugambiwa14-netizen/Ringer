@@ -3,8 +3,17 @@ import { StyleSheet, View } from 'react-native';
 import { router } from 'expo-router';
 import { useRedirectWhen } from '../../src/lib/navigation';
 import {
-  Avatar, Button, Card, Row, Rule, Screen, Sticker, Text,
-  color, onColor, type as t,
+  Avatar,
+  Button,
+  Card,
+  Row,
+  Rule,
+  Screen,
+  Sticker,
+  Text,
+  color,
+  onColor,
+  type as t,
 } from '../../src/ui';
 import { useGame } from '../../src/store/gameStore';
 import { displayName } from '../../src/engine/roster';

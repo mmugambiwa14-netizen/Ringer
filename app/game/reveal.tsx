@@ -4,8 +4,17 @@ import { router } from 'expo-router';
 import { useRedirectWhen } from '../../src/lib/navigation';
 import { useKeepAwake } from 'expo-keep-awake';
 import {
-  Avatar, Button, RevealCard, Row, Screen, Sticker, Text,
-  border, color, onColor, type as t,
+  Avatar,
+  Button,
+  RevealCard,
+  Row,
+  Screen,
+  Sticker,
+  Text,
+  border,
+  color,
+  onColor,
+  type as t,
 } from '../../src/ui';
 import { useGame } from '../../src/store/gameStore';
 import { usePrefs } from '../../src/store/prefsStore';
@@ -52,9 +61,7 @@ export default function Reveal() {
           <Avatar icon={player.icon} size="xl" label={name} />
           <Text style={t.label}>PASS THE PHONE TO</Text>
           <Text style={styles.bigName}>{name}</Text>
-          <Sticker>
-            {`PLAYER ${round.revealIndex + 1} OF ${game.players.length}`}
-          </Sticker>
+          <Sticker>{`PLAYER ${round.revealIndex + 1} OF ${game.players.length}`}</Sticker>
         </View>
         <Button label={`I'M ${name} — SHOW ME`} onPress={() => setHandedOver(true)} />
       </Screen>
@@ -79,9 +86,7 @@ export default function Reveal() {
             <Text style={t.tiny}>CATEGORY · {face.category}</Text>
           </View>
         ) : null}
-        {face.hint ? (
-          <Text style={[styles.hint, { color: ink }]}>{face.hint}</Text>
-        ) : null}
+        {face.hint ? <Text style={[styles.hint, { color: ink }]}>{face.hint}</Text> : null}
       </RevealCard>
 
       <Button

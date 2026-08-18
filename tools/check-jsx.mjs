@@ -40,38 +40,56 @@ function scan(src, report) {
 
   while (i < src.length) {
     const c = src[i];
-    if (c === '\n') { line++; i++; continue; }
+    if (c === '\n') {
+      line++;
+      i++;
+      continue;
+    }
 
     // comments
-    if (c === '/' && src[i + 1] === '/') { while (i < src.length && src[i] !== '\n') i++; continue; }
+    if (c === '/' && src[i + 1] === '/') {
+      while (i < src.length && src[i] !== '\n') i++;
+      continue;
+    }
     if (c === '/' && src[i + 1] === '*') {
       i += 2;
-      while (i < src.length && !(src[i] === '*' && src[i + 1] === '/')) { if (src[i] === '\n') line++; i++; }
-      i += 2; continue;
+      while (i < src.length && !(src[i] === '*' && src[i + 1] === '/')) {
+        if (src[i] === '\n') line++;
+        i++;
+      }
+      i += 2;
+      continue;
     }
     // strings
     if (c === "'" || c === '"' || c === '`') {
-      const quote = c; i++;
+      const quote = c;
+      i++;
       while (i < src.length && src[i] !== quote) {
         if (src[i] === '\\') i++;
         else if (src[i] === '\n') line++;
         i++;
       }
-      i++; continue;
+      i++;
+      continue;
     }
 
-    if (c !== '<') { i++; continue; }
+    if (c !== '<') {
+      i++;
+      continue;
+    }
 
     // ---- closing tag ----
     if (src[i + 1] === '/') {
-      let j = i + 2, name = '';
+      let j = i + 2,
+        name = '';
       while (j < src.length && NAME.test(src[j])) name += src[j++];
       while (j < src.length && src[j] !== '>') j++;
       if (!name) {
         // `</>` closes a fragment, which was pushed with an empty name.
         const open = stack.pop();
         if (!open) report(`${line} — closing </> with no fragment open`);
-        else if (open.name !== '') report(`${line} — </> closes <${open.name}> opened at line ${open.line}`);
+        else if (open.name !== '')
+          report(`${line} — </> closes <${open.name}> opened at line ${open.line}`);
       } else {
         const open = stack.pop();
         if (!open) report(`${line} — closing </${name}> with nothing open`);
@@ -79,25 +97,45 @@ function scan(src, report) {
           report(`${line} — </${name}> closes <${open.name}> opened at line ${open.line}`);
         }
       }
-      i = j + 1; continue;
+      i = j + 1;
+      continue;
     }
 
     // ---- fragment ----
-    if (src[i + 1] === '>') { stack.push({ name: '', line }); i += 2; continue; }
-    if (src[i + 1] === '/' ) { i += 2; continue; }
+    if (src[i + 1] === '>') {
+      stack.push({ name: '', line });
+      i += 2;
+      continue;
+    }
+    if (src[i + 1] === '/') {
+      i += 2;
+      continue;
+    }
 
     // ---- opening tag, maybe ----
-    if (!/[A-Za-z]/.test(src[i + 1] ?? '')) { i++; continue; }
+    if (!/[A-Za-z]/.test(src[i + 1] ?? '')) {
+      i++;
+      continue;
+    }
     // A generic argument is always preceded by an identifier character.
-    if (IDENT_END.test(prevMeaningful(i))) { i++; continue; }
+    if (IDENT_END.test(prevMeaningful(i))) {
+      i++;
+      continue;
+    }
 
-    let j = i + 1, name = '';
+    let j = i + 1,
+      name = '';
     while (j < src.length && NAME.test(src[j])) name += src[j++];
     // Components are capitalised; lowercase means a DOM tag we don't use, or `a < b`.
-    if (!/^[A-Z]/.test(name)) { i = j; continue; }
+    if (!/^[A-Z]/.test(name)) {
+      i = j;
+      continue;
+    }
 
     // consume attributes, respecting nested braces and strings
-    let depth = 0, selfClosing = false, closed = false;
+    let depth = 0,
+      selfClosing = false,
+      closed = false;
     while (j < src.length) {
       const d = src[j];
       if (d === '\n') line++;
@@ -106,24 +144,36 @@ function scan(src, report) {
         continue;
       } else if (d === '/' && src[j + 1] === '*') {
         j += 2;
-        while (j < src.length && !(src[j] === '*' && src[j + 1] === '/')) { if (src[j] === '\n') line++; j++; }
+        while (j < src.length && !(src[j] === '*' && src[j + 1] === '/')) {
+          if (src[j] === '\n') line++;
+          j++;
+        }
         j += 2;
         continue;
-      }
-      else if (d === '{') depth++;
+      } else if (d === '{') depth++;
       else if (d === '}') depth--;
       else if (d === "'" || d === '"' || d === '`') {
-        const quote = d; j++;
-        while (j < src.length && src[j] !== quote) { if (src[j] === '\\') j++; else if (src[j] === '\n') line++; j++; }
+        const quote = d;
+        j++;
+        while (j < src.length && src[j] !== quote) {
+          if (src[j] === '\\') j++;
+          else if (src[j] === '\n') line++;
+          j++;
+        }
       } else if (depth === 0 && d === '>') {
         let k = j - 1;
         while (k > i && /\s/.test(src[k])) k--;
         selfClosing = src[k] === '/';
-        closed = true; j++; break;
+        closed = true;
+        j++;
+        break;
       }
       j++;
     }
-    if (!closed) { i = j; continue; }
+    if (!closed) {
+      i = j;
+      continue;
+    }
     if (!selfClosing) stack.push({ name, line });
     i = j;
   }

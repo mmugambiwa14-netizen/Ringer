@@ -93,7 +93,11 @@ function collectExports(file, seen = new Set()) {
   for (const [, name] of src.matchAll(EXPORT_DECL)) names.add(name);
   for (const [, list] of src.matchAll(EXPORT_LIST)) {
     for (const part of list.split(',')) {
-      const name = part.split(/\s+as\s+/).pop()?.trim().replace(/^type\s+/, '');
+      const name = part
+        .split(/\s+as\s+/)
+        .pop()
+        ?.trim()
+        .replace(/^type\s+/, '');
       if (name) names.add(name);
     }
   }
@@ -119,7 +123,10 @@ for (const file of files) {
     const available = collectExports(target);
     if (available.size === 0) continue; // JSON or something we can't read
     for (const raw of list.split(',')) {
-      const name = raw.split(/\s+as\s+/)[0]?.trim().replace(/^type\s+/, '');
+      const name = raw
+        .split(/\s+as\s+/)[0]
+        ?.trim()
+        .replace(/^type\s+/, '');
       if (!name) continue;
       if (!available.has(name)) {
         pass2.push(`${file}: "${name}" is not exported by ${spec}`);
@@ -130,7 +137,10 @@ for (const file of files) {
   // A hook used but never imported is a hard crash on first render.
   const reactImport = src.match(/import\s*\{([^}]*)\}\s*from\s*['"]react['"]/);
   const imported = new Set(
-    (reactImport?.[1] ?? '').split(',').map((s) => s.trim()).filter(Boolean),
+    (reactImport?.[1] ?? '')
+      .split(',')
+      .map((s) => s.trim())
+      .filter(Boolean),
   );
   for (const hook of HOOKS) {
     if (new RegExp(`(^|[^.\\w])${hook}\\s*\\(`).test(src) && !imported.has(hook)) {

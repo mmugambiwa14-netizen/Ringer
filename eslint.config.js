@@ -26,8 +26,10 @@ module.exports = [
         'error',
         {
           patterns: [
-            { group: ['react', 'react-native', 'expo*', '**/ui/**', '**/store/**'],
-              message: 'src/engine must stay pure — no React, React Native or Expo imports.' },
+            {
+              group: ['react', 'react-native', 'expo*', '**/ui/**', '**/store/**'],
+              message: 'src/engine must stay pure — no React, React Native or Expo imports.',
+            },
           ],
         },
       ],

@@ -3,10 +3,25 @@ import { router } from 'expo-router';
 import { Button, Card, Row, Screen, Sticker, Text, color, type as t } from '../src/ui';
 
 const STEPS = [
-  ['01', 'SLIDE UP TO LOOK', 'Slide the card up to see the secret word. Let go and it shuts instantly. One of you sees something else.', color.blue],
-  ['02', 'GIVE ONE CLUE', 'Take turns, one word each. Too obvious and the ringer works it out. Too vague and you look guilty.', color.blue],
+  [
+    '01',
+    'SLIDE UP TO LOOK',
+    'Slide the card up to see the secret word. Let go and it shuts instantly. One of you sees something else.',
+    color.blue,
+  ],
+  [
+    '02',
+    'GIVE ONE CLUE',
+    'Take turns, one word each. Too obvious and the ringer works it out. Too vague and you look guilty.',
+    color.blue,
+  ],
   ['03', 'ARGUE, THEN VOTE', 'Point at whoever sounded wrong.', color.blue],
-  ['04', 'THE STEAL', 'Catch the ringer and they get one guess at the word. Right answer, they win anyway.', color.pink],
+  [
+    '04',
+    'THE STEAL',
+    'Catch the ringer and they get one guess at the word. Right answer, they win anyway.',
+    color.pink,
+  ],
 ] as const;
 
 export default function HowToPlay() {

@@ -45,14 +45,15 @@ export default function Deal() {
     playSfx('deal');
     haptics.press();
 
-    if (!reduced) wobble.value = withRepeat(
-      withSequence(
-        withTiming(1, { duration: 90, easing: Easing.inOut(Easing.quad) }),
-        withTiming(-1, { duration: 90, easing: Easing.inOut(Easing.quad) }),
-      ),
-      -1,
-      true,
-    );
+    if (!reduced)
+      wobble.value = withRepeat(
+        withSequence(
+          withTiming(1, { duration: 90, easing: Easing.inOut(Easing.quad) }),
+          withTiming(-1, { duration: 90, easing: Easing.inOut(Easing.quad) }),
+        ),
+        -1,
+        true,
+      );
 
     const id = setTimeout(() => router.replace('/game/reveal'), BEAT_MS);
     return () => clearTimeout(id);
@@ -66,10 +67,7 @@ export default function Deal() {
   return (
     <Screen tone={color.yellow}>
       <View style={styles.body}>
-        <DealAnimation
-          count={game.players.length}
-          icons={game.players.map((p) => p.icon)}
-        />
+        <DealAnimation count={game.players.length} icons={game.players.map((p) => p.icon)} />
         <Animated.View style={wobbleStyle}>
           <Text style={styles.title}>DEALING</Text>
         </Animated.View>

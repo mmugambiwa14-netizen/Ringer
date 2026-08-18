@@ -1,8 +1,15 @@
 import { StyleSheet, View } from 'react-native';
 import { router } from 'expo-router';
 import {
-  Avatar, Button, GhostButton, Row, Screen, Text,
-  border, color, type as t,
+  Avatar,
+  Button,
+  GhostButton,
+  Row,
+  Screen,
+  Text,
+  border,
+  color,
+  type as t,
 } from '../src/ui';
 import { useGame } from '../src/store/gameStore';
 import { standings } from '../src/engine/scoring';
@@ -44,7 +51,11 @@ export default function Scoreboard() {
 
       <View style={styles.spacer} />
       {over ? (
-        <Button label="SEE THE PODIUM" tone={color.pink} onPress={() => router.replace('/podium')} />
+        <Button
+          label="SEE THE PODIUM"
+          tone={color.pink}
+          onPress={() => router.replace('/podium')}
+        />
       ) : (
         <Button
           label="NEXT ROUND"

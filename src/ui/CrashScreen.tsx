@@ -23,10 +23,12 @@ export function CrashScreen({
     <View style={styles.root}>
       <ScrollView contentContainerStyle={styles.inner}>
         <Sticker tone={color.paper}>SOMETHING BROKE</Sticker>
-        <Text style={styles.title}>THAT{'\n'}WASN&rsquo;T{'\n'}THE PLAN</Text>
+        <Text style={styles.title}>
+          THAT{'\n'}WASN&rsquo;T{'\n'}THE PLAN
+        </Text>
         <Text style={styles.body}>
-          The round is still saved. Try carrying on — if it breaks again, starting a fresh
-          session will clear it.
+          The round is still saved. Try carrying on — if it breaks again, starting a fresh session
+          will clear it.
         </Text>
         <Card style={styles.card}>
           <Text style={t.label}>WHAT HAPPENED</Text>

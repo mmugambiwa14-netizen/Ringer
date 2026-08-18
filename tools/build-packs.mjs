@@ -40,7 +40,11 @@ function levenshtein(a, b) {
   for (let i = 1; i <= a.length; i++) {
     const curr = [i];
     for (let j = 1; j <= b.length; j++) {
-      curr[j] = Math.min(curr[j - 1] + 1, prev[j] + 1, prev[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+      curr[j] = Math.min(
+        curr[j - 1] + 1,
+        prev[j] + 1,
+        prev[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1),
+      );
     }
     prev = curr;
   }
@@ -48,14 +52,20 @@ function levenshtein(a, b) {
 }
 
 function slug(text) {
-  return text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  return text
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
 }
 
 function checkText(packId, line, label, text) {
   const where = `${packId}:${line} ${label} "${text}"`;
-  if (!ALLOWED.test(text)) errors.push(`${where} — must be UPPERCASE letters, digits, spaces, ' or -`);
-  if (text.length > MAX_LEN) errors.push(`${where} — ${text.length} chars, max ${MAX_LEN} (won't fit at display size)`);
-  if (text.trim().split(/\s+/).length > MAX_WORDS) errors.push(`${where} — more than ${MAX_WORDS} words`);
+  if (!ALLOWED.test(text))
+    errors.push(`${where} — must be UPPERCASE letters, digits, spaces, ' or -`);
+  if (text.length > MAX_LEN)
+    errors.push(`${where} — ${text.length} chars, max ${MAX_LEN} (won't fit at display size)`);
+  if (text.trim().split(/\s+/).length > MAX_WORDS)
+    errors.push(`${where} — more than ${MAX_WORDS} words`);
   if (text !== text.trim()) errors.push(`${where} — stray whitespace`);
 }
 
@@ -80,9 +90,14 @@ for (const meta of META) {
     const trimmed = rawLine.trim();
     if (!trimmed || trimmed.startsWith('#')) return;
 
-    const parts = rawLine.split('\t').map((s) => s.trim()).filter((s) => s.length > 0);
+    const parts = rawLine
+      .split('\t')
+      .map((s) => s.trim())
+      .filter((s) => s.length > 0);
     if (parts.length < 2) {
-      errors.push(`${meta.id}:${line} — expected "WORD<tab>DECOY<tab>difficulty", got "${trimmed}"`);
+      errors.push(
+        `${meta.id}:${line} — expected "WORD<tab>DECOY<tab>difficulty", got "${trimmed}"`,
+      );
       return;
     }
     const [text, decoy, diffRaw] = parts;
@@ -94,7 +109,8 @@ for (const meta of META) {
     if (!Number.isInteger(difficulty) || difficulty < 1 || difficulty > 3) {
       errors.push(`${meta.id}:${line} "${text}" — difficulty must be 1, 2 or 3`);
     }
-    if (text === decoy) errors.push(`${meta.id}:${line} "${text}" — decoy is identical to the word`);
+    if (text === decoy)
+      errors.push(`${meta.id}:${line} "${text}" — decoy is identical to the word`);
     if (text.includes(decoy) || decoy.includes(text)) {
       errors.push(`${meta.id}:${line} "${text}" / "${decoy}" — one contains the other`);
     }
@@ -112,9 +128,12 @@ for (const meta of META) {
     }
     // Spelling-similarity only matters once words are long enough to misread.
     if (Math.min(text.length, decoy.length) >= 8 && levenshtein(text, decoy) <= 2) {
-      errors.push(`${meta.id}:${line} "${text}" / "${decoy}" — near-identical spelling, easy to misread`);
+      errors.push(
+        `${meta.id}:${line} "${text}" / "${decoy}" — near-identical spelling, easy to misread`,
+      );
     }
-    if (textsInPack.has(text)) errors.push(`${meta.id}:${line} "${text}" — duplicate inside the pack`);
+    if (textsInPack.has(text))
+      errors.push(`${meta.id}:${line} "${text}" — duplicate inside the pack`);
     textsInPack.add(text);
 
     const otherPack = seenText.get(text);
@@ -164,4 +183,7 @@ const byDiff = [1, 2, 3].map(
 console.log(
   `${checkOnly ? 'checked' : 'built'} ${built.length} packs, ${total} words (difficulty ${byDiff.join(' ')})`,
 );
-for (const p of built) console.log(`  ${p.name.padEnd(9)} ${String(p.words.length).padStart(3)}${p.adult ? '  (18+)' : ''}`);
+for (const p of built)
+  console.log(
+    `  ${p.name.padEnd(9)} ${String(p.words.length).padStart(3)}${p.adult ? '  (18+)' : ''}`,
+  );

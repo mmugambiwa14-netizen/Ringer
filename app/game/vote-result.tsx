@@ -1,7 +1,18 @@
 import { StyleSheet, View } from 'react-native';
 import { router } from 'expo-router';
 import { useRedirectWhen } from '../../src/lib/navigation';
-import { Avatar, Button, Card, Row, Screen, Sticker, Text, border, color, type as t } from '../../src/ui';
+import {
+  Avatar,
+  Button,
+  Card,
+  Row,
+  Screen,
+  Sticker,
+  Text,
+  border,
+  color,
+  type as t,
+} from '../../src/ui';
 import { useGame } from '../../src/store/gameStore';
 import { voteCounts } from '../../src/engine/selectors';
 import { displayName } from '../../src/engine/roster';
@@ -88,7 +99,12 @@ const styles = StyleSheet.create({
   tallyRow: { gap: 4 },
   tallyLabel: {},
   spacer: { flex: 1 },
-  track: { height: 22, borderWidth: border.base, borderColor: color.ink, backgroundColor: color.paper },
+  track: {
+    height: 22,
+    borderWidth: border.base,
+    borderColor: color.ink,
+    backgroundColor: color.paper,
+  },
   fill: { height: '100%' },
   card: { marginTop: 4 },
   out: { marginTop: 8 },

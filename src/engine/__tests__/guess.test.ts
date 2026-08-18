@@ -9,7 +9,7 @@ describe('guess matching', () => {
   });
 
   it('ignores punctuation', () => {
-    expect(guessMatches("stand-up!", 'STAND UP')).toBe(true);
+    expect(guessMatches('stand-up!', 'STAND UP')).toBe(true);
   });
 
   it('forgives one typo in longer words', () => {

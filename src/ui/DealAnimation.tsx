@@ -33,13 +33,7 @@ export function DealAnimation({ count, icons }: { count: number; icons: number[]
   return (
     <View style={styles.stage} pointerEvents="none">
       {Array.from({ length: shown }, (_, i) => (
-        <DealtCard
-          key={i}
-          index={i}
-          total={shown}
-          spread={spread}
-          icon={icons[i] ?? i}
-        />
+        <DealtCard key={i} index={i} total={shown} spread={spread} icon={icons[i] ?? i} />
       ))}
     </View>
   );
@@ -65,7 +59,10 @@ function DealtCard({
     if (reduced) {
       // Reduce Motion is a request to stop things flying around, not to hide
       // the beat entirely — the cards still appear, they just don't fan.
-      progress.value = withSequence(withTiming(0.12, { duration: 200 }), withTiming(0, { duration: 200 }));
+      progress.value = withSequence(
+        withTiming(0.12, { duration: 200 }),
+        withTiming(0, { duration: 200 }),
+      );
       return;
     }
     progress.value = withDelay(

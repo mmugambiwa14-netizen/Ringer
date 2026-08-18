@@ -107,12 +107,7 @@ function Glyph({ shape }: { shape: string }) {
       return (
         <>
           <Circle cx="14" cy="15" r="7.5" fill="none" stroke={INK} strokeWidth="5" />
-          <Path
-            d="M18 20l13 13m-5 0l4 4m-8-8l4 4"
-            fill="none"
-            stroke={INK}
-            strokeWidth="4.5"
-          />
+          <Path d="M18 20l13 13m-5 0l4 4m-8-8l4 4" fill="none" stroke={INK} strokeWidth="4.5" />
         </>
       );
     default:

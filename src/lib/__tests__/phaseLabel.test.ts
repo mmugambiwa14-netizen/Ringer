@@ -4,8 +4,18 @@ import { phaseLabel, routeForPhase } from '../phaseLabel';
 import type { Phase } from '../../engine/types';
 
 const ALL: Phase[] = [
-  'setup', 'deal', 'reveal', 'startingPlayer', 'clues', 'discussion',
-  'vote', 'voteResult', 'imposterGuess', 'roundResult', 'scoreboard', 'gameOver',
+  'setup',
+  'deal',
+  'reveal',
+  'startingPlayer',
+  'clues',
+  'discussion',
+  'vote',
+  'voteResult',
+  'imposterGuess',
+  'roundResult',
+  'scoreboard',
+  'gameOver',
 ];
 
 describe('resume routing', () => {

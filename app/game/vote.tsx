@@ -2,10 +2,7 @@ import { useEffect, useState } from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
 import { router } from 'expo-router';
 import { useRedirectWhen } from '../../src/lib/navigation';
-import {
-  Avatar, Button, Row, Screen, Sticker, Text,
-  border, color, type as t,
-} from '../../src/ui';
+import { Avatar, Button, Row, Screen, Sticker, Text, border, color, type as t } from '../../src/ui';
 import { useGame } from '../../src/store/gameStore';
 import { displayName } from '../../src/engine/roster';
 import { haptics } from '../../src/lib/haptics';
@@ -53,9 +50,7 @@ export default function Vote() {
           <Sticker tone={color.pink}>3 · 2 · 1 · POINT</Sticker>
         </Row>
         <Text style={styles.title}>WHO&rsquo;S{'\n'}THE RINGER?</Text>
-        <Text style={styles.sub}>
-          Everyone points at once. Tap whoever the table accused.
-        </Text>
+        <Text style={styles.sub}>Everyone points at once. Tap whoever the table accused.</Text>
         <Grid
           players={choices}
           onPick={(id) => {

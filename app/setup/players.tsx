@@ -2,8 +2,16 @@ import { useEffect } from 'react';
 import { StyleSheet, TextInput, View } from 'react-native';
 import { router } from 'expo-router';
 import {
-  Avatar, Button, GhostButton, Row, Screen, Text,
-  border, color, shadow, type as t,
+  Avatar,
+  Button,
+  GhostButton,
+  Row,
+  Screen,
+  Text,
+  border,
+  color,
+  shadow,
+  type as t,
 } from '../../src/ui';
 import { useGame } from '../../src/store/gameStore';
 import { identityFor } from '../../src/engine/roster';

@@ -4,8 +4,17 @@ import { router } from 'expo-router';
 import { useRedirectWhen } from '../../src/lib/navigation';
 import { useKeepAwake } from 'expo-keep-awake';
 import {
-  Avatar, Button, GhostButton, Row, Screen, Sticker, Text, TimerRing,
-  border, color, type as t,
+  Avatar,
+  Button,
+  GhostButton,
+  Row,
+  Screen,
+  Sticker,
+  Text,
+  TimerRing,
+  border,
+  color,
+  type as t,
 } from '../../src/ui';
 import { useGame } from '../../src/store/gameStore';
 import { clueTurnInfo } from '../../src/engine/selectors';

@@ -51,7 +51,10 @@ describe('scoring', () => {
   });
 
   it('a surviving ringer takes 3', () => {
-    const out = applyAwards(players, awardsForRound(players, round({ accusedId: 'c' }), 'imposter', false));
+    const out = applyAwards(
+      players,
+      awardsForRound(players, round({ accusedId: 'c' }), 'imposter', false),
+    );
     expect(total(out, 'b')).toBe(3);
     expect(total(out, 'a')).toBe(0);
   });

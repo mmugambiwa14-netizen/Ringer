@@ -39,10 +39,7 @@ export function Button({
   const drop = size === 'lg' ? shadow.offset : 4;
 
   const animated = useAnimatedStyle(() => ({
-    transform: [
-      { translateX: pressed.value * drop },
-      { translateY: pressed.value * drop },
-    ],
+    transform: [{ translateX: pressed.value * drop }, { translateY: pressed.value * drop }],
     shadowOffset: {
       width: (1 - pressed.value) * drop,
       height: (1 - pressed.value) * drop,

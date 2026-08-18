@@ -1,6 +1,16 @@
 import { Pressable, StyleSheet, View } from 'react-native';
 import { router } from 'expo-router';
-import { Button, GhostButton, Row, Screen, Text, border, color, onColor, type as t } from '../../src/ui';
+import {
+  Button,
+  GhostButton,
+  Row,
+  Screen,
+  Text,
+  border,
+  color,
+  onColor,
+  type as t,
+} from '../../src/ui';
 import { useGame } from '../../src/store/gameStore';
 import { usableWordCount, visiblePacks } from '../../src/data/packs';
 import { usePrefs } from '../../src/store/prefsStore';
@@ -15,9 +25,7 @@ export default function Packs() {
 
   const toggle = (id: string) => {
     haptics.tap();
-    const next = selected.includes(id)
-      ? selected.filter((p) => p !== id)
-      : [...selected, id];
+    const next = selected.includes(id) ? selected.filter((p) => p !== id) : [...selected, id];
     if (next.length === 0) return; // always leave one pack on
     dispatch({ type: 'SET_CONFIG', patch: { packs: next } });
   };

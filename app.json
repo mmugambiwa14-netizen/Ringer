@@ -34,14 +34,9 @@
       },
       "versionCode": 1,
       "permissions": [],
-      "blockedPermissions": [
-        "android.permission.RECORD_AUDIO"
-      ]
+      "blockedPermissions": ["android.permission.RECORD_AUDIO"]
     },
-    "plugins": [
-      "expo-router",
-      "expo-font"
-    ],
+    "plugins": ["expo-router", "expo-font"],
     "experiments": {
       "typedRoutes": true
     },
@@ -50,9 +45,7 @@
       "favicon": "./assets/favicon.png",
       "bundler": "metro"
     },
-    "assetBundlePatterns": [
-      "assets/**/*"
-    ],
+    "assetBundlePatterns": ["assets/**/*"],
     "primaryColor": "#FF3D9A"
   }
 }

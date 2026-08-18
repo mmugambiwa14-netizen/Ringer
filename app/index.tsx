@@ -2,8 +2,16 @@ import { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { router } from 'expo-router';
 import {
-  Button, ResumePrompt, Row, Screen, Sticker, Text,
-  border, color, shadow, type as t,
+  Button,
+  ResumePrompt,
+  Row,
+  Screen,
+  Sticker,
+  Text,
+  border,
+  color,
+  shadow,
+  type as t,
 } from '../src/ui';
 import { useGame } from '../src/store/gameStore';
 import { phaseLabel, routeForPhase } from '../src/lib/phaseLabel';

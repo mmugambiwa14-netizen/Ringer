@@ -35,7 +35,14 @@ export function TimerRing({ seconds, onExpire }: { seconds: number; onExpire?: (
   return (
     <View style={styles.wrap}>
       <Svg width={SIZE} height={SIZE} style={styles.svg}>
-        <Circle cx={SIZE / 2} cy={SIZE / 2} r={R + 8} stroke={color.ink} strokeWidth={3} fill="none" />
+        <Circle
+          cx={SIZE / 2}
+          cy={SIZE / 2}
+          r={R + 8}
+          stroke={color.ink}
+          strokeWidth={3}
+          fill="none"
+        />
         <Circle
           cx={SIZE / 2}
           cy={SIZE / 2}
@@ -46,7 +53,14 @@ export function TimerRing({ seconds, onExpire }: { seconds: number; onExpire?: (
           strokeDasharray={`${C}`}
           strokeDashoffset={C * (1 - pct)}
         />
-        <Circle cx={SIZE / 2} cy={SIZE / 2} r={R - 8} stroke={color.ink} strokeWidth={3} fill="none" />
+        <Circle
+          cx={SIZE / 2}
+          cy={SIZE / 2}
+          r={R - 8}
+          stroke={color.ink}
+          strokeWidth={3}
+          fill="none"
+        />
       </Svg>
       <View style={styles.numWrap} pointerEvents="none">
         <Text style={styles.num}>{left}</Text>

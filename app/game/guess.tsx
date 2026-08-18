@@ -3,8 +3,17 @@ import { KeyboardAvoidingView, Platform, StyleSheet, TextInput, View } from 'rea
 import { router } from 'expo-router';
 import { useRedirectWhen } from '../../src/lib/navigation';
 import {
-  Avatar, Button, GhostButton, Row, Screen, Sticker, Text,
-  border, color, shadow, type as t,
+  Avatar,
+  Button,
+  GhostButton,
+  Row,
+  Screen,
+  Sticker,
+  Text,
+  border,
+  color,
+  shadow,
+  type as t,
 } from '../../src/ui';
 import { useGame } from '../../src/store/gameStore';
 import { displayName } from '../../src/engine/roster';
@@ -35,7 +44,9 @@ export default function Guess() {
         <View style={styles.flex}>
           <Row style={styles.who}>
             <Avatar icon={caught.icon} size="lg" />
-            <Text style={styles.title}>{displayName(caught)} WAS{'\n'}THE RINGER</Text>
+            <Text style={styles.title}>
+              {displayName(caught)} WAS{'\n'}THE RINGER
+            </Text>
           </Row>
           <Text style={styles.body}>
             One guess at the secret word. Get it right and you steal the round.

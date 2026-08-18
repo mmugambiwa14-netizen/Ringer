@@ -188,9 +188,33 @@ function Arrow() {
   return (
     <Svg width={40} height={40} viewBox="0 0 40 40">
       <Rect x="0" y="0" width="0" height="0" />
-      <Line x1="20" y1="34" x2="20" y2="8" stroke={color.ink} strokeWidth="5" strokeLinecap="round" />
-      <Line x1="20" y1="7" x2="9" y2="19" stroke={color.ink} strokeWidth="5" strokeLinecap="round" />
-      <Line x1="20" y1="7" x2="31" y2="19" stroke={color.ink} strokeWidth="5" strokeLinecap="round" />
+      <Line
+        x1="20"
+        y1="34"
+        x2="20"
+        y2="8"
+        stroke={color.ink}
+        strokeWidth="5"
+        strokeLinecap="round"
+      />
+      <Line
+        x1="20"
+        y1="7"
+        x2="9"
+        y2="19"
+        stroke={color.ink}
+        strokeWidth="5"
+        strokeLinecap="round"
+      />
+      <Line
+        x1="20"
+        y1="7"
+        x2="31"
+        y2="19"
+        stroke={color.ink}
+        strokeWidth="5"
+        strokeLinecap="round"
+      />
     </Svg>
   );
 }

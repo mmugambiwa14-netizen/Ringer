@@ -1,12 +1,6 @@
 import { describe, it } from 'node:test';
 import { expect } from '../../engine/__tests__/expect';
-import {
-  READABLE_AT,
-  isReadable,
-  shutterOffset,
-  shutterProgress,
-  travelFor,
-} from '../reveal';
+import { READABLE_AT, isReadable, shutterOffset, shutterProgress, travelFor } from '../reveal';
 
 describe('slide-up reveal', () => {
   const travel = travelFor(400); // 288px

@@ -48,7 +48,10 @@ export type AnalyticsEvent =
   | { name: 'share_opened'; rounds_played: number }
   | { name: 'share_completed'; rounds_played: number };
 
-export type AnalyticsSink = (name: string, props: Record<string, string | number | boolean>) => void;
+export type AnalyticsSink = (
+  name: string,
+  props: Record<string, string | number | boolean>,
+) => void;
 
 let sink: AnalyticsSink | null = null;
 let enabled = false;

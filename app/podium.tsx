@@ -3,8 +3,18 @@ import { StyleSheet, View } from 'react-native';
 import { router } from 'expo-router';
 import { useRedirectWhen } from '../src/lib/navigation';
 import {
-  Avatar, Button, Card, GhostButton, Row, Screen, Sticker, Text,
-  border, color, onColor, type as t,
+  Avatar,
+  Button,
+  Card,
+  GhostButton,
+  Row,
+  Screen,
+  Sticker,
+  Text,
+  border,
+  color,
+  onColor,
+  type as t,
 } from '../src/ui';
 import { useGame } from '../src/store/gameStore';
 import { standings } from '../src/engine/scoring';
@@ -56,7 +66,9 @@ export default function Podium() {
 
       <View style={styles.crown}>
         <Avatar icon={winner.icon} size="xl" />
-        <Text style={[t.label, { color: onColor(color.blue) }]}>TONIGHT&rsquo;S RINGER-CATCHER</Text>
+        <Text style={[t.label, { color: onColor(color.blue) }]}>
+          TONIGHT&rsquo;S RINGER-CATCHER
+        </Text>
         <Text style={styles.name} adjustsFontSizeToFit numberOfLines={1}>
           {displayName(winner)}
         </Text>
